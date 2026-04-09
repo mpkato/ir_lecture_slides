@@ -9,13 +9,13 @@ Lecture slides for the Information Retrieval course.
 | # | Topic |
 |---|-------|
 | 1 | Document Ranking and Keyword Search |
-| 2 | Inverted Index and Efficient Search |
-| 3 | Evaluation of Information Retrieval |
-| 4 | Retrieval Models |
-| 5 | Query Processing and Expansion |
+| 2 | Machine Learning and Information Retrieval |
+| 3 | Relevance and Search Evaluation |
+| 4 | Traditional Retrieval Models |
+| 5 | Transformer and BERT for Ranking |
 | 6 | Exercise (hands-on) |
-| 7 | Machine Learning for IR |
-| 8 | Neural IR Models |
-| 9 | Large Language Models and IR |
-| 10 | Recommendation Systems |
-| 11 | Conversational Search and Question Answering |
+| 7 | Neural Ranking Models: Long Document Ranking |
+| 8 | Cross-Encoder Reranking |
+| 9 | Query and Document Expansion |
+| 10 | Bi-Encoders and Dense Retrieval |
+| 11 | Learned Sparse Retrieval |
