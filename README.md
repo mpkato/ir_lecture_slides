@@ -11,7 +11,7 @@ Lecture slides for the Information Retrieval course.
 | 1 | Document Ranking and Keyword Search | [PDF](lecture1.pdf) |
 | 2 | Machine Learning and Information Retrieval | [PDF](lecture2.pdf) |
 | 3 | Relevance and Search Evaluation | [PDF](lecture3.pdf) |
-| 4 | Traditional Retrieval Models | |
+| 4 | Traditional Retrieval Models | [PDF](lecture4.pdf) |
 | 5 | Transformer and BERT for Ranking | |
 | 6 | Exercise (hands-on) | |
 | 7 | Neural Ranking Models: Long Document Ranking | |
