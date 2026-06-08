@@ -1,6 +1,6 @@
 """
-Introduction to Information Retrieval — Lecture 6 Exercise
-==========================================================
+Information Retrieval — Lecture 6 Exercise
+==========================================
 
 Runs in a low-resource environment (no GPU, a few GB of memory).
 Uses the standard library only (no `pip install` required).
@@ -348,7 +348,7 @@ Q3 (10 points): As you vary the BM25 parameter k1 over 0, 0.5, 1.2, 5.0,
 def run_tests():
     """Run the tests for all tasks."""
     print("=" * 60)
-    print("Introduction to Information Retrieval — Lecture 6 Exercise")
+    print("Information Retrieval — Lecture 6 Exercise")
     print("=" * 60)
 
     errors = 0
