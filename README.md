@@ -20,6 +20,3 @@ Lecture slides for the Information Retrieval course.
 | 10 | Bi-Encoders and Dense Retrieval | |
 | 11 | Learned Sparse Retrieval | |
 | 12 | Exercise (hands-on) | |
-| 13 | Advanced topics 1 | |
-| 14 | Advanced topics 2 | |
-| 15 | Advanced topics 3 | |
