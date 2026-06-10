@@ -15,7 +15,7 @@ Lecture slides for the Information Retrieval course.
 | 5 | Transformer and BERT for Ranking | [PDF](lecture5.pdf) |
 | 6 | Exercise (hands-on) | [PDF](lecture6.pdf) · [exercise.py](lecture6_exercise.py) |
 | 7 | Neural Ranking Models: Long Document Ranking | [PDF](lecture7.pdf) |
-| 8 | Cross-Encoder Reranking | |
+| 8 | Cross-Encoder Reranking | [PDF](lecture8.pdf) |
 | 9 | Query and Document Expansion | |
 | 10 | Bi-Encoders and Dense Retrieval | |
 | 11 | Learned Sparse Retrieval | |
