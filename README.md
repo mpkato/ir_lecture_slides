@@ -19,4 +19,4 @@ Lecture slides for the Information Retrieval course.
 | 9 | Query and Document Expansion | [PDF](lecture9.pdf) |
 | 10 | Bi-Encoders and Dense Retrieval | |
 | 11 | Learned Sparse Retrieval | |
-| 12 | Exercise (hands-on) | |
+| 12 | Exercise (hands-on) | [exercise.py](lecture12_exercise.py) |
