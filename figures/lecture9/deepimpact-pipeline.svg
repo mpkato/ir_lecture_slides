@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="880" height="520" viewBox="0 0 880 520" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#555555"/>
+    </marker>
+  </defs>
+
+  <!-- top row -->
+  <rect x="60" y="40" width="180" height="64" rx="8" fill="#DDEEF7" stroke="#2B87B8" stroke-width="1.5"/>
+  <text x="150" y="66" text-anchor="middle" font-size="14" font-weight="bold" fill="#18617E">Document <tspan font-style="italic">d</tspan></text>
+  <text x="150" y="88" text-anchor="middle" font-size="11" fill="#33617A">original text</text>
+
+  <line x1="242" y1="72" x2="306" y2="72" stroke="#555555" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <rect x="310" y="44" width="180" height="56" rx="8" fill="#E87E2E"/>
+  <text x="400" y="68" text-anchor="middle" font-size="14" font-weight="bold" fill="#FFFFFF">doc2query</text>
+  <text x="400" y="88" text-anchor="middle" font-size="11" fill="#FBE3CD">generate queries</text>
+
+  <line x1="492" y1="72" x2="556" y2="72" stroke="#555555" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <rect x="560" y="40" width="200" height="64" rx="8" fill="#FCEEDF" stroke="#E8A05D" stroke-width="1.5"/>
+  <text x="660" y="66" text-anchor="middle" font-size="14" font-weight="bold" fill="#B35A0E">Expanded <tspan font-style="italic">d&#8242;</tspan></text>
+  <text x="660" y="88" text-anchor="middle" font-size="11" fill="#7A5230">original + new terms</text>
+
+  <line x1="660" y1="104" x2="660" y2="140" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- BERT encoder -->
+  <rect x="140" y="144" width="600" height="48" rx="7" fill="#2B87B8"/>
+  <text x="440" y="174" text-anchor="middle" font-size="16" font-weight="bold" fill="#FFFFFF">BERT Encoder</text>
+
+  <g stroke="#555555" stroke-width="1.2">
+    <line x1="240" y1="194" x2="240" y2="222" marker-end="url(#arrow)"/>
+    <line x1="380" y1="194" x2="380" y2="222" marker-end="url(#arrow)"/>
+    <line x1="520" y1="194" x2="520" y2="222" marker-end="url(#arrow)"/>
+    <line x1="640" y1="194" x2="640" y2="222" marker-end="url(#arrow)"/>
+  </g>
+
+  <!-- token chips -->
+  <rect x="185" y="226" width="110" height="30" rx="5" fill="#DDEEF7" stroke="#7FB8D6"/>
+  <text x="240" y="246" text-anchor="middle" font-size="12" fill="#18617E">token&#8202;<tspan dy="2" font-size="9">1</tspan></text>
+  <rect x="325" y="226" width="110" height="30" rx="5" fill="#DDEEF7" stroke="#7FB8D6"/>
+  <text x="380" y="246" text-anchor="middle" font-size="12" fill="#18617E">token&#8202;<tspan dy="2" font-size="9">2</tspan></text>
+  <rect x="465" y="226" width="110" height="30" rx="5" fill="#FCEEDF" stroke="#E8A05D"/>
+  <text x="520" y="246" text-anchor="middle" font-size="12" fill="#B35A0E">new term</text>
+  <rect x="605" y="226" width="70" height="30" rx="5" fill="#F7F7F7" stroke="#CCCCCC"/>
+  <text x="640" y="246" text-anchor="middle" font-size="12" fill="#999999">&#8230;</text>
+
+  <text x="310" y="278" text-anchor="middle" font-size="11" fill="#2B87B8">original terms</text>
+  <text x="520" y="278" text-anchor="middle" font-size="11" fill="#E87E2E">expanded terms (also weighted)</text>
+
+  <line x1="440" y1="288" x2="440" y2="320" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- impact score -->
+  <rect x="140" y="324" width="600" height="44" rx="7" fill="#E87E2E"/>
+  <text x="440" y="352" text-anchor="middle" font-size="15" font-weight="bold" fill="#FFFFFF">Impact score:&#160;&#160;<tspan font-style="italic">s</tspan>(<tspan font-style="italic">t</tspan>, <tspan font-style="italic">d&#8242;</tspan>) = ReLU(<tspan font-style="italic">w</tspan><tspan dy="-6" font-size="11">T</tspan><tspan dy="6" font-style="italic">h</tspan><tspan dy="3" font-size="11" font-style="italic">t</tspan><tspan dy="-3">&#160;+&#160;</tspan><tspan font-style="italic">b</tspan>)</text>
+
+  <line x1="440" y1="368" x2="440" y2="400" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="455" y="390" font-size="11" fill="#888888">quantize</text>
+
+  <!-- inverted index -->
+  <rect x="200" y="404" width="480" height="46" rx="8" fill="#FCEEDF" stroke="#E8A05D" stroke-width="1.5"/>
+  <text x="440" y="432" text-anchor="middle" font-size="14" font-weight="bold" fill="#B35A0E">Inverted index with learned impact weights</text>
+
+  <rect x="700" y="404" width="150" height="46" rx="8" fill="#E4F4E9" stroke="#3E9C5C" stroke-width="1.5"/>
+  <text x="775" y="423" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#2C7A46">No GPU needed</text>
+  <text x="775" y="440" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#2C7A46">at search time</text>
+
+  <text x="440" y="492" text-anchor="middle" font-size="11" font-style="italic" fill="#888888">Unlike DeepCT, expanded terms also receive learned weights, and training is optimized directly for relevance</text>
+</svg>

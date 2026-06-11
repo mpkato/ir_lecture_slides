@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="760" height="545" viewBox="0 0 760 545" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#555555"/>
+    </marker>
+  </defs>
+
+  <!-- token row -->
+  <text x="380" y="28" text-anchor="middle" font-size="13" font-weight="bold" fill="#444444">Document tokens</text>
+  <g>
+    <rect x="60" y="42" width="100" height="30" rx="5" fill="#DDEEF7" stroke="#7FB8D6"/>
+    <text x="110" y="62" text-anchor="middle" font-size="12" fill="#18617E">deep</text>
+    <rect x="172" y="42" width="100" height="30" rx="5" fill="#DDEEF7" stroke="#7FB8D6"/>
+    <text x="222" y="62" text-anchor="middle" font-size="12" fill="#18617E">learning</text>
+    <rect x="284" y="42" width="100" height="30" rx="5" fill="#DDEEF7" stroke="#7FB8D6"/>
+    <text x="334" y="62" text-anchor="middle" font-size="12" fill="#18617E">for</text>
+    <rect x="396" y="42" width="100" height="30" rx="5" fill="#DDEEF7" stroke="#7FB8D6"/>
+    <text x="446" y="62" text-anchor="middle" font-size="12" fill="#18617E">image</text>
+    <rect x="508" y="42" width="100" height="30" rx="5" fill="#DDEEF7" stroke="#7FB8D6"/>
+    <text x="558" y="62" text-anchor="middle" font-size="12" fill="#18617E">recognition</text>
+    <text x="640" y="62" font-size="14" fill="#888888">&#8230;</text>
+  </g>
+
+  <g stroke="#555555" stroke-width="1.2">
+    <line x1="110" y1="74" x2="110" y2="102" marker-end="url(#arrow)"/>
+    <line x1="222" y1="74" x2="222" y2="102" marker-end="url(#arrow)"/>
+    <line x1="334" y1="74" x2="334" y2="102" marker-end="url(#arrow)"/>
+    <line x1="446" y1="74" x2="446" y2="102" marker-end="url(#arrow)"/>
+    <line x1="558" y1="74" x2="558" y2="102" marker-end="url(#arrow)"/>
+  </g>
+
+  <!-- BERT -->
+  <rect x="60" y="106" width="548" height="50" rx="7" fill="#2B87B8"/>
+  <text x="334" y="137" text-anchor="middle" font-size="17" font-weight="bold" fill="#FFFFFF">BERT</text>
+
+  <g stroke="#555555" stroke-width="1.2">
+    <line x1="110" y1="158" x2="110" y2="186" marker-end="url(#arrow)"/>
+    <line x1="222" y1="158" x2="222" y2="186" marker-end="url(#arrow)"/>
+    <line x1="334" y1="158" x2="334" y2="186" marker-end="url(#arrow)"/>
+    <line x1="446" y1="158" x2="446" y2="186" marker-end="url(#arrow)"/>
+    <line x1="558" y1="158" x2="558" y2="186" marker-end="url(#arrow)"/>
+  </g>
+
+  <!-- embeddings -->
+  <text x="380" y="182" text-anchor="middle" font-size="11" fill="#888888" opacity="0">.</text>
+  <g>
+    <rect x="80" y="190" width="60" height="28" rx="5" fill="#FFFFFF" stroke="#2B87B8"/>
+    <text x="110" y="209" text-anchor="middle" font-size="12" fill="#18617E"><tspan font-style="italic" font-weight="bold">h</tspan><tspan dy="3" font-size="9">1</tspan></text>
+    <rect x="192" y="190" width="60" height="28" rx="5" fill="#FFFFFF" stroke="#2B87B8"/>
+    <text x="222" y="209" text-anchor="middle" font-size="12" fill="#18617E"><tspan font-style="italic" font-weight="bold">h</tspan><tspan dy="3" font-size="9">2</tspan></text>
+    <rect x="304" y="190" width="60" height="28" rx="5" fill="#FFFFFF" stroke="#2B87B8"/>
+    <text x="334" y="209" text-anchor="middle" font-size="12" fill="#18617E"><tspan font-style="italic" font-weight="bold">h</tspan><tspan dy="3" font-size="9">3</tspan></text>
+    <rect x="416" y="190" width="60" height="28" rx="5" fill="#FFFFFF" stroke="#2B87B8"/>
+    <text x="446" y="209" text-anchor="middle" font-size="12" fill="#18617E"><tspan font-style="italic" font-weight="bold">h</tspan><tspan dy="3" font-size="9">4</tspan></text>
+    <rect x="528" y="190" width="60" height="28" rx="5" fill="#FFFFFF" stroke="#2B87B8"/>
+    <text x="558" y="209" text-anchor="middle" font-size="12" fill="#18617E"><tspan font-style="italic" font-weight="bold">h</tspan><tspan dy="3" font-size="9">5</tspan></text>
+  </g>
+  <text x="650" y="209" font-size="11" fill="#888888">contextualized</text>
+  <text x="650" y="223" font-size="11" fill="#888888">embeddings</text>
+
+  <g stroke="#555555" stroke-width="1.2">
+    <line x1="110" y1="220" x2="110" y2="248" marker-end="url(#arrow)"/>
+    <line x1="222" y1="220" x2="222" y2="248" marker-end="url(#arrow)"/>
+    <line x1="334" y1="220" x2="334" y2="248" marker-end="url(#arrow)"/>
+    <line x1="446" y1="220" x2="446" y2="248" marker-end="url(#arrow)"/>
+    <line x1="558" y1="220" x2="558" y2="248" marker-end="url(#arrow)"/>
+  </g>
+
+  <!-- linear layer -->
+  <rect x="60" y="252" width="548" height="42" rx="7" fill="#E87E2E"/>
+  <text x="334" y="279" text-anchor="middle" font-size="15" font-weight="bold" fill="#FFFFFF">Linear layer:&#160;&#160;<tspan font-style="italic">w</tspan><tspan dy="3" font-size="11" font-style="italic">i</tspan><tspan dy="-3">&#160;=&#160;</tspan><tspan font-style="italic">v</tspan><tspan dy="-6" font-size="11">T</tspan><tspan dy="6" font-style="italic">h</tspan><tspan dy="3" font-size="11" font-style="italic">i</tspan><tspan dy="-3">&#160;+&#160;</tspan><tspan font-style="italic">b</tspan></text>
+
+  <g stroke="#555555" stroke-width="1.2">
+    <line x1="110" y1="296" x2="110" y2="324" marker-end="url(#arrow)"/>
+    <line x1="222" y1="296" x2="222" y2="324" marker-end="url(#arrow)"/>
+    <line x1="334" y1="296" x2="334" y2="324" marker-end="url(#arrow)"/>
+    <line x1="446" y1="296" x2="446" y2="324" marker-end="url(#arrow)"/>
+    <line x1="558" y1="296" x2="558" y2="324" marker-end="url(#arrow)"/>
+  </g>
+
+  <!-- predicted weights -->
+  <g>
+    <rect x="80" y="328" width="60" height="28" rx="5" fill="#E87E2E"/>
+    <text x="110" y="347" text-anchor="middle" font-size="12" font-weight="bold" fill="#FFFFFF">0.83</text>
+    <rect x="192" y="328" width="60" height="28" rx="5" fill="#E8A05D"/>
+    <text x="222" y="347" text-anchor="middle" font-size="12" font-weight="bold" fill="#FFFFFF">0.78</text>
+    <rect x="304" y="328" width="60" height="28" rx="5" fill="#EEEEEE" stroke="#BBBBBB"/>
+    <text x="334" y="347" text-anchor="middle" font-size="12" fill="#999999">0.04</text>
+    <rect x="416" y="328" width="60" height="28" rx="5" fill="#E8A05D"/>
+    <text x="446" y="347" text-anchor="middle" font-size="12" font-weight="bold" fill="#FFFFFF">0.72</text>
+    <rect x="528" y="328" width="60" height="28" rx="5" fill="#E8A05D"/>
+    <text x="558" y="347" text-anchor="middle" font-size="12" font-weight="bold" fill="#FFFFFF">0.69</text>
+  </g>
+  <text x="650" y="342" font-size="11" fill="#888888">predicted term</text>
+  <text x="650" y="356" font-size="11" fill="#888888">importance</text>
+
+  <line x1="334" y1="358" x2="334" y2="396" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- quantize -->
+  <rect x="120" y="400" width="430" height="44" rx="7" fill="#FCEEDF" stroke="#E8A05D" stroke-width="1.5"/>
+  <text x="335" y="427" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#B35A0E">Quantize to integer pseudo-TF &#8594; store in the inverted index</text>
+
+  <text x="335" y="482" text-anchor="middle" font-size="12" fill="#666666">On-topic terms (&#8220;deep&#8221;, &#8220;learning&#8221;, &#8220;image&#8221;, &#8220;recognition&#8221;) get high weights; generic terms (&#8220;for&#8221;) get low weights</text>
+  <text x="335" y="512" text-anchor="middle" font-size="11" font-style="italic" fill="#888888">At search time: plain BM25 with the new TF values &#8212; no extra cost, no index size increase</text>
+</svg>

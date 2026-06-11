@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="880" height="545" viewBox="0 0 880 545" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="axisarrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#555555"/>
+    </marker>
+  </defs>
+
+  <!-- gridlines -->
+  <g stroke="#E6E6E6" stroke-width="1">
+    <line x1="90" y1="393.8" x2="820" y2="393.8"/>
+    <line x1="90" y1="301.3" x2="820" y2="301.3"/>
+    <line x1="90" y1="208.8" x2="820" y2="208.8"/>
+    <line x1="90" y1="116.3" x2="820" y2="116.3"/>
+    <line x1="272.5" y1="70" x2="272.5" y2="440"/>
+    <line x1="455" y1="70" x2="455" y2="440"/>
+    <line x1="637.5" y1="70" x2="637.5" y2="440"/>
+  </g>
+
+  <!-- axes -->
+  <line x1="90" y1="440" x2="836" y2="440" stroke="#555555" stroke-width="1.8" marker-end="url(#axisarrow)"/>
+  <line x1="90" y1="440" x2="90" y2="54" stroke="#555555" stroke-width="1.8" marker-end="url(#axisarrow)"/>
+
+  <!-- x ticks -->
+  <g font-size="12" fill="#555555" text-anchor="middle">
+    <text x="90" y="462">10</text>
+    <text x="272.5" y="462">100</text>
+    <text x="455" y="462">1K</text>
+    <text x="637.5" y="462">10K</text>
+    <text x="820" y="462">100K</text>
+  </g>
+  <text x="455" y="492" text-anchor="middle" font-size="13.5" fill="#333333">Latency per query (ms, log scale) &#8594;</text>
+
+  <!-- y ticks -->
+  <g font-size="12" fill="#555555" text-anchor="end">
+    <text x="80" y="398">0.50</text>
+    <text x="80" y="305">0.60</text>
+    <text x="80" y="213">0.70</text>
+    <text x="80" y="120">0.80</text>
+  </g>
+  <text x="36" y="250" text-anchor="middle" font-size="13.5" fill="#333333" transform="rotate(-90 36 250)">nDCG@10 (TREC DL19) &#8594;</text>
+
+  <!-- Pareto frontier -->
+  <polyline points="104,388 272,301 455,204 542,179 610,161 660,150 820,148" fill="none" stroke="#AAAAAA" stroke-width="1.8" stroke-dasharray="7,5"/>
+  <text x="725" y="120" font-size="12" font-style="italic" fill="#888888">Pareto frontier</text>
+
+  <!-- points -->
+  <!-- BM25 -->
+  <circle cx="104" cy="388" r="9" fill="#9AA0A6"/>
+  <text x="120" y="382" font-size="12.5" font-weight="bold" fill="#6B7075">BM25</text>
+  <text x="120" y="397" font-size="10.5" fill="#999999">0.506</text>
+
+  <!-- Distilled BERT -->
+  <circle cx="272" cy="301" r="9" fill="#7FBFDD"/>
+  <text x="288" y="296" font-size="12.5" font-weight="bold" fill="#33759B">Distilled BERT</text>
+  <text x="288" y="311" font-size="10.5" fill="#999999">~3&#215; faster than monoBERT</text>
+
+  <!-- monoBERT -->
+  <circle cx="455" cy="204" r="9" fill="#2B87B8"/>
+  <text x="438" y="190" text-anchor="end" font-size="12.5" font-weight="bold" fill="#18617E">monoBERT</text>
+  <text x="438" y="205" text-anchor="end" font-size="10.5" fill="#999999">0.705</text>
+
+  <!-- monoT5-3B -->
+  <circle cx="542" cy="179" r="9" fill="#E8A05D"/>
+  <text x="528" y="160" text-anchor="end" font-size="12.5" font-weight="bold" fill="#B35A0E">monoT5-3B</text>
+  <text x="528" y="175" text-anchor="end" font-size="10.5" fill="#999999">0.732</text>
+
+  <!-- RankZephyr -->
+  <circle cx="610" cy="161" r="9" fill="#E87E2E"/>
+  <text x="596" y="135" text-anchor="end" font-size="12.5" font-weight="bold" fill="#C2620E">RankZephyr</text>
+  <text x="596" y="150" text-anchor="end" font-size="10.5" fill="#999999">0.752</text>
+
+  <!-- RankLLaMA -->
+  <circle cx="660" cy="150" r="9" fill="#C0392B"/>
+  <text x="676" y="172" font-size="12.5" font-weight="bold" fill="#962D22">RankLLaMA</text>
+  <text x="676" y="187" font-size="10.5" fill="#999999">0.764</text>
+
+  <!-- RankGPT GPT-3.5 -->
+  <circle cx="724" cy="247" r="9" fill="#D98880"/>
+  <text x="708" y="266" text-anchor="end" font-size="12.5" font-weight="bold" fill="#A0564B">RankGPT (GPT-3.5)</text>
+  <text x="708" y="281" text-anchor="end" font-size="10.5" fill="#999999">0.659</text>
+
+  <!-- RankGPT GPT-4 -->
+  <circle cx="800" cy="158" r="9" fill="#922B21"/>
+  <text x="784" y="200" text-anchor="end" font-size="12.5" font-weight="bold" fill="#7B241C">RankGPT (GPT-4)</text>
+  <text x="784" y="215" text-anchor="end" font-size="10.5" fill="#999999">0.755</text>
+
+  <text x="455" y="528" text-anchor="middle" font-size="11" font-style="italic" fill="#888888">Conceptual placement &#8212; nDCG@10 values are as reported on TREC DL19; latencies are rough estimates and experimental conditions differ across papers</text>
+</svg>

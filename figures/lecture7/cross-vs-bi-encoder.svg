@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="880" height="460" viewBox="0 0 880 460" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#555555"/>
+    </marker>
+  </defs>
+
+  <!-- ===== Cross-encoder panel ===== -->
+  <rect x="20" y="20" width="400" height="420" rx="10" fill="#FDF4EA" stroke="#E8A05D" stroke-width="1.5"/>
+  <text x="220" y="52" text-anchor="middle" font-size="17" font-weight="bold" fill="#C2620E">Cross-encoder</text>
+
+  <rect x="70" y="76" width="300" height="36" rx="6" fill="#FFFFFF" stroke="#E8A05D" stroke-width="1.5"/>
+  <text x="220" y="99" text-anchor="middle" font-size="13" font-family="Menlo, Consolas, monospace" fill="#333333">[CLS] q [SEP] d [SEP]</text>
+
+  <line x1="220" y1="112" x2="220" y2="143" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="120" y="145" width="200" height="44" rx="6" fill="#E87E2E"/>
+  <text x="220" y="173" text-anchor="middle" font-size="16" font-weight="bold" fill="#FFFFFF">BERT</text>
+
+  <line x1="220" y1="189" x2="220" y2="221" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="120" y="223" width="200" height="36" rx="6" fill="#FFFFFF" stroke="#E8A05D" stroke-width="1.5"/>
+  <text x="220" y="246" text-anchor="middle" font-size="13" fill="#7A3E0F"><tspan font-style="italic" font-weight="bold">T</tspan><tspan dy="3" font-size="9">[CLS]</tspan></text>
+
+  <line x1="220" y1="259" x2="220" y2="291" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="120" y="293" width="200" height="40" rx="6" fill="#E87E2E"/>
+  <text x="220" y="318" text-anchor="middle" font-size="14" font-weight="bold" fill="#FFFFFF">score(<tspan font-style="italic">q</tspan>, <tspan font-style="italic">d</tspan>)</text>
+
+  <text x="220" y="368" text-anchor="middle" font-size="14" font-weight="bold" fill="#B35A0E">High accuracy &#183; slow</text>
+  <text x="220" y="390" text-anchor="middle" font-size="12" fill="#7A5230">Captures all q&#8211;d token interactions</text>
+  <text x="220" y="408" text-anchor="middle" font-size="12" fill="#7A5230">No pre-computation possible &#8594; inference per document</text>
+
+  <!-- ===== Bi-encoder panel ===== -->
+  <rect x="460" y="20" width="400" height="420" rx="10" fill="#E9F4FA" stroke="#7FB8D6" stroke-width="1.5"/>
+  <text x="660" y="52" text-anchor="middle" font-size="17" font-weight="bold" fill="#18617E">Bi-encoder</text>
+
+  <rect x="530" y="76" width="80" height="34" rx="6" fill="#FFFFFF" stroke="#2B87B8" stroke-width="1.5"/>
+  <text x="570" y="98" text-anchor="middle" font-size="14" font-style="italic" fill="#18617E">q</text>
+  <rect x="710" y="76" width="80" height="34" rx="6" fill="#FFFFFF" stroke="#2B87B8" stroke-width="1.5"/>
+  <text x="750" y="98" text-anchor="middle" font-size="14" font-style="italic" fill="#18617E">d</text>
+
+  <line x1="570" y1="110" x2="570" y2="141" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="750" y1="110" x2="750" y2="141" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="520" y="143" width="100" height="44" rx="6" fill="#2B87B8"/>
+  <text x="570" y="171" text-anchor="middle" font-size="15" font-weight="bold" fill="#FFFFFF">BERT</text>
+  <rect x="700" y="143" width="100" height="44" rx="6" fill="#2B87B8"/>
+  <text x="750" y="171" text-anchor="middle" font-size="15" font-weight="bold" fill="#FFFFFF">BERT</text>
+
+  <line x1="570" y1="187" x2="570" y2="219" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="750" y1="187" x2="750" y2="219" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="530" y="221" width="80" height="34" rx="6" fill="#FFFFFF" stroke="#2B87B8" stroke-width="1.5"/>
+  <text x="570" y="243" text-anchor="middle" font-size="13" fill="#18617E"><tspan font-style="italic" font-weight="bold">v</tspan><tspan dy="3" font-size="10" font-style="italic">q</tspan></text>
+  <rect x="710" y="221" width="80" height="34" rx="6" fill="#FFFFFF" stroke="#2B87B8" stroke-width="1.5"/>
+  <text x="750" y="243" text-anchor="middle" font-size="13" fill="#18617E"><tspan font-style="italic" font-weight="bold">v</tspan><tspan dy="3" font-size="10" font-style="italic">d</tspan></text>
+
+  <line x1="570" y1="255" x2="626" y2="291" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="750" y1="255" x2="694" y2="291" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="585" y="293" width="150" height="40" rx="6" fill="#2B87B8"/>
+  <text x="660" y="318" text-anchor="middle" font-size="14" font-weight="bold" fill="#FFFFFF">sim(<tspan font-style="italic">v</tspan><tspan dy="3" font-size="10" font-style="italic">q</tspan><tspan dy="-3">,&#160;</tspan><tspan font-style="italic">v</tspan><tspan dy="3" font-size="10" font-style="italic">d</tspan><tspan dy="-3">)</tspan></text>
+
+  <text x="660" y="368" text-anchor="middle" font-size="14" font-weight="bold" fill="#18617E">Lower accuracy &#183; fast</text>
+  <text x="660" y="390" text-anchor="middle" font-size="12" fill="#33617A">q and d are encoded independently</text>
+  <text x="660" y="408" text-anchor="middle" font-size="12" fill="#33617A">Document vectors can be pre-computed offline</text>
+</svg>

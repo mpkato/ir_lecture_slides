@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="700" height="470" viewBox="0 0 700 470" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#555555"/>
+    </marker>
+  </defs>
+
+  <!-- x axis (top) -->
+  <line x1="150" y1="58" x2="640" y2="58" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="395" y="44" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#444444">Vocabulary expansion (what to add)</text>
+
+  <!-- y axis (left, pointing down) -->
+  <line x1="118" y1="90" x2="118" y2="396" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="100" y="243" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#444444" transform="rotate(-90 100 243)">Weight learning (how to weight)</text>
+
+  <!-- top-left: BM25 -->
+  <rect x="150" y="90" width="230" height="140" rx="9" fill="#F2F2F2" stroke="#BBBBBB" stroke-width="1.5"/>
+  <text x="265" y="135" text-anchor="middle" font-size="16" font-weight="bold" fill="#555555">BM25</text>
+  <text x="265" y="160" text-anchor="middle" font-size="12" fill="#777777">no expansion &#183; raw TF</text>
+  <text x="265" y="194" text-anchor="middle" font-size="13" font-weight="bold" fill="#777777">MRR@10 = 0.184</text>
+
+  <!-- top-right: doc2query -->
+  <rect x="410" y="90" width="230" height="140" rx="9" fill="#FCEEDF" stroke="#E8A05D" stroke-width="1.5"/>
+  <text x="525" y="135" text-anchor="middle" font-size="16" font-weight="bold" fill="#B35A0E">doc2query</text>
+  <text x="525" y="160" text-anchor="middle" font-size="12" fill="#7A5230">expansion &#183; raw TF</text>
+  <text x="525" y="194" text-anchor="middle" font-size="13" font-weight="bold" fill="#B35A0E">MRR@10 = 0.218</text>
+
+  <!-- bottom-left: DeepCT -->
+  <rect x="150" y="256" width="230" height="140" rx="9" fill="#DDEEF7" stroke="#2B87B8" stroke-width="1.5"/>
+  <text x="265" y="301" text-anchor="middle" font-size="16" font-weight="bold" fill="#18617E">DeepCT</text>
+  <text x="265" y="326" text-anchor="middle" font-size="12" fill="#33617A">no expansion &#183; learned weights</text>
+  <text x="265" y="360" text-anchor="middle" font-size="13" font-weight="bold" fill="#18617E">MRR@10 = 0.243</text>
+
+  <!-- bottom-right: DeepImpact -->
+  <rect x="410" y="256" width="230" height="140" rx="9" fill="#E87E2E"/>
+  <text x="525" y="301" text-anchor="middle" font-size="16" font-weight="bold" fill="#FFFFFF">DeepImpact</text>
+  <text x="525" y="326" text-anchor="middle" font-size="12" fill="#FBE3CD">expansion &#183; learned weights</text>
+  <text x="525" y="360" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFFFFF">MRR@10 = 0.326</text>
+
+  <text x="395" y="438" text-anchor="middle" font-size="12" font-style="italic" fill="#777777">The two axes are orthogonal &#8212; DeepImpact combines both (MRR@10: MS MARCO passage dev, Lin et al., 2021)</text>
+</svg>

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="620" height="500" viewBox="0 0 620 500" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#555555"/>
+    </marker>
+  </defs>
+
+  <!-- funnel guides -->
+  <path d="M60,80 L110,140" stroke="#CCCCCC" stroke-width="1" stroke-dasharray="4,4" fill="none"/>
+  <path d="M560,80 L510,140" stroke="#CCCCCC" stroke-width="1" stroke-dasharray="4,4" fill="none"/>
+  <path d="M110,200 L160,260" stroke="#CCCCCC" stroke-width="1" stroke-dasharray="4,4" fill="none"/>
+  <path d="M510,200 L460,260" stroke="#CCCCCC" stroke-width="1" stroke-dasharray="4,4" fill="none"/>
+  <path d="M160,320 L210,380" stroke="#CCCCCC" stroke-width="1" stroke-dasharray="4,4" fill="none"/>
+  <path d="M460,320 L410,380" stroke="#CCCCCC" stroke-width="1" stroke-dasharray="4,4" fill="none"/>
+
+  <!-- corpus -->
+  <rect x="60" y="30" width="500" height="50" rx="7" fill="#F2F2F2" stroke="#BBBBBB" stroke-width="1.5"/>
+  <text x="310" y="51" text-anchor="middle" font-size="15" font-weight="bold" fill="#444444">Corpus</text>
+  <text x="310" y="70" text-anchor="middle" font-size="12" fill="#777777">8.8M passages (MS MARCO)</text>
+
+  <line x1="310" y1="82" x2="310" y2="138" stroke="#555555" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <text x="325" y="114" font-size="13" font-weight="bold" fill="#2B87B8">Stage 1: BM25 (~10 ms)</text>
+
+  <!-- stage 1 result -->
+  <rect x="110" y="140" width="400" height="60" rx="7" fill="#2B87B8"/>
+  <text x="310" y="165" text-anchor="middle" font-size="16" font-weight="bold" fill="#FFFFFF">Retrieve top 1,000</text>
+  <text x="310" y="186" text-anchor="middle" font-size="12" fill="#D9ECF5">Recall@1000 &#8776; 0.86</text>
+
+  <line x1="310" y1="202" x2="310" y2="258" stroke="#555555" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <text x="325" y="234" font-size="13" font-weight="bold" fill="#E87E2E">Stage 2: monoBERT (30 ms &#215; 100 docs &#8776; 3 s)</text>
+
+  <!-- stage 2 result -->
+  <rect x="160" y="260" width="300" height="60" rx="7" fill="#E87E2E"/>
+  <text x="310" y="285" text-anchor="middle" font-size="16" font-weight="bold" fill="#FFFFFF">Rerank top 100</text>
+  <text x="310" y="306" text-anchor="middle" font-size="12" fill="#FBE3CD">MRR@10: 0.187 &#8594; 0.372</text>
+
+  <line x1="310" y1="322" x2="310" y2="378" stroke="#555555" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <!-- final -->
+  <rect x="210" y="380" width="200" height="44" rx="7" fill="#F2F2F2" stroke="#BBBBBB" stroke-width="1.5"/>
+  <text x="310" y="407" text-anchor="middle" font-size="14" font-weight="bold" fill="#444444">Final ranking (top 10)</text>
+
+  <text x="310" y="460" text-anchor="middle" font-size="12" font-style="italic" fill="#888888">BM25&#8217;s Recall sets the performance ceiling &#8212;</text>
+  <text x="310" y="478" text-anchor="middle" font-size="12" font-style="italic" fill="#888888">documents missed in Stage 1 can never be recovered by BERT</text>
+</svg>

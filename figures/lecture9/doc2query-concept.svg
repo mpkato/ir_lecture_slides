@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="760" height="430" viewBox="0 0 760 430" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#555555"/>
+    </marker>
+  </defs>
+
+  <!-- document -->
+  <rect x="40" y="40" width="190" height="84" rx="8" fill="#DDEEF7" stroke="#2B87B8" stroke-width="1.5"/>
+  <text x="135" y="66" text-anchor="middle" font-size="14" font-weight="bold" fill="#18617E">Document <tspan font-style="italic">d</tspan></text>
+  <text x="135" y="88" text-anchor="middle" font-size="11" font-style="italic" fill="#33617A">&#8220;Deep learning has</text>
+  <text x="135" y="104" text-anchor="middle" font-size="11" font-style="italic" fill="#33617A">transformed NLP &#8230;&#8221;</text>
+
+  <line x1="232" y1="82" x2="296" y2="82" stroke="#555555" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <!-- T5 -->
+  <rect x="300" y="52" width="160" height="60" rx="8" fill="#2B87B8"/>
+  <text x="380" y="78" text-anchor="middle" font-size="17" font-weight="bold" fill="#FFFFFF">T5</text>
+  <text x="380" y="98" text-anchor="middle" font-size="11" fill="#D9ECF5">Seq2Seq model</text>
+
+  <line x1="462" y1="82" x2="526" y2="82" stroke="#555555" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <text x="494" y="72" text-anchor="middle" font-size="10.5" fill="#888888">generate</text>
+
+  <!-- generated queries -->
+  <rect x="530" y="30" width="200" height="104" rx="8" fill="#FCEEDF" stroke="#E8A05D" stroke-width="1.5"/>
+  <text x="630" y="52" text-anchor="middle" font-size="13" font-weight="bold" fill="#B35A0E">Generated queries</text>
+  <text x="630" y="72" text-anchor="middle" font-size="11" fill="#7A5230"><tspan font-style="italic">q</tspan><tspan dy="2" font-size="8">1</tspan><tspan dy="-2">: &#8220;what is deep learning&#8221;</tspan></text>
+  <text x="630" y="90" text-anchor="middle" font-size="11" fill="#7A5230"><tspan font-style="italic">q</tspan><tspan dy="2" font-size="8">2</tspan><tspan dy="-2">: &#8220;NLP techniques&#8221;</tspan></text>
+  <text x="630" y="108" text-anchor="middle" font-size="11" fill="#7A5230"><tspan font-style="italic">q</tspan><tspan dy="2" font-size="8">3</tspan><tspan dy="-2">: &#8220;neural networks&#8221;</tspan></text>
+  <text x="630" y="124" text-anchor="middle" font-size="11" fill="#9C7A56">&#8230;</text>
+
+  <!-- converge -->
+  <path d="M135,124 L135,206" fill="none" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <path d="M630,134 L630,206" fill="none" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="382" y="186" text-anchor="middle" font-size="22" font-weight="bold" fill="#888888">+</text>
+  <text x="382" y="164" text-anchor="middle" font-size="11" fill="#888888">append (concatenate)</text>
+
+  <!-- expanded document -->
+  <rect x="110" y="210" width="540" height="58" rx="8" fill="#FFFFFF" stroke="#2B87B8" stroke-width="1.8"/>
+  <text x="380" y="234" text-anchor="middle" font-size="14" font-weight="bold" fill="#18617E">Expanded document <tspan font-style="italic">d&#8242;</tspan></text>
+  <text x="380" y="256" text-anchor="middle" font-size="12" fill="#33617A">&#8220;Deep learning has transformed NLP &#8230;&#8221; + <tspan font-style="italic">q</tspan><tspan dy="2" font-size="9">1</tspan><tspan dy="-2">&#160;+&#160;</tspan><tspan font-style="italic">q</tspan><tspan dy="2" font-size="9">2</tspan><tspan dy="-2">&#160;+&#160;</tspan><tspan font-style="italic">q</tspan><tspan dy="2" font-size="9">3</tspan><tspan dy="-2">&#160;+ &#8230;</tspan></text>
+
+  <line x1="380" y1="268" x2="380" y2="322" stroke="#555555" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <text x="395" y="299" font-size="12" fill="#888888">standard indexing &#8212; BM25 needs no modification</text>
+
+  <!-- inverted index -->
+  <rect x="230" y="326" width="300" height="46" rx="8" fill="#DDEEF7" stroke="#2B87B8" stroke-width="1.5"/>
+  <text x="380" y="354" text-anchor="middle" font-size="14" font-weight="bold" fill="#18617E">Inverted index (BM25)</text>
+
+  <text x="380" y="408" text-anchor="middle" font-size="11" font-style="italic" fill="#888888">Expansion runs once, offline, at indexing time &#8212; search-time latency is unchanged</text>
+</svg>

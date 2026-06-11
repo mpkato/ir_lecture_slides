@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="640" height="560" viewBox="0 0 640 560" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#555555"/>
+    </marker>
+  </defs>
+
+  <!-- document -->
+  <rect x="220" y="20" width="200" height="40" rx="6" fill="#DDEEF7" stroke="#2B87B8" stroke-width="1.5"/>
+  <text x="320" y="45" text-anchor="middle" font-size="15" font-weight="bold" fill="#18617E">Document <tspan font-style="italic">D</tspan></text>
+
+  <line x1="320" y1="62" x2="320" y2="92" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="335" y="82" font-size="11" fill="#888888">sliding window: 150 words, stride 75</text>
+
+  <!-- overlapping passages -->
+  <text x="320" y="112" text-anchor="middle" font-size="12" fill="#666666">Overlapping passages <tspan font-style="italic">p</tspan><tspan dy="3" font-size="9">1</tspan><tspan dy="-3">,&#160;</tspan><tspan font-style="italic">p</tspan><tspan dy="3" font-size="9">2</tspan><tspan dy="-3">, &#8230;,&#160;</tspan><tspan font-style="italic">p</tspan><tspan dy="3" font-size="9" font-style="italic">k</tspan></text>
+  <rect x="140" y="122" width="135" height="22" rx="4" fill="#BBDDEE" stroke="#7FB8D6"/>
+  <text x="207" y="137" text-anchor="middle" font-size="11" fill="#15425C"><tspan font-style="italic">p</tspan><tspan dy="2" font-size="8">1</tspan></text>
+  <rect x="272" y="122" width="135" height="22" rx="4" fill="#BBDDEE" stroke="#7FB8D6"/>
+  <text x="339" y="137" text-anchor="middle" font-size="11" fill="#15425C"><tspan font-style="italic">p</tspan><tspan dy="2" font-size="8">3</tspan></text>
+  <rect x="206" y="150" width="135" height="22" rx="4" fill="#F4D2AE" stroke="#E8A05D"/>
+  <text x="273" y="165" text-anchor="middle" font-size="11" fill="#7A3E0F"><tspan font-style="italic">p</tspan><tspan dy="2" font-size="8">2</tspan></text>
+  <rect x="338" y="150" width="135" height="22" rx="4" fill="#F4D2AE" stroke="#E8A05D"/>
+  <text x="405" y="165" text-anchor="middle" font-size="11" fill="#7A3E0F"><tspan font-style="italic">p</tspan><tspan dy="2" font-size="8">4</tspan></text>
+  <text x="492" y="166" font-size="13" fill="#888888">&#8230;</text>
+
+  <line x1="320" y1="180" x2="320" y2="210" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- BERT -->
+  <rect x="120" y="212" width="400" height="58" rx="7" fill="#2B87B8"/>
+  <text x="320" y="236" text-anchor="middle" font-size="15" font-weight="bold" fill="#FFFFFF">BERT( [CLS] <tspan font-style="italic">q</tspan> [SEP] <tspan font-style="italic">p</tspan><tspan dy="3" font-size="11" font-style="italic">i</tspan><tspan dy="-3">&#160;[SEP] )</tspan></text>
+  <text x="320" y="257" text-anchor="middle" font-size="12" fill="#D9ECF5">each passage is scored independently</text>
+
+  <line x1="320" y1="272" x2="320" y2="304" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- passage scores -->
+  <rect x="170" y="306" width="300" height="40" rx="6" fill="#FFFFFF" stroke="#7FB8D6" stroke-width="1.5"/>
+  <text x="320" y="331" text-anchor="middle" font-size="14" fill="#18617E">Passage scores: <tspan font-style="italic">s</tspan><tspan dy="3" font-size="10">1</tspan><tspan dy="-3">,&#160;</tspan><tspan font-style="italic">s</tspan><tspan dy="3" font-size="10">2</tspan><tspan dy="-3">, &#8230;,&#160;</tspan><tspan font-style="italic">s</tspan><tspan dy="3" font-size="10" font-style="italic">k</tspan></text>
+
+  <line x1="320" y1="348" x2="320" y2="380" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- MaxP aggregation -->
+  <rect x="150" y="382" width="340" height="62" rx="7" fill="#E87E2E"/>
+  <text x="320" y="406" text-anchor="middle" font-size="15" font-weight="bold" fill="#FFFFFF">MaxP aggregation</text>
+  <text x="320" y="430" text-anchor="middle" font-size="14" fill="#FFFFFF"><tspan font-style="italic">s</tspan><tspan dy="3" font-size="10" font-style="italic">d</tspan><tspan dy="-3">&#160;= max(&#160;</tspan><tspan font-style="italic">s</tspan><tspan dy="3" font-size="10">1</tspan><tspan dy="-3">,&#160;</tspan><tspan font-style="italic">s</tspan><tspan dy="3" font-size="10">2</tspan><tspan dy="-3">, &#8230;,&#160;</tspan><tspan font-style="italic">s</tspan><tspan dy="3" font-size="10" font-style="italic">k</tspan><tspan dy="-3">&#160;)</tspan></text>
+
+  <text x="320" y="486" text-anchor="middle" font-size="12" fill="#666666">Alternatives: FirstP <tspan font-style="italic">s</tspan><tspan dy="3" font-size="9" font-style="italic">d</tspan><tspan dy="-3">&#160;=&#160;</tspan><tspan font-style="italic">s</tspan><tspan dy="3" font-size="9">1</tspan><tspan dy="-3">&#160; &#183;  SumP&#160;</tspan><tspan font-style="italic">s</tspan><tspan dy="3" font-size="9" font-style="italic">d</tspan><tspan dy="-3">&#160;= &#931;</tspan><tspan dy="3" font-size="9" font-style="italic">i</tspan><tspan dy="-3">&#160;</tspan><tspan font-style="italic">s</tspan><tspan dy="3" font-size="9" font-style="italic">i</tspan></text>
+  <text x="320" y="520" text-anchor="middle" font-size="11" font-style="italic" fill="#888888">Training: all passages of a relevant document are treated as relevant (noisy labels)</text>
+</svg>

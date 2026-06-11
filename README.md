@@ -20,3 +20,9 @@ Lecture slides for the Information Retrieval course.
 | 10 | Bi-Encoders and Dense Retrieval | |
 | 11 | Learned Sparse Retrieval | |
 | 12 | Exercise (hands-on) | |
+
+## Figures
+
+Redrawn SVG versions of the diagrams in Lectures 7–9 are available in
+[`figures/`](figures/README.md), organized per lecture and ready to embed in
+Marp slides.

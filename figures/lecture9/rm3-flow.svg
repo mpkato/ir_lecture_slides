@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="660" height="450" viewBox="0 0 660 450" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#555555"/>
+    </marker>
+  </defs>
+
+  <!-- original query -->
+  <rect x="50" y="30" width="560" height="44" rx="7" fill="#DDEEF7" stroke="#2B87B8" stroke-width="1.5"/>
+  <text x="330" y="57" text-anchor="middle" font-size="14" fill="#18617E"><tspan font-weight="bold">Original query:</tspan> &#8220;Kyoto autumn leaves best time&#8221;</text>
+
+  <line x1="330" y1="74" x2="330" y2="128" stroke="#555555" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <text x="345" y="105" font-size="13" font-weight="bold" fill="#2B87B8">&#9312; Initial retrieval with BM25</text>
+
+  <!-- expansion terms -->
+  <rect x="50" y="130" width="560" height="58" rx="7" fill="#2B87B8"/>
+  <text x="330" y="154" text-anchor="middle" font-size="14" font-weight="bold" fill="#FFFFFF">Extract expansion terms from the top-<tspan font-style="italic">k</tspan> documents</text>
+  <text x="330" y="176" text-anchor="middle" font-size="12.5" fill="#D9ECF5">&#8220;Arashiyama&#8221;&#160;&#160;&#8220;Tofukuji&#8221;&#160;&#160;&#8220;November&#8221;&#160;&#160;&#8220;illumination&#8221;&#160;&#160;&#8230;</text>
+
+  <line x1="330" y1="188" x2="330" y2="242" stroke="#555555" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <text x="345" y="219" font-size="13" font-weight="bold" fill="#2B87B8">&#9313; Integrate via linear interpolation (weight &#945;)</text>
+
+  <!-- expanded query -->
+  <rect x="50" y="244" width="560" height="58" rx="7" fill="#F2F2F2" stroke="#BBBBBB" stroke-width="1.5"/>
+  <text x="330" y="268" text-anchor="middle" font-size="14" fill="#333333"><tspan font-weight="bold">Expanded query:</tspan> &#8220;Kyoto autumn leaves best time</text>
+  <text x="330" y="290" text-anchor="middle" font-size="14" fill="#333333">Arashiyama Tofukuji November &#8230;&#8221;</text>
+
+  <line x1="330" y1="302" x2="330" y2="356" stroke="#555555" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <text x="345" y="333" font-size="13" font-weight="bold" fill="#E87E2E">&#9314; Re-search with the expanded query</text>
+
+  <!-- final -->
+  <rect x="50" y="358" width="560" height="44" rx="7" fill="#E87E2E"/>
+  <text x="330" y="385" text-anchor="middle" font-size="14" font-weight="bold" fill="#FFFFFF">Final results: more relevant documents are retrieved</text>
+
+  <text x="330" y="434" text-anchor="middle" font-size="12" fill="#777777"><tspan font-style="italic">P</tspan><tspan dy="3" font-size="9">RM3</tspan><tspan dy="-3">(</tspan><tspan font-style="italic">w</tspan>|<tspan font-style="italic">q</tspan>) = &#945; &#183; <tspan font-style="italic">P</tspan><tspan dy="3" font-size="9">ML</tspan><tspan dy="-3">(</tspan><tspan font-style="italic">w</tspan>|<tspan font-style="italic">q</tspan>) + (1 &#8722; &#945;) &#183; <tspan font-style="italic">P</tspan><tspan dy="3" font-size="9">RM</tspan><tspan dy="-3">(</tspan><tspan font-style="italic">w</tspan>|<tspan font-style="italic">F</tspan>)&#160;&#160;&#8212;&#160;&#160;<tspan font-style="italic">F</tspan> = pseudo-relevant top-<tspan font-style="italic">k</tspan> documents</text>
+</svg>
