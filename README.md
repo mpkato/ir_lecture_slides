@@ -20,3 +20,15 @@ Lecture slides for the Information Retrieval course.
 | 10 | Bi-Encoders and Dense Retrieval | |
 | 11 | Learned Sparse Retrieval | |
 | 12 | Exercise (hands-on) | [exercise.py](lecture12_exercise.py) |
+
+## Lecture 12 exercise
+
+The Lecture 12 exercise ([lecture12_exercise.py](lecture12_exercise.py), covering
+Lectures 7-11) uses real pre-trained models — a cross-encoder, doc2query,
+a bi-encoder, and SPLADE — on a tiny corpus, so everything runs on a CPU.
+About 870 MB of models are downloaded from Hugging Face on the first run.
+
+```bash
+pip install -r requirements.txt
+python lecture12_exercise.py
+```
