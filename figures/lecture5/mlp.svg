@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="640" height="440" viewBox="0 0 640 440" font-family="Helvetica, Arial, sans-serif">
+
+  <text x="320" y="36" text-anchor="middle" font-size="15" font-weight="bold" fill="#333333">Multi-Layer Perceptron (MLP)</text>
+
+  <!-- edges input->hidden -->
+  <g stroke="#C5D9E5" stroke-width="1.5">
+    <line x1="150" y1="130" x2="320" y2="100"/>
+    <line x1="150" y1="130" x2="320" y2="170"/>
+    <line x1="150" y1="130" x2="320" y2="240"/>
+    <line x1="150" y1="130" x2="320" y2="310"/>
+    <line x1="150" y1="205" x2="320" y2="100"/>
+    <line x1="150" y1="205" x2="320" y2="170"/>
+    <line x1="150" y1="205" x2="320" y2="240"/>
+    <line x1="150" y1="205" x2="320" y2="310"/>
+    <line x1="150" y1="280" x2="320" y2="100"/>
+    <line x1="150" y1="280" x2="320" y2="170"/>
+    <line x1="150" y1="280" x2="320" y2="240"/>
+    <line x1="150" y1="280" x2="320" y2="310"/>
+  </g>
+  <!-- edges hidden->output -->
+  <g stroke="#F0CDA8" stroke-width="1.5">
+    <line x1="320" y1="100" x2="490" y2="205"/>
+    <line x1="320" y1="170" x2="490" y2="205"/>
+    <line x1="320" y1="240" x2="490" y2="205"/>
+    <line x1="320" y1="310" x2="490" y2="205"/>
+  </g>
+
+  <!-- weight labels -->
+  <text x="228" y="104" font-size="11" fill="#33759B" font-style="italic">w<tspan dy="2" font-size="8">11</tspan></text>
+  <text x="228" y="180" font-size="11" fill="#33759B" font-style="italic">w<tspan dy="2" font-size="8">22</tspan></text>
+  <text x="408" y="138" font-size="11" fill="#B35A0E" font-style="italic">w&#8242;<tspan dy="2" font-size="8">1</tspan></text>
+
+  <!-- input nodes -->
+  <g>
+    <circle cx="150" cy="130" r="24" fill="#DDEEF7" stroke="#2B87B8" stroke-width="2"/>
+    <text x="150" y="135" text-anchor="middle" font-size="13" fill="#18617E"><tspan font-style="italic">x</tspan><tspan dy="3" font-size="10">1</tspan></text>
+    <circle cx="150" cy="205" r="24" fill="#DDEEF7" stroke="#2B87B8" stroke-width="2"/>
+    <text x="150" y="210" text-anchor="middle" font-size="13" fill="#18617E"><tspan font-style="italic">x</tspan><tspan dy="3" font-size="10">2</tspan></text>
+    <circle cx="150" cy="280" r="24" fill="#DDEEF7" stroke="#2B87B8" stroke-width="2"/>
+    <text x="150" y="285" text-anchor="middle" font-size="13" fill="#18617E"><tspan font-style="italic">x</tspan><tspan dy="3" font-size="10">3</tspan></text>
+  </g>
+
+  <!-- hidden nodes -->
+  <g>
+    <circle cx="320" cy="100" r="24" fill="#2B87B8"/>
+    <circle cx="320" cy="170" r="24" fill="#2B87B8"/>
+    <circle cx="320" cy="240" r="24" fill="#2B87B8"/>
+    <circle cx="320" cy="310" r="24" fill="#2B87B8"/>
+  </g>
+
+  <!-- output node -->
+  <circle cx="490" cy="205" r="26" fill="#E87E2E"/>
+  <text x="490" y="211" text-anchor="middle" font-size="14" font-weight="bold" fill="#FFFFFF" font-style="italic">y</text>
+
+  <!-- layer labels -->
+  <text x="150" y="350" text-anchor="middle" font-size="13" font-weight="bold" fill="#18617E">Input layer</text>
+  <text x="320" y="370" text-anchor="middle" font-size="13" font-weight="bold" fill="#18617E">Hidden layer</text>
+  <text x="490" y="266" text-anchor="middle" font-size="13" font-weight="bold" fill="#B35A0E">Output layer</text>
+
+  <text x="320" y="406" text-anchor="middle" font-size="12" fill="#555555"><tspan font-style="italic">y</tspan> = <tspan font-style="italic">f</tspan>&#8202;(&#931; <tspan font-style="italic">w</tspan><tspan dy="2" font-size="9" font-style="italic">i</tspan><tspan dy="-2"></tspan><tspan font-style="italic">x</tspan><tspan dy="2" font-size="9" font-style="italic">i</tspan><tspan dy="-2"> + </tspan><tspan font-style="italic">b</tspan>) &#8212; every connection has a weight learned from data by backpropagation</text>
+  <text x="320" y="428" text-anchor="middle" font-size="11" font-style="italic" fill="#888888">More layers &#8594; more complex patterns can be learned (deep learning)</text>
+</svg>

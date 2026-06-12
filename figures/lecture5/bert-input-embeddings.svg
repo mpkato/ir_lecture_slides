@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="780" height="420" viewBox="0 0 780 420" font-family="Helvetica, Arial, sans-serif">
+
+  <text x="390" y="36" text-anchor="middle" font-size="15" font-weight="bold" fill="#333333">BERT Input Representation = sum of three embeddings</text>
+
+  <!-- column x positions: tokens at 180,260,340,420,500,580,660; row labels at x=110 -->
+  <!-- Token row -->
+  <text x="100" y="100" text-anchor="end" font-size="13" font-weight="bold" fill="#18617E">Token</text>
+  <g font-size="12">
+    <rect x="140" y="78" width="74" height="34" rx="5" fill="#2B87B8"/>
+    <text x="177" y="100" text-anchor="middle" fill="#FFFFFF" font-weight="bold">[CLS]</text>
+    <rect x="224" y="78" width="74" height="34" rx="5" fill="#7FBFDD"/>
+    <text x="261" y="100" text-anchor="middle" fill="#15425C">Kyo</text>
+    <rect x="308" y="78" width="74" height="34" rx="5" fill="#7FBFDD"/>
+    <text x="345" y="100" text-anchor="middle" fill="#15425C">##to</text>
+    <rect x="392" y="78" width="74" height="34" rx="5" fill="#EEEEEE" stroke="#AAAAAA"/>
+    <text x="429" y="100" text-anchor="middle" fill="#555555">[SEP]</text>
+    <rect x="476" y="78" width="74" height="34" rx="5" fill="#F0B27E"/>
+    <text x="513" y="100" text-anchor="middle" fill="#7A3E0F">au</text>
+    <rect x="560" y="78" width="74" height="34" rx="5" fill="#F0B27E"/>
+    <text x="597" y="100" text-anchor="middle" fill="#7A3E0F">##tumn</text>
+    <rect x="644" y="78" width="74" height="34" rx="5" fill="#EEEEEE" stroke="#AAAAAA"/>
+    <text x="681" y="100" text-anchor="middle" fill="#555555">[SEP]</text>
+  </g>
+
+  <text x="390" y="142" text-anchor="middle" font-size="18" font-weight="bold" fill="#888888">+</text>
+
+  <!-- Segment row -->
+  <text x="100" y="184" text-anchor="end" font-size="13" font-weight="bold" fill="#33759B">Segment</text>
+  <g font-size="12">
+    <rect x="140" y="162" width="74" height="34" rx="5" fill="#DDEEF7" stroke="#7FB8D6"/>
+    <text x="177" y="184" text-anchor="middle" fill="#18617E">A</text>
+    <rect x="224" y="162" width="74" height="34" rx="5" fill="#DDEEF7" stroke="#7FB8D6"/>
+    <text x="261" y="184" text-anchor="middle" fill="#18617E">A</text>
+    <rect x="308" y="162" width="74" height="34" rx="5" fill="#DDEEF7" stroke="#7FB8D6"/>
+    <text x="345" y="184" text-anchor="middle" fill="#18617E">A</text>
+    <rect x="392" y="162" width="74" height="34" rx="5" fill="#DDEEF7" stroke="#7FB8D6"/>
+    <text x="429" y="184" text-anchor="middle" fill="#18617E">A</text>
+    <rect x="476" y="162" width="74" height="34" rx="5" fill="#FCEEDF" stroke="#E8A05D"/>
+    <text x="513" y="184" text-anchor="middle" fill="#B35A0E">B</text>
+    <rect x="560" y="162" width="74" height="34" rx="5" fill="#FCEEDF" stroke="#E8A05D"/>
+    <text x="597" y="184" text-anchor="middle" fill="#B35A0E">B</text>
+    <rect x="644" y="162" width="74" height="34" rx="5" fill="#FCEEDF" stroke="#E8A05D"/>
+    <text x="681" y="184" text-anchor="middle" fill="#B35A0E">B</text>
+  </g>
+
+  <text x="390" y="226" text-anchor="middle" font-size="18" font-weight="bold" fill="#888888">+</text>
+
+  <!-- Position row -->
+  <text x="100" y="268" text-anchor="end" font-size="13" font-weight="bold" fill="#555555">Position</text>
+  <g font-size="12">
+    <rect x="140" y="246" width="74" height="34" rx="5" fill="#F7F7F7" stroke="#BBBBBB"/>
+    <text x="177" y="268" text-anchor="middle" fill="#555555">0</text>
+    <rect x="224" y="246" width="74" height="34" rx="5" fill="#F7F7F7" stroke="#BBBBBB"/>
+    <text x="261" y="268" text-anchor="middle" fill="#555555">1</text>
+    <rect x="308" y="246" width="74" height="34" rx="5" fill="#F7F7F7" stroke="#BBBBBB"/>
+    <text x="345" y="268" text-anchor="middle" fill="#555555">2</text>
+    <rect x="392" y="246" width="74" height="34" rx="5" fill="#F7F7F7" stroke="#BBBBBB"/>
+    <text x="429" y="268" text-anchor="middle" fill="#555555">3</text>
+    <rect x="476" y="246" width="74" height="34" rx="5" fill="#F7F7F7" stroke="#BBBBBB"/>
+    <text x="513" y="268" text-anchor="middle" fill="#555555">4</text>
+    <rect x="560" y="246" width="74" height="34" rx="5" fill="#F7F7F7" stroke="#BBBBBB"/>
+    <text x="597" y="268" text-anchor="middle" fill="#555555">5</text>
+    <rect x="644" y="246" width="74" height="34" rx="5" fill="#F7F7F7" stroke="#BBBBBB"/>
+    <text x="681" y="268" text-anchor="middle" fill="#555555">6</text>
+  </g>
+
+  <!-- segment brace labels -->
+  <line x1="140" y1="306" x2="466" y2="306" stroke="#2B87B8" stroke-width="2"/>
+  <text x="303" y="326" text-anchor="middle" font-size="12" font-weight="bold" fill="#2B87B8">Segment A = query</text>
+  <line x1="476" y1="306" x2="718" y2="306" stroke="#E87E2E" stroke-width="2"/>
+  <text x="597" y="326" text-anchor="middle" font-size="12" font-weight="bold" fill="#E87E2E">Segment B = document</text>
+
+  <text x="390" y="366" text-anchor="middle" font-size="12" fill="#555555">The three embeddings are combined by <tspan font-weight="bold">element-wise addition</tspan> (not concatenation)</text>
+  <text x="390" y="394" text-anchor="middle" font-size="11" font-style="italic" fill="#888888">Position embeddings are learnable, up to 512 tokens &#8212; the source of BERT&#8217;s input length limit (Devlin et al., 2019)</text>
+</svg>

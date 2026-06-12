@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="680" height="500" viewBox="0 0 680 500" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#555555"/>
+    </marker>
+  </defs>
+
+  <!-- 1 visceral -->
+  <rect x="70" y="30" width="540" height="56" rx="8" fill="#F2F2F2" stroke="#BBBBBB" stroke-width="1.5"/>
+  <text x="340" y="53" text-anchor="middle" font-size="14" font-weight="bold" fill="#555555">1. Visceral need</text>
+  <text x="340" y="74" text-anchor="middle" font-size="12.5" font-style="italic" fill="#777777">&#8220;Something is missing&#8230;&#8221; &#8212; a vague sense of dissatisfaction</text>
+
+  <line x1="340" y1="86" x2="340" y2="120" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="355" y="108" font-size="11.5" font-weight="bold" fill="#2B87B8">becoming conscious</text>
+
+  <!-- 2 conscious -->
+  <rect x="70" y="122" width="540" height="56" rx="8" fill="#EAF4FA" stroke="#7FB8D6" stroke-width="1.5"/>
+  <text x="340" y="145" text-anchor="middle" font-size="14" font-weight="bold" fill="#33759B">2. Conscious need</text>
+  <text x="340" y="166" text-anchor="middle" font-size="12.5" font-style="italic" fill="#33617A">&#8220;I want to know about autumn foliage&#8221; &#8212; conscious but ambiguous</text>
+
+  <line x1="340" y1="178" x2="340" y2="212" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="355" y="200" font-size="11.5" font-weight="bold" fill="#2B87B8">verbalization</text>
+
+  <!-- 3 formalized -->
+  <rect x="70" y="214" width="540" height="56" rx="8" fill="#D6E9F4" stroke="#2B87B8" stroke-width="1.5"/>
+  <text x="340" y="237" text-anchor="middle" font-size="14" font-weight="bold" fill="#18617E">3. Formalized need</text>
+  <text x="340" y="258" text-anchor="middle" font-size="12.5" font-style="italic" fill="#18617E">&#8220;Where are the best foliage spots in Kyoto in November?&#8221;</text>
+
+  <line x1="340" y1="270" x2="340" y2="304" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="355" y="292" font-size="11.5" font-weight="bold" fill="#E87E2E">compromise (adapt to the system)</text>
+
+  <!-- 4 compromised -->
+  <rect x="70" y="306" width="540" height="56" rx="8" fill="#E87E2E"/>
+  <text x="340" y="329" text-anchor="middle" font-size="14" font-weight="bold" fill="#FFFFFF">4. Compromised need = the query</text>
+  <text x="340" y="350" text-anchor="middle" font-size="13" font-family="Menlo, Consolas, monospace" fill="#FBE3CD">&#8220;Kyoto autumn leaves November&#8221;</text>
+
+  <!-- information loss sidebar -->
+  <path d="M635,40 L635,352" stroke="#C0392B" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="657" y="200" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#C0392B" transform="rotate(90 657 200)">information is lost at every stage</text>
+
+  <text x="340" y="408" text-anchor="middle" font-size="12.5" fill="#555555">The query is an <tspan font-weight="bold">incomplete approximation</tspan> of the underlying information need</text>
+  <text x="340" y="436" text-anchor="middle" font-size="11" font-style="italic" fill="#888888">Taylor, &#8220;The Process of Asking Questions&#8221;, 1962 &#8212; starting from Belkin&#8217;s ASK (Anomalous State of Knowledge)</text>
+</svg>

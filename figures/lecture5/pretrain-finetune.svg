@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="760" height="560" viewBox="0 0 760 560" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#555555"/>
+    </marker>
+  </defs>
+
+  <!-- phase 1 -->
+  <rect x="40" y="30" width="680" height="190" rx="11" fill="#E9F4FA" stroke="#2B87B8" stroke-width="1.8"/>
+  <text x="380" y="60" text-anchor="middle" font-size="15" font-weight="bold" fill="#18617E">Phase 1: Pre-training&#160;&#160;<tspan font-size="11.5" font-weight="normal" fill="#5B87A0">(days to weeks on a GPU/TPU cluster &#183; run once)</tspan></text>
+
+  <rect x="70" y="84" width="190" height="76" rx="8" fill="#FFFFFF" stroke="#7FB8D6" stroke-width="1.5"/>
+  <text x="165" y="112" text-anchor="middle" font-size="13" font-weight="bold" fill="#18617E">Large-scale corpus</text>
+  <text x="165" y="132" text-anchor="middle" font-size="11" fill="#5B87A0">Wikipedia + BooksCorpus</text>
+  <text x="165" y="148" text-anchor="middle" font-size="11" fill="#5B87A0">~3.3B words, no labels</text>
+
+  <line x1="264" y1="122" x2="306" y2="122" stroke="#555555" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <rect x="310" y="84" width="170" height="76" rx="8" fill="#2B87B8"/>
+  <text x="395" y="112" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFFFFF">MLM + NSP</text>
+  <text x="395" y="132" text-anchor="middle" font-size="11" fill="#D9ECF5">self-supervised</text>
+  <text x="395" y="148" text-anchor="middle" font-size="11" fill="#D9ECF5">learning</text>
+
+  <line x1="484" y1="122" x2="526" y2="122" stroke="#555555" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <rect x="530" y="84" width="170" height="76" rx="8" fill="#FFFFFF" stroke="#2B87B8" stroke-width="2"/>
+  <text x="615" y="112" text-anchor="middle" font-size="13" font-weight="bold" fill="#18617E">Pre-trained BERT</text>
+  <text x="615" y="132" text-anchor="middle" font-size="11" fill="#5B87A0">general language</text>
+  <text x="615" y="148" text-anchor="middle" font-size="11" fill="#5B87A0">knowledge acquired</text>
+
+  <!-- transfer arrow -->
+  <path d="M615,224 L615,272" fill="none" stroke="#555555" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="632" y="254" font-size="12" font-weight="bold" fill="#E87E2E">transfer the model</text>
+
+  <!-- phase 2 -->
+  <rect x="40" y="276" width="680" height="190" rx="11" fill="#FDF4EA" stroke="#E87E2E" stroke-width="1.8"/>
+  <text x="380" y="306" text-anchor="middle" font-size="15" font-weight="bold" fill="#B35A0E">Phase 2: Fine-tuning&#160;&#160;<tspan font-size="11.5" font-weight="normal" fill="#9C7A56">(a few hours on 1 GPU &#183; per task)</tspan></text>
+
+  <rect x="70" y="330" width="190" height="76" rx="8" fill="#FFFFFF" stroke="#E8A05D" stroke-width="1.5"/>
+  <text x="165" y="358" text-anchor="middle" font-size="13" font-weight="bold" fill="#B35A0E">Labeled data</text>
+  <text x="165" y="378" text-anchor="middle" font-size="11" fill="#9C7A56">query&#8211;document pairs</text>
+  <text x="165" y="394" text-anchor="middle" font-size="11" fill="#9C7A56">10K&#8211;100K examples</text>
+
+  <line x1="264" y1="368" x2="306" y2="368" stroke="#555555" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <rect x="310" y="330" width="170" height="76" rx="8" fill="#E87E2E"/>
+  <text x="395" y="358" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFFFFF">Fine-tuning</text>
+  <text x="395" y="378" text-anchor="middle" font-size="11" fill="#FBE3CD">low learning rate</text>
+  <text x="395" y="394" text-anchor="middle" font-size="11" fill="#FBE3CD">+ new classification head</text>
+
+  <line x1="484" y1="368" x2="526" y2="368" stroke="#555555" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <rect x="530" y="330" width="170" height="76" rx="8" fill="#FFFFFF" stroke="#E87E2E" stroke-width="2"/>
+  <text x="615" y="358" text-anchor="middle" font-size="13" font-weight="bold" fill="#B35A0E">Ranking model</text>
+  <text x="615" y="378" text-anchor="middle" font-size="11" fill="#9C7A56">specialized for the</text>
+  <text x="615" y="394" text-anchor="middle" font-size="11" fill="#9C7A56">retrieval task</text>
+
+  <text x="380" y="508" text-anchor="middle" font-size="12.5" fill="#555555">Fine-tuning = steering a massive pre-trained knowledge base toward a specific task</text>
+  <text x="380" y="536" text-anchor="middle" font-size="11" font-style="italic" fill="#888888">Language structure is task-independent &#8212; learned once, it transfers to any task (Devlin et al., 2019)</text>
+</svg>

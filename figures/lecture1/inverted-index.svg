@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="760" height="440" viewBox="0 0 760 440" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#555555"/>
+    </marker>
+  </defs>
+
+  <text x="190" y="44" text-anchor="middle" font-size="14" font-weight="bold" fill="#18617E">Dictionary</text>
+  <text x="520" y="44" text-anchor="middle" font-size="14" font-weight="bold" fill="#B35A0E">Posting lists</text>
+
+  <!-- row 1: Kyoto -->
+  <rect x="60" y="64" width="180" height="40" rx="6" fill="#2B87B8"/>
+  <text x="110" y="89" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFFFFF">Kyoto</text>
+  <text x="205" y="89" text-anchor="middle" font-size="11" fill="#D9ECF5">df=3</text>
+  <line x1="244" y1="84" x2="284" y2="84" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="290" y="64" width="110" height="40" rx="6" fill="#FFFFFF" stroke="#7FB8D6" stroke-width="1.5"/>
+  <text x="345" y="89" text-anchor="middle" font-size="12" fill="#18617E"><tspan font-style="italic">d</tspan><tspan dy="3" font-size="9">1</tspan><tspan dy="-3"> (tf=2)</tspan></text>
+  <line x1="402" y1="84" x2="426" y2="84" stroke="#AAAAAA" stroke-width="1.3" marker-end="url(#arrow)"/>
+  <rect x="430" y="64" width="110" height="40" rx="6" fill="#FFFFFF" stroke="#7FB8D6" stroke-width="1.5"/>
+  <text x="485" y="89" text-anchor="middle" font-size="12" fill="#18617E"><tspan font-style="italic">d</tspan><tspan dy="3" font-size="9">3</tspan><tspan dy="-3"> (tf=1)</tspan></text>
+  <line x1="542" y1="84" x2="566" y2="84" stroke="#AAAAAA" stroke-width="1.3" marker-end="url(#arrow)"/>
+  <rect x="570" y="64" width="110" height="40" rx="6" fill="#FFFFFF" stroke="#7FB8D6" stroke-width="1.5"/>
+  <text x="625" y="89" text-anchor="middle" font-size="12" fill="#18617E"><tspan font-style="italic">d</tspan><tspan dy="3" font-size="9">8</tspan><tspan dy="-3"> (tf=3)</tspan></text>
+
+  <!-- row 2: autumn -->
+  <rect x="60" y="124" width="180" height="40" rx="6" fill="#5BA6CC"/>
+  <text x="110" y="149" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFFFFF">autumn</text>
+  <text x="205" y="149" text-anchor="middle" font-size="11" fill="#E8F3F9">df=2</text>
+  <line x1="244" y1="144" x2="284" y2="144" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="290" y="124" width="110" height="40" rx="6" fill="#FFFFFF" stroke="#7FB8D6" stroke-width="1.5"/>
+  <text x="345" y="149" text-anchor="middle" font-size="12" fill="#18617E"><tspan font-style="italic">d</tspan><tspan dy="3" font-size="9">1</tspan><tspan dy="-3"> (tf=1)</tspan></text>
+  <line x1="402" y1="144" x2="426" y2="144" stroke="#AAAAAA" stroke-width="1.3" marker-end="url(#arrow)"/>
+  <rect x="430" y="124" width="110" height="40" rx="6" fill="#FFFFFF" stroke="#7FB8D6" stroke-width="1.5"/>
+  <text x="485" y="149" text-anchor="middle" font-size="12" fill="#18617E"><tspan font-style="italic">d</tspan><tspan dy="3" font-size="9">7</tspan><tspan dy="-3"> (tf=2)</tspan></text>
+
+  <!-- row 3: tourism -->
+  <rect x="60" y="184" width="180" height="40" rx="6" fill="#7FBFDD"/>
+  <text x="110" y="209" text-anchor="middle" font-size="13" font-weight="bold" fill="#15425C">tourism</text>
+  <text x="205" y="209" text-anchor="middle" font-size="11" fill="#33617A">df=3</text>
+  <line x1="244" y1="204" x2="284" y2="204" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="290" y="184" width="110" height="40" rx="6" fill="#FFFFFF" stroke="#7FB8D6" stroke-width="1.5"/>
+  <text x="345" y="209" text-anchor="middle" font-size="12" fill="#18617E"><tspan font-style="italic">d</tspan><tspan dy="3" font-size="9">1</tspan><tspan dy="-3"> (tf=1)</tspan></text>
+  <line x1="402" y1="204" x2="426" y2="204" stroke="#AAAAAA" stroke-width="1.3" marker-end="url(#arrow)"/>
+  <rect x="430" y="184" width="110" height="40" rx="6" fill="#FFFFFF" stroke="#7FB8D6" stroke-width="1.5"/>
+  <text x="485" y="209" text-anchor="middle" font-size="12" fill="#18617E"><tspan font-style="italic">d</tspan><tspan dy="3" font-size="9">5</tspan><tspan dy="-3"> (tf=3)</tspan></text>
+  <line x1="542" y1="204" x2="566" y2="204" stroke="#AAAAAA" stroke-width="1.3" marker-end="url(#arrow)"/>
+  <rect x="570" y="184" width="110" height="40" rx="6" fill="#FFFFFF" stroke="#7FB8D6" stroke-width="1.5"/>
+  <text x="625" y="209" text-anchor="middle" font-size="12" fill="#18617E"><tspan font-style="italic">d</tspan><tspan dy="3" font-size="9">6</tspan><tspan dy="-3"> (tf=2)</tspan></text>
+
+  <!-- row 4: search -->
+  <rect x="60" y="244" width="180" height="40" rx="6" fill="#A5D2E8"/>
+  <text x="110" y="269" text-anchor="middle" font-size="13" font-weight="bold" fill="#15425C">search</text>
+  <text x="205" y="269" text-anchor="middle" font-size="11" fill="#33617A">df=1</text>
+  <line x1="244" y1="264" x2="284" y2="264" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="290" y="244" width="110" height="40" rx="6" fill="#FFFFFF" stroke="#7FB8D6" stroke-width="1.5"/>
+  <text x="345" y="269" text-anchor="middle" font-size="12" fill="#18617E"><tspan font-style="italic">d</tspan><tspan dy="3" font-size="9">9</tspan><tspan dy="-3"> (tf=2)</tspan></text>
+
+  <text x="110" y="312" text-anchor="middle" font-size="14" fill="#888888">&#8942;</text>
+
+  <!-- footer -->
+  <rect x="60" y="340" width="620" height="56" rx="8" fill="#EFF7FB" stroke="#B9D8E8" stroke-width="1.5"/>
+  <text x="370" y="364" text-anchor="middle" font-size="12.5" fill="#33617A">Forward index: document &#8594; terms&#160;&#160;&#183;&#160;&#160;<tspan font-weight="bold" fill="#18617E">Inverted index: term &#8594; documents</tspan> &#8212; optimized for search</text>
+  <text x="370" y="384" text-anchor="middle" font-size="11.5" fill="#5B87A0">Each posting: document ID + term frequency (+ positions) &#8594; enables fast computation of S(q, d) = &#931; f(t)</text>
+</svg>

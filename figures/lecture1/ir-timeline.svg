@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="920" height="420" viewBox="0 0 920 420" font-family="Helvetica, Arial, sans-serif">
+
+  <!-- timeline axis: 1945..2018 mapped 80..860 (10.68 px/yr) -->
+  <line x1="60" y1="180" x2="880" y2="180" stroke="#B9D8E8" stroke-width="3"/>
+
+  <!-- events: x = 80 + (year-1945)*10.68 -->
+  <!-- 1945 Bush x=80 -->
+  <circle cx="80" cy="180" r="9" fill="#2B87B8"/>
+  <text x="80" y="214" text-anchor="middle" font-size="13" font-weight="bold" fill="#18617E">1945</text>
+  <text x="80" y="232" text-anchor="middle" font-size="11.5" fill="#444444">Bush</text>
+  <text x="80" y="247" text-anchor="middle" font-size="10" fill="#888888">&#8220;As We May Think&#8221;</text>
+
+  <!-- 1958 Luhn x=219 -->
+  <circle cx="219" cy="180" r="9" fill="#2B87B8"/>
+  <text x="219" y="214" text-anchor="middle" font-size="13" font-weight="bold" fill="#18617E">1958</text>
+  <text x="219" y="232" text-anchor="middle" font-size="11.5" fill="#444444">Luhn</text>
+  <text x="219" y="247" text-anchor="middle" font-size="10" fill="#888888">automatic indexing</text>
+
+  <!-- 1960 Maron & Kuhns x=240 (above) -->
+  <circle cx="240" cy="180" r="9" fill="#7FBFDD"/>
+  <line x1="240" y1="170" x2="240" y2="140" stroke="#B9D8E8" stroke-width="1.3"/>
+  <text x="240" y="126" text-anchor="middle" font-size="13" font-weight="bold" fill="#33759B">1960</text>
+  <text x="240" y="108" text-anchor="middle" font-size="11.5" fill="#444444">Maron &#38; Kuhns</text>
+  <text x="240" y="93" text-anchor="middle" font-size="10" fill="#888888">relevance scores</text>
+
+  <!-- 1972 Sparck Jones x=368 -->
+  <circle cx="368" cy="180" r="9" fill="#2B87B8"/>
+  <text x="368" y="214" text-anchor="middle" font-size="13" font-weight="bold" fill="#18617E">1972</text>
+  <text x="368" y="232" text-anchor="middle" font-size="11.5" fill="#444444">Sparck Jones</text>
+  <text x="368" y="247" text-anchor="middle" font-size="10" fill="#888888">IDF / SMART</text>
+
+  <!-- 1975 Salton x=400 (above) -->
+  <circle cx="400" cy="180" r="9" fill="#7FBFDD"/>
+  <line x1="400" y1="170" x2="400" y2="140" stroke="#B9D8E8" stroke-width="1.3"/>
+  <text x="400" y="126" text-anchor="middle" font-size="13" font-weight="bold" fill="#33759B">1975</text>
+  <text x="400" y="108" text-anchor="middle" font-size="11.5" fill="#444444">Salton et al.</text>
+  <text x="400" y="93" text-anchor="middle" font-size="10" fill="#888888">Vector Space Model</text>
+
+  <!-- 1994 BM25 x=603 -->
+  <circle cx="603" cy="180" r="10" fill="#E87E2E"/>
+  <text x="603" y="214" text-anchor="middle" font-size="13" font-weight="bold" fill="#B35A0E">1994</text>
+  <text x="603" y="232" text-anchor="middle" font-size="11.5" fill="#444444">Robertson et al.</text>
+  <text x="603" y="247" text-anchor="middle" font-size="10" font-weight="bold" fill="#B35A0E">BM25</text>
+
+  <!-- 2018 BERT x=860 -->
+  <circle cx="860" cy="180" r="11" fill="#C0392B"/>
+  <line x1="860" y1="170" x2="860" y2="140" stroke="#E8C2BC" stroke-width="1.3"/>
+  <text x="860" y="126" text-anchor="middle" font-size="13" font-weight="bold" fill="#962D22">2018</text>
+  <text x="860" y="108" text-anchor="middle" font-size="11.5" fill="#444444">Devlin et al.</text>
+  <text x="860" y="93" text-anchor="middle" font-size="10" font-weight="bold" fill="#962D22">BERT</text>
+
+  <!-- era bands -->
+  <rect x="60" y="290" width="450" height="40" rx="6" fill="#E9F4FA" stroke="#7FB8D6" stroke-width="1.3"/>
+  <text x="285" y="315" text-anchor="middle" font-size="12" fill="#18617E">1945&#8211;1970s: manual &#8594; automatic indexing &#183; Vector Space Model</text>
+
+  <rect x="525" y="290" width="200" height="40" rx="6" fill="#FDF4EA" stroke="#E8A05D" stroke-width="1.3"/>
+  <text x="625" y="315" text-anchor="middle" font-size="12" fill="#7A5230">1990s: BM25 standard</text>
+
+  <rect x="740" y="290" width="140" height="40" rx="6" fill="#FBEDEB" stroke="#C0392B" stroke-width="1.3"/>
+  <text x="810" y="315" text-anchor="middle" font-size="12" fill="#962D22">2018&#8211;: Neural IR</text>
+
+  <!-- scope -->
+  <rect x="60" y="350" width="665" height="36" rx="6" fill="none" stroke="#2B87B8" stroke-width="1.3" stroke-dasharray="6,4"/>
+  <text x="392" y="373" text-anchor="middle" font-size="12" font-weight="bold" fill="#2B87B8">&#8592; this lecture&#8217;s scope (up to BM25) &#8594;</text>
+  <rect x="740" y="350" width="140" height="36" rx="6" fill="none" stroke="#E87E2E" stroke-width="1.3" stroke-dasharray="6,4"/>
+  <text x="810" y="373" text-anchor="middle" font-size="12" font-weight="bold" fill="#E87E2E">upcoming lectures</text>
+</svg>

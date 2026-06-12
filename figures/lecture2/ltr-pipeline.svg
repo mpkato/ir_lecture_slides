@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="620" height="500" viewBox="0 0 620 500" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#555555"/>
+    </marker>
+  </defs>
+
+  <rect x="160" y="28" width="300" height="44" rx="7" fill="#DDEEF7" stroke="#2B87B8" stroke-width="1.5"/>
+  <text x="310" y="55" text-anchor="middle" font-size="14" font-weight="bold" fill="#18617E">Query <tspan font-style="italic">q</tspan> + Document <tspan font-style="italic">d</tspan></text>
+
+  <line x1="310" y1="72" x2="310" y2="106" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="120" y="108" width="380" height="58" rx="7" fill="#2B87B8"/>
+  <text x="310" y="132" text-anchor="middle" font-size="14" font-weight="bold" fill="#FFFFFF">Feature extraction</text>
+  <text x="310" y="153" text-anchor="middle" font-size="11.5" fill="#D9ECF5">BM25 score &#183; PageRank &#183; CTR &#183; title match &#183; freshness &#183; &#8230;</text>
+
+  <line x1="310" y1="166" x2="310" y2="200" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="140" y="202" width="340" height="44" rx="7" fill="#FFFFFF" stroke="#7FB8D6" stroke-width="1.5"/>
+  <text x="310" y="229" text-anchor="middle" font-size="13.5" fill="#18617E">Feature vector <tspan font-style="italic">x</tspan> = (<tspan font-style="italic">x</tspan><tspan dy="3" font-size="10">1</tspan><tspan dy="-3">, </tspan><tspan font-style="italic">x</tspan><tspan dy="3" font-size="10">2</tspan><tspan dy="-3">, &#8230;, </tspan><tspan font-style="italic">x</tspan><tspan dy="3" font-size="10" font-style="italic">n</tspan><tspan dy="-3">)</tspan></text>
+
+  <line x1="310" y1="246" x2="310" y2="280" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="120" y="282" width="380" height="58" rx="7" fill="#E87E2E"/>
+  <text x="310" y="306" text-anchor="middle" font-size="14" font-weight="bold" fill="#FFFFFF">Trained model <tspan font-style="italic">f</tspan>&#8202;(<tspan font-style="italic">x</tspan>; &#952;)</text>
+  <text x="310" y="327" text-anchor="middle" font-size="11.5" fill="#FBE3CD">gradient-boosted trees, neural nets, &#8230; (supervised learning)</text>
+
+  <line x1="310" y1="340" x2="310" y2="374" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="160" y="376" width="300" height="44" rx="7" fill="#FCEEDF" stroke="#E8A05D" stroke-width="1.5"/>
+  <text x="310" y="403" text-anchor="middle" font-size="14" font-weight="bold" fill="#B35A0E">Ranking score <tspan font-style="italic">s</tspan> = <tspan font-style="italic">f</tspan>&#8202;(<tspan font-style="italic">x</tspan>; &#952;)</text>
+
+  <text x="310" y="456" text-anchor="middle" font-size="12" fill="#555555">Training data: query&#8211;document pairs annotated with relevance labels</text>
+  <text x="310" y="480" text-anchor="middle" font-size="11" font-style="italic" fill="#888888">Real-world search engines combine hundreds of features &#8212; BM25 is integrated as one of them, not replaced</text>
+</svg>

@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="880" height="480" viewBox="0 0 880 480" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="axisarrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#555555"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="36" text-anchor="middle" font-size="16" font-weight="bold" fill="#333333">nDCG components: DCG(<tspan font-style="italic">R</tspan>, <tspan font-style="italic">q</tspan>) = &#931; Gain / Discount</text>
+
+  <!-- ===== Gain panel ===== -->
+  <rect x="40" y="60" width="380" height="340" rx="10" fill="#FDF4EA" stroke="#E8A05D" stroke-width="1.5"/>
+  <text x="230" y="90" text-anchor="middle" font-size="14" font-weight="bold" fill="#B35A0E">Gain: 2<tspan dy="-5" font-size="11">rel</tspan><tspan dy="5"> &#8722; 1</tspan></text>
+
+  <!-- bars: rel 0..3 -> gain 0,1,3,7; baseline y=340, 30px per unit -->
+  <line x1="80" y1="340" x2="390" y2="340" stroke="#999999" stroke-width="1.3"/>
+  <line x1="80" y1="340" x2="80" y2="110" stroke="#999999" stroke-width="1.3"/>
+  <g font-size="11" fill="#777777" text-anchor="end">
+    <text x="74" y="344">0</text>
+    <text x="74" y="314">1</text>
+    <text x="74" y="254">3</text>
+    <text x="74" y="134">7</text>
+  </g>
+
+  <rect x="105" y="339" width="56" height="1" fill="#F0CDA8"/>
+  <text x="133" y="330" text-anchor="middle" font-size="12" font-weight="bold" fill="#9C7A56">0</text>
+  <text x="133" y="362" text-anchor="middle" font-size="12" fill="#444444">rel = 0</text>
+
+  <rect x="175" y="310" width="56" height="30" fill="#F4D2AE"/>
+  <text x="203" y="300" text-anchor="middle" font-size="12" font-weight="bold" fill="#9C7A56">1</text>
+  <text x="203" y="362" text-anchor="middle" font-size="12" fill="#444444">rel = 1</text>
+
+  <rect x="245" y="250" width="56" height="90" fill="#E8A05D"/>
+  <text x="273" y="240" text-anchor="middle" font-size="12" font-weight="bold" fill="#B35A0E">3</text>
+  <text x="273" y="362" text-anchor="middle" font-size="12" fill="#444444">rel = 2</text>
+
+  <rect x="315" y="130" width="56" height="210" fill="#E87E2E"/>
+  <text x="343" y="120" text-anchor="middle" font-size="12" font-weight="bold" fill="#B35A0E">7</text>
+  <text x="343" y="362" text-anchor="middle" font-size="12" fill="#444444">rel = 3</text>
+
+  <text x="230" y="388" text-anchor="middle" font-size="11.5" fill="#7A5230">higher relevance grades are rewarded exponentially</text>
+
+  <!-- ===== Discount panel ===== -->
+  <rect x="460" y="60" width="380" height="340" rx="10" fill="#E9F4FA" stroke="#7FB8D6" stroke-width="1.5"/>
+  <text x="650" y="90" text-anchor="middle" font-size="14" font-weight="bold" fill="#18617E">Discount: 1 / log&#8202;<tspan dy="3" font-size="10">2</tspan><tspan dy="-3">(</tspan><tspan font-style="italic">i</tspan> + 1)</text>
+
+  <!-- curve: rank 1..10 -> x 510..810 (33.3/rank), discount 1..0.289 -> y: 1.0 at 130, 0 at 340 (210px per unit) -->
+  <line x1="500" y1="340" x2="825" y2="340" stroke="#999999" stroke-width="1.3" marker-end="url(#axisarrow)"/>
+  <line x1="500" y1="340" x2="500" y2="105" stroke="#999999" stroke-width="1.3" marker-end="url(#axisarrow)"/>
+  <g font-size="11" fill="#777777">
+    <text x="494" y="134" text-anchor="end">1.0</text>
+    <text x="494" y="239" text-anchor="end">0.5</text>
+    <text x="494" y="344" text-anchor="end">0</text>
+  </g>
+
+  <!-- points: i=1:1.0(543,130) 2:0.631(577,207.5) 3:0.5(610,235) 4:0.431(643,249.5) 5:0.387(677,258.7) 6:0.356(710,265.2) 8:0.315(777,273.8) 10:0.289(810,279.3) -->
+  <path d="M543,130 L577,207.5 L610,235 L643,249.5 L677,258.7 L710,265.2 L743,270 L777,273.8 L810,279.3" fill="none" stroke="#2B87B8" stroke-width="2.5"/>
+  <g fill="#2B87B8">
+    <circle cx="543" cy="130" r="5"/>
+    <circle cx="577" cy="207.5" r="5"/>
+    <circle cx="610" cy="235" r="5"/>
+    <circle cx="677" cy="258.7" r="5"/>
+  </g>
+  <g font-size="11" fill="#33759B" text-anchor="middle">
+    <text x="560" y="122">1.000</text>
+    <text x="599" y="200">0.631</text>
+    <text x="632" y="228">0.500</text>
+    <text x="700" y="251">0.387</text>
+  </g>
+  <g font-size="11" fill="#777777" text-anchor="middle">
+    <text x="543" y="358">1</text>
+    <text x="577" y="358">2</text>
+    <text x="610" y="358">3</text>
+    <text x="677" y="358">5</text>
+    <text x="810" y="358">10</text>
+  </g>
+  <text x="660" y="382" text-anchor="middle" font-size="11.5" fill="#33617A">rank <tspan font-style="italic">i</tspan> &#8212; gains decay as users scan down the list</text>
+
+  <!-- footer -->
+  <text x="440" y="432" text-anchor="middle" font-size="12.5" fill="#555555">nDCG = DCG / IDCG &#8712; [0, 1] &#8212; normalized by the ideal ranking so queries can be compared</text>
+  <text x="440" y="460" text-anchor="middle" font-size="11" font-style="italic" fill="#888888">J&#228;rvelin and Kek&#228;l&#228;inen, &#8220;Cumulated Gain-Based Evaluation of IR Techniques&#8221;, TOIS, 2002</text>
+</svg>

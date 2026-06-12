@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="760" height="400" viewBox="0 0 760 400" font-family="Helvetica, Arial, sans-serif">
+
+  <!-- actual query -->
+  <rect x="50" y="60" width="280" height="120" rx="10" fill="#DDEEF7" stroke="#2B87B8" stroke-width="1.8"/>
+  <text x="190" y="92" text-anchor="middle" font-size="14" font-weight="bold" fill="#18617E">Actual query</text>
+  <text x="190" y="124" text-anchor="middle" font-size="13" font-family="Menlo, Consolas, monospace" fill="#333333">&#8220;Kyoto autumn leaves</text>
+  <text x="190" y="144" text-anchor="middle" font-size="13" font-family="Menlo, Consolas, monospace" fill="#333333">November&#8221;</text>
+
+  <!-- mismatch mark -->
+  <line x1="338" y1="120" x2="422" y2="120" stroke="#BBBBBB" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <text x="380" y="112" text-anchor="middle" font-size="22" font-weight="bold" fill="#C0392B">&#8800;</text>
+
+  <!-- true need -->
+  <rect x="430" y="40" width="280" height="160" rx="10" fill="#FDF4EA" stroke="#E87E2E" stroke-width="1.8"/>
+  <text x="570" y="72" text-anchor="middle" font-size="14" font-weight="bold" fill="#B35A0E">True information need</text>
+  <text x="570" y="104" text-anchor="middle" font-size="12.5" font-style="italic" fill="#7A5230">&#8220;I want to know the best places</text>
+  <text x="570" y="124" text-anchor="middle" font-size="12.5" font-style="italic" fill="#7A5230">for autumn foliage during my</text>
+  <text x="570" y="144" text-anchor="middle" font-size="12.5" font-style="italic" fill="#7A5230">Kyoto trip <tspan font-weight="bold">next month</tspan>&#8221;</text>
+  <text x="570" y="176" text-anchor="middle" font-size="10.5" fill="#9C7A56">context: trip &#183; next month &#183; peak season</text>
+
+  <!-- information loss -->
+  <rect x="120" y="240" width="520" height="80" rx="9" fill="#FBEDEB" stroke="#C0392B" stroke-width="1.5"/>
+  <text x="380" y="268" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#962D22">Information loss</text>
+  <text x="380" y="292" text-anchor="middle" font-size="12" fill="#7B3A33">&#8220;next month&#8221;, &#8220;trip&#8221;, and &#8220;peak season&#8221; never make it into the query &#8212;</text>
+  <text x="380" y="310" text-anchor="middle" font-size="12" fill="#7B3A33">the search system must infer the need from this incomplete clue</text>
+
+  <text x="380" y="362" text-anchor="middle" font-size="11" font-style="italic" fill="#888888">The same need surfaces differently per system: web search (keywords) vs voice assistant (natural language)</text>
+</svg>

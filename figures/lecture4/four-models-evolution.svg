@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="970" height="460" viewBox="0 0 970 460" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#555555"/>
+    </marker>
+  </defs>
+
+  <!-- era labels -->
+  <g font-size="13" font-weight="bold" fill="#888888" text-anchor="middle">
+    <text x="130" y="50">1950s&#8211;</text>
+    <text x="370" y="50">1960s&#8211;</text>
+    <text x="610" y="50">1970s&#8211;</text>
+    <text x="850" y="50">1998&#8211;</text>
+  </g>
+
+  <!-- Boolean -->
+  <rect x="30" y="70" width="200" height="190" rx="10" fill="#F7F7F7" stroke="#BBBBBB" stroke-width="1.8"/>
+  <text x="130" y="102" text-anchor="middle" font-size="16" font-weight="bold" fill="#555555">Boolean</text>
+  <text x="130" y="130" text-anchor="middle" font-size="11.5" fill="#777777">set theory</text>
+  <text x="130" y="150" text-anchor="middle" font-size="11.5" fill="#777777">exact match (AND/OR/NOT)</text>
+  <text x="130" y="190" text-anchor="middle" font-size="11.5" fill="#A14D33">no ranking</text>
+  <text x="130" y="210" text-anchor="middle" font-size="11.5" fill="#A14D33">no partial matching</text>
+
+  <line x1="234" y1="165" x2="266" y2="165" stroke="#555555" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- VSM -->
+  <rect x="270" y="70" width="200" height="190" rx="10" fill="#E9F4FA" stroke="#7FB8D6" stroke-width="1.8"/>
+  <text x="370" y="102" text-anchor="middle" font-size="16" font-weight="bold" fill="#33759B">Vector Space</text>
+  <text x="370" y="130" text-anchor="middle" font-size="11.5" fill="#33617A">linear algebra</text>
+  <text x="370" y="150" text-anchor="middle" font-size="11.5" fill="#33617A">TF-IDF + cosine similarity</text>
+  <text x="370" y="190" text-anchor="middle" font-size="11.5" fill="#2C7A46">ranking + partial match</text>
+  <text x="370" y="210" text-anchor="middle" font-size="11.5" fill="#A14D33">weak theoretical basis</text>
+
+  <line x1="474" y1="165" x2="506" y2="165" stroke="#555555" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Probabilistic -->
+  <rect x="510" y="70" width="200" height="190" rx="10" fill="#D6E9F4" stroke="#2B87B8" stroke-width="1.8"/>
+  <text x="610" y="102" text-anchor="middle" font-size="16" font-weight="bold" fill="#18617E">Probabilistic</text>
+  <text x="610" y="130" text-anchor="middle" font-size="11.5" fill="#33617A">probability theory + PRP</text>
+  <text x="610" y="150" text-anchor="middle" font-size="11.5" fill="#33617A">BIM &#8594; BM25</text>
+  <text x="610" y="190" text-anchor="middle" font-size="11.5" fill="#2C7A46">theoretically grounded</text>
+  <text x="610" y="210" text-anchor="middle" font-size="11.5" fill="#2C7A46">best practical effectiveness</text>
+
+  <line x1="714" y1="165" x2="746" y2="165" stroke="#555555" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Language Model -->
+  <rect x="750" y="70" width="200" height="190" rx="10" fill="#FDF4EA" stroke="#E87E2E" stroke-width="1.8"/>
+  <text x="850" y="102" text-anchor="middle" font-size="16" font-weight="bold" fill="#B35A0E">Language Model</text>
+  <text x="850" y="130" text-anchor="middle" font-size="11.5" fill="#7A5230">statistical language model</text>
+  <text x="850" y="150" text-anchor="middle" font-size="11.5" fill="#7A5230">P(<tspan font-style="italic">q</tspan> | <tspan font-style="italic">M</tspan><tspan dy="3" font-size="9" font-style="italic">d</tspan><tspan dy="-3">)</tspan></text>
+  <text x="850" y="190" text-anchor="middle" font-size="11.5" fill="#2C7A46">theoretically consistent</text>
+  <text x="850" y="210" text-anchor="middle" font-size="11.5" fill="#2C7A46">extensible (RM3, KL)</text>
+
+  <!-- ranking enabled labels -->
+  <g font-size="10.5" fill="#888888" text-anchor="middle">
+    <text x="130" y="246">ranking: &#10005;</text>
+    <text x="370" y="246">ranking: &#10003;</text>
+    <text x="610" y="246">ranking: &#10003;</text>
+    <text x="850" y="246">ranking: &#10003;</text>
+  </g>
+
+  <!-- common limitation banner -->
+  <rect x="115" y="300" width="740" height="56" rx="9" fill="#FBEDEB" stroke="#C0392B" stroke-width="1.5"/>
+  <text x="485" y="324" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#962D22">Common limitation: term-independence assumption (bag-of-words)</text>
+  <text x="485" y="345" text-anchor="middle" font-size="12" fill="#7B3A33">word order and semantic relationships between terms are ignored</text>
+
+  <line x1="485" y1="356" x2="485" y2="388" stroke="#555555" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <rect x="265" y="392" width="440" height="44" rx="22" fill="#2B87B8"/>
+  <text x="485" y="420" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#FFFFFF">Neural IR (BERT) overcomes this constraint &#8594; Lecture 5</text>
+</svg>

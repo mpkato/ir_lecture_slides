@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="680" height="540" viewBox="0 0 680 540" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#555555"/>
+    </marker>
+  </defs>
+
+  <text x="340" y="36" text-anchor="middle" font-size="15" font-weight="bold" fill="#333333">Ranking via Language Models (Query Likelihood)</text>
+
+  <!-- document -->
+  <rect x="140" y="60" width="400" height="60" rx="8" fill="#DDEEF7" stroke="#2B87B8" stroke-width="1.5"/>
+  <text x="340" y="84" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#18617E">Document <tspan font-style="italic">d</tspan>&#160;&#160;(|<tspan font-style="italic">d</tspan>| = 100 terms)</text>
+  <text x="340" y="106" text-anchor="middle" font-size="12" font-style="italic" fill="#33617A">&#8220;Kyoto autumn leaves best in November &#8230;&#8221;</text>
+
+  <line x1="340" y1="120" x2="340" y2="154" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="355" y="143" font-size="11.5" fill="#888888">estimate the document&#8217;s language model (MLE)</text>
+
+  <!-- language model -->
+  <rect x="120" y="156" width="440" height="96" rx="9" fill="#2B87B8"/>
+  <text x="340" y="182" text-anchor="middle" font-size="14" font-weight="bold" fill="#FFFFFF">Language model <tspan font-style="italic">M</tspan><tspan dy="3" font-size="10" font-style="italic">d</tspan><tspan dy="-3">&#160;&#160;&#8212;&#160;&#160;P(</tspan><tspan font-style="italic">t</tspan> | <tspan font-style="italic">M</tspan><tspan dy="3" font-size="10" font-style="italic">d</tspan><tspan dy="-3">) = tf(</tspan><tspan font-style="italic">t</tspan>, <tspan font-style="italic">d</tspan>) / |<tspan font-style="italic">d</tspan>|</text>
+  <text x="340" y="208" text-anchor="middle" font-size="12.5" fill="#D9ECF5">P(&#8220;Kyoto&#8221; | <tspan font-style="italic">M</tspan><tspan dy="2" font-size="9" font-style="italic">d</tspan><tspan dy="-2">) = 5/100 = 0.05</tspan></text>
+  <text x="340" y="230" text-anchor="middle" font-size="12.5" fill="#D9ECF5">P(&#8220;autumn&#8221; | <tspan font-style="italic">M</tspan><tspan dy="2" font-size="9" font-style="italic">d</tspan><tspan dy="-2">) = 3/100 = 0.03</tspan></text>
+
+  <line x1="340" y1="252" x2="340" y2="286" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="355" y="275" font-size="11.5" fill="#888888">compute the query generation probability</text>
+
+  <!-- query -->
+  <rect x="170" y="288" width="340" height="44" rx="8" fill="#FCEEDF" stroke="#E8A05D" stroke-width="1.5"/>
+  <text x="340" y="315" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#B35A0E">Query <tspan font-style="italic">q</tspan> = &#8220;Kyoto autumn&#8221;</text>
+
+  <line x1="340" y1="332" x2="340" y2="366" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- result -->
+  <rect x="120" y="368" width="440" height="52" rx="8" fill="#E87E2E"/>
+  <text x="340" y="400" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#FFFFFF">P(<tspan font-style="italic">q</tspan> | <tspan font-style="italic">M</tspan><tspan dy="3" font-size="10" font-style="italic">d</tspan><tspan dy="-3">) = 0.05 &#215; 0.03 = 0.0015</tspan></text>
+
+  <text x="340" y="458" text-anchor="middle" font-size="12.5" fill="#555555">Rank documents by P(<tspan font-style="italic">q</tspan> | <tspan font-style="italic">M</tspan><tspan dy="2" font-size="9" font-style="italic">d</tspan><tspan dy="-2">) in descending order &#8212; &#8220;would this document&#8217;s author write this query?&#8221;</tspan></text>
+  <text x="340" y="490" text-anchor="middle" font-size="12" fill="#A14D33">Zero-probability problem: one missing query term makes the whole product 0 &#8594; smoothing is required</text>
+  <text x="340" y="518" text-anchor="middle" font-size="11" font-style="italic" fill="#888888">Ponte and Croft, &#8220;A Language Modeling Approach to Information Retrieval&#8221;, SIGIR, 1998</text>
+</svg>

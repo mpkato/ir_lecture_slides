@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="640" height="470" viewBox="0 0 640 470" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="axisarrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#555555"/>
+    </marker>
+  </defs>
+
+  <text x="320" y="36" text-anchor="middle" font-size="15" font-weight="bold" fill="#333333">Comparison of TF Weighting Functions</text>
+
+  <!-- plot: x 0..10 -> 80..560 (48px/unit), y 0..8 -> 350..60 (36.25px/unit) -->
+  <g stroke="#EDEDED" stroke-width="1">
+    <line x1="80" y1="277.5" x2="560" y2="277.5"/>
+    <line x1="80" y1="205" x2="560" y2="205"/>
+    <line x1="80" y1="132.5" x2="560" y2="132.5"/>
+  </g>
+  <line x1="80" y1="350" x2="585" y2="350" stroke="#555555" stroke-width="1.5" marker-end="url(#axisarrow)"/>
+  <line x1="80" y1="350" x2="80" y2="45" stroke="#555555" stroke-width="1.5" marker-end="url(#axisarrow)"/>
+  <g font-size="11.5" fill="#777777">
+    <text x="76" y="354" text-anchor="end">0</text>
+    <text x="76" y="281" text-anchor="end">2</text>
+    <text x="76" y="209" text-anchor="end">4</text>
+    <text x="76" y="136" text-anchor="end">6</text>
+    <text x="128" y="368" text-anchor="middle">1</text>
+    <text x="176" y="368" text-anchor="middle">2</text>
+    <text x="272" y="368" text-anchor="middle">4</text>
+    <text x="368" y="368" text-anchor="middle">6</text>
+    <text x="464" y="368" text-anchor="middle">8</text>
+    <text x="560" y="368" text-anchor="middle">10</text>
+  </g>
+  <text x="320" y="398" text-anchor="middle" font-size="13" fill="#333333">Term frequency tf(<tspan font-style="italic">t</tspan>, <tspan font-style="italic">d</tspan>)</text>
+  <text x="34" y="200" text-anchor="middle" font-size="13" fill="#333333" transform="rotate(-90 34 200)">TF weight</text>
+
+  <!-- Raw TF: w = tf, clipped at 8 -->
+  <line x1="80" y1="350" x2="468" y2="60" stroke="#9AA0A6" stroke-width="2.2"/>
+  <text x="430" y="72" text-anchor="end" font-size="12.5" font-weight="bold" fill="#6B7075">Raw TF (linear)</text>
+
+  <!-- Log TF: 1 + ln(tf) -->
+  <path d="M128,313.7 L176,288.6 L224,273.9 L272,263.5 L320,255.4 L368,248.8 L416,243.2 L464,238.4 L512,234.1 L560,230.2" fill="none" stroke="#2B87B8" stroke-width="2.5"/>
+  <circle cx="128" cy="313.7" r="4" fill="#2B87B8"/>
+  <text x="566" y="225" font-size="12.5" font-weight="bold" fill="#18617E" text-anchor="end"><tspan x="556" dy="0">1 + log(tf)</tspan></text>
+
+  <!-- BM25 TF: tf*2.2/(tf+1.2), asymptote 2.2 -->
+  <line x1="80" y1="270.3" x2="560" y2="270.3" stroke="#E8A05D" stroke-width="1" stroke-dasharray="5,4"/>
+  <text x="555" y="262" text-anchor="end" font-size="10.5" fill="#C2620E">asymptote <tspan font-style="italic">k</tspan><tspan dy="2" font-size="8">1</tspan><tspan dy="-2"> + 1 = 2.2</tspan></text>
+  <path d="M128,313.7 L176,300.2 L224,293.0 L272,288.7 L320,285.7 L368,283.5 L416,281.8 L464,280.6 L512,279.6 L560,278.8" fill="none" stroke="#E87E2E" stroke-width="2.5"/>
+  <circle cx="128" cy="313.7" r="4" fill="#E87E2E"/>
+  <text x="556" y="300" text-anchor="end" font-size="12.5" font-weight="bold" fill="#B35A0E">BM25: tf&#8202;(<tspan font-style="italic">k</tspan><tspan dy="2" font-size="9">1</tspan><tspan dy="-2">+1) / (tf+</tspan><tspan font-style="italic">k</tspan><tspan dy="2" font-size="9">1</tspan><tspan dy="-2">),&#160;</tspan><tspan font-style="italic">k</tspan><tspan dy="2" font-size="9">1</tspan><tspan dy="-2"> = 1.2</tspan></text>
+
+  <text x="320" y="432 " text-anchor="middle" font-size="12" fill="#555555">Saturation: even as tf grows, the weight gain diminishes &#8212; 10 occurrences are not 10&#215; as important as 1</text>
+  <text x="320" y="456" text-anchor="middle" font-size="11" font-style="italic" fill="#888888">BM25&#8217;s saturation function is theoretically derived from the probabilistic model (2-Poisson)</text>
+</svg>

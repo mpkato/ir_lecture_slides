@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="900" height="560" viewBox="0 0 900 560" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#555555"/>
+    </marker>
+  </defs>
+
+  <!-- ===== Pointwise ===== -->
+  <rect x="30" y="30" width="260" height="420" rx="10" fill="#F7F7F7" stroke="#BBBBBB" stroke-width="1.5"/>
+  <text x="160" y="62" text-anchor="middle" font-size="16" font-weight="bold" fill="#555555">Pointwise</text>
+  <text x="160" y="86" text-anchor="middle" font-size="11.5" fill="#777777">input: individual documents</text>
+  <text x="160" y="103" text-anchor="middle" font-size="11.5" fill="#777777">loss: regression / classification</text>
+  <text x="160" y="130" text-anchor="middle" font-size="12" font-style="italic" fill="#555555">&#8220;What score is this?&#8221;</text>
+
+  <g font-size="12.5">
+    <rect x="70" y="150" width="80" height="32" rx="5" fill="#FFFFFF" stroke="#AAAAAA"/>
+    <text x="110" y="171" text-anchor="middle" fill="#444444"><tspan font-style="italic">d</tspan><tspan dy="3" font-size="9">1</tspan></text>
+    <line x1="154" y1="166" x2="184" y2="166" stroke="#555555" stroke-width="1.3" marker-end="url(#arrow)"/>
+    <text x="218" y="171" text-anchor="middle" fill="#444444">2.8</text>
+
+    <rect x="70" y="194" width="80" height="32" rx="5" fill="#FFFFFF" stroke="#AAAAAA"/>
+    <text x="110" y="215" text-anchor="middle" fill="#444444"><tspan font-style="italic">d</tspan><tspan dy="3" font-size="9">2</tspan></text>
+    <line x1="154" y1="210" x2="184" y2="210" stroke="#555555" stroke-width="1.3" marker-end="url(#arrow)"/>
+    <text x="218" y="215" text-anchor="middle" fill="#444444">1.5</text>
+
+    <rect x="70" y="238" width="80" height="32" rx="5" fill="#FFFFFF" stroke="#AAAAAA"/>
+    <text x="110" y="259" text-anchor="middle" fill="#444444"><tspan font-style="italic">d</tspan><tspan dy="3" font-size="9">3</tspan></text>
+    <line x1="154" y1="254" x2="184" y2="254" stroke="#555555" stroke-width="1.3" marker-end="url(#arrow)"/>
+    <text x="218" y="259" text-anchor="middle" fill="#444444">0.3</text>
+  </g>
+
+  <text x="160" y="330" text-anchor="middle" font-size="11.5" fill="#777777">linear regression, SVM regression</text>
+  <text x="160" y="380" text-anchor="middle" font-size="12" fill="#996644">does not directly optimize ordering</text>
+  <text x="160" y="424" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#888888">simple</text>
+
+  <!-- ===== Pairwise ===== -->
+  <rect x="320" y="30" width="260" height="420" rx="10" fill="#E9F4FA" stroke="#2B87B8" stroke-width="1.8"/>
+  <text x="450" y="62" text-anchor="middle" font-size="16" font-weight="bold" fill="#18617E">Pairwise</text>
+  <text x="450" y="86" text-anchor="middle" font-size="11.5" fill="#33617A">input: document pairs</text>
+  <text x="450" y="103" text-anchor="middle" font-size="11.5" fill="#33617A">loss: pair-ordering loss</text>
+  <text x="450" y="130" text-anchor="middle" font-size="12" font-style="italic" fill="#33617A">&#8220;Is A ranked above B?&#8221;</text>
+
+  <g font-size="12.5">
+    <rect x="355" y="150" width="80" height="32" rx="5" fill="#FFFFFF" stroke="#7FB8D6"/>
+    <text x="395" y="171" text-anchor="middle" fill="#18617E"><tspan font-style="italic">d</tspan><tspan dy="3" font-size="9">1</tspan></text>
+    <text x="450" y="171" text-anchor="middle" font-size="15" font-weight="bold" fill="#2B87B8">&#8827;</text>
+    <rect x="465" y="150" width="80" height="32" rx="5" fill="#FFFFFF" stroke="#7FB8D6"/>
+    <text x="505" y="171" text-anchor="middle" fill="#18617E"><tspan font-style="italic">d</tspan><tspan dy="3" font-size="9">2</tspan></text>
+
+    <rect x="355" y="194" width="80" height="32" rx="5" fill="#FFFFFF" stroke="#7FB8D6"/>
+    <text x="395" y="215" text-anchor="middle" fill="#18617E"><tspan font-style="italic">d</tspan><tspan dy="3" font-size="9">1</tspan></text>
+    <text x="450" y="215" text-anchor="middle" font-size="15" font-weight="bold" fill="#2B87B8">&#8827;</text>
+    <rect x="465" y="194" width="80" height="32" rx="5" fill="#FFFFFF" stroke="#7FB8D6"/>
+    <text x="505" y="215" text-anchor="middle" fill="#18617E"><tspan font-style="italic">d</tspan><tspan dy="3" font-size="9">3</tspan></text>
+  </g>
+
+  <text x="450" y="330" text-anchor="middle" font-size="11.5" fill="#33617A">RankNet, RankSVM, LambdaRank</text>
+  <text x="450" y="380" text-anchor="middle" font-size="12" fill="#33617A">learns relative ordering directly</text>
+
+  <!-- ===== Listwise ===== -->
+  <rect x="610" y="30" width="260" height="420" rx="10" fill="#FDF4EA" stroke="#E87E2E" stroke-width="1.8"/>
+  <text x="740" y="62" text-anchor="middle" font-size="16" font-weight="bold" fill="#B35A0E">Listwise</text>
+  <text x="740" y="86" text-anchor="middle" font-size="11.5" fill="#7A5230">input: the full list</text>
+  <text x="740" y="103" text-anchor="middle" font-size="11.5" fill="#7A5230">loss: list quality (nDCG, &#8230;)</text>
+  <text x="740" y="130" text-anchor="middle" font-size="12" font-style="italic" fill="#7A5230">&#8220;How good is this whole ranking?&#8221;</text>
+
+  <g font-size="12.5">
+    <rect x="660" y="150" width="160" height="32" rx="5" fill="#FFFFFF" stroke="#E8A05D"/>
+    <text x="740" y="171" text-anchor="middle" fill="#7A3E0F">1.&#160;&#160;<tspan font-style="italic">d</tspan><tspan dy="3" font-size="9">1</tspan></text>
+    <rect x="660" y="194" width="160" height="32" rx="5" fill="#FFFFFF" stroke="#E8A05D"/>
+    <text x="740" y="215" text-anchor="middle" fill="#7A3E0F">2.&#160;&#160;<tspan font-style="italic">d</tspan><tspan dy="3" font-size="9">3</tspan></text>
+    <rect x="660" y="238" width="160" height="32" rx="5" fill="#FFFFFF" stroke="#E8A05D"/>
+    <text x="740" y="259" text-anchor="middle" fill="#7A3E0F">3.&#160;&#160;<tspan font-style="italic">d</tspan><tspan dy="3" font-size="9">2</tspan></text>
+  </g>
+
+  <text x="740" y="330" text-anchor="middle" font-size="11.5" fill="#7A5230">ListNet, AdaRank, LambdaMART</text>
+  <text x="740" y="380" text-anchor="middle" font-size="12" fill="#7A5230">optimizes the final ranking metric</text>
+  <text x="740" y="424" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#B35A0E">advanced</text>
+
+  <!-- bottom banner -->
+  <rect x="120" y="480" width="660" height="56" rx="8" fill="#EFF7FB" stroke="#B9D8E8" stroke-width="1.5"/>
+  <text x="450" y="503" text-anchor="middle" font-size="13" font-weight="bold" fill="#18617E">LambdaMART = Pairwise loss (RankNet) &#215; Listwise weight (|&#916;nDCG|)</text>
+  <text x="450" y="523" text-anchor="middle" font-size="11.5" fill="#33617A">a hybrid of both &#8212; the most successful Learning-to-Rank method in practice</text>
+</svg>

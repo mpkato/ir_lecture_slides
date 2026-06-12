@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="760" height="500" viewBox="0 0 760 500" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#555555"/>
+    </marker>
+  </defs>
+
+  <text x="380" y="36" text-anchor="middle" font-size="15" font-weight="bold" fill="#333333">Self-Attention: each token produces Query, Key, and Value</text>
+
+  <!-- input vector -->
+  <rect x="60" y="190" width="150" height="80" rx="9" fill="#DDEEF7" stroke="#2B87B8" stroke-width="1.8"/>
+  <text x="135" y="222" text-anchor="middle" font-size="14" font-weight="bold" fill="#18617E">Input vector</text>
+  <text x="135" y="248" text-anchor="middle" font-size="14" fill="#18617E"><tspan font-style="italic">x</tspan><tspan dy="3" font-size="11" font-style="italic">i</tspan></text>
+
+  <!-- arrows to W matrices -->
+  <path d="M214,210 L296,110" fill="none" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <path d="M214,230 L296,230" fill="none" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <path d="M214,250 L296,350" fill="none" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- W^Q -->
+  <rect x="300" y="80" width="110" height="56" rx="7" fill="#E87E2E"/>
+  <text x="355" y="104" text-anchor="middle" font-size="14" font-weight="bold" fill="#FFFFFF"><tspan font-style="italic">W</tspan><tspan dy="-6" font-size="11">Q</tspan></text>
+  <text x="355" y="126" text-anchor="middle" font-size="10" fill="#FBE3CD"><tspan font-style="italic">d</tspan> &#215; <tspan font-style="italic">d</tspan><tspan dy="2" font-size="8" font-style="italic">k</tspan></text>
+  <!-- W^K -->
+  <rect x="300" y="202" width="110" height="56" rx="7" fill="#2B87B8"/>
+  <text x="355" y="226" text-anchor="middle" font-size="14" font-weight="bold" fill="#FFFFFF"><tspan font-style="italic">W</tspan><tspan dy="-6" font-size="11">K</tspan></text>
+  <text x="355" y="248" text-anchor="middle" font-size="10" fill="#D9ECF5"><tspan font-style="italic">d</tspan> &#215; <tspan font-style="italic">d</tspan><tspan dy="2" font-size="8" font-style="italic">k</tspan></text>
+  <!-- W^V -->
+  <rect x="300" y="324" width="110" height="56" rx="7" fill="#5BA6CC"/>
+  <text x="355" y="348" text-anchor="middle" font-size="14" font-weight="bold" fill="#FFFFFF"><tspan font-style="italic">W</tspan><tspan dy="-6" font-size="11">V</tspan></text>
+  <text x="355" y="370" text-anchor="middle" font-size="10" fill="#E8F3F9"><tspan font-style="italic">d</tspan> &#215; <tspan font-style="italic">d</tspan><tspan dy="2" font-size="8" font-style="italic">k</tspan></text>
+
+  <g stroke="#555555" stroke-width="1.5">
+    <line x1="414" y1="108" x2="466" y2="108" marker-end="url(#arrow)"/>
+    <line x1="414" y1="230" x2="466" y2="230" marker-end="url(#arrow)"/>
+    <line x1="414" y1="352" x2="466" y2="352" marker-end="url(#arrow)"/>
+  </g>
+
+  <!-- Q -->
+  <rect x="470" y="80" width="230" height="56" rx="7" fill="#FCEEDF" stroke="#E87E2E" stroke-width="1.5"/>
+  <text x="585" y="103" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#B35A0E">Query&#160;&#160;<tspan font-style="italic">q</tspan><tspan dy="3" font-size="10" font-style="italic">i</tspan><tspan dy="-3"> = </tspan><tspan font-style="italic">x</tspan><tspan dy="3" font-size="10" font-style="italic">i</tspan><tspan dy="-3"></tspan><tspan font-style="italic">W</tspan><tspan dy="-5" font-size="10">Q</tspan></text>
+  <text x="585" y="124" text-anchor="middle" font-size="11.5" font-style="italic" fill="#9C7A56">&#8220;What am I looking for?&#8221;</text>
+  <!-- K -->
+  <rect x="470" y="202" width="230" height="56" rx="7" fill="#DDEEF7" stroke="#2B87B8" stroke-width="1.5"/>
+  <text x="585" y="225" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#18617E">Key&#160;&#160;<tspan font-style="italic">k</tspan><tspan dy="3" font-size="10" font-style="italic">i</tspan><tspan dy="-3"> = </tspan><tspan font-style="italic">x</tspan><tspan dy="3" font-size="10" font-style="italic">i</tspan><tspan dy="-3"></tspan><tspan font-style="italic">W</tspan><tspan dy="-5" font-size="10">K</tspan></text>
+  <text x="585" y="246" text-anchor="middle" font-size="11.5" font-style="italic" fill="#5B87A0">&#8220;What do I contain?&#8221;</text>
+  <!-- V -->
+  <rect x="470" y="324" width="230" height="56" rx="7" fill="#EAF4FA" stroke="#5BA6CC" stroke-width="1.5"/>
+  <text x="585" y="347" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#33759B">Value&#160;&#160;<tspan font-style="italic">v</tspan><tspan dy="3" font-size="10" font-style="italic">i</tspan><tspan dy="-3"> = </tspan><tspan font-style="italic">x</tspan><tspan dy="3" font-size="10" font-style="italic">i</tspan><tspan dy="-3"></tspan><tspan font-style="italic">W</tspan><tspan dy="-5" font-size="10">V</tspan></text>
+  <text x="585" y="368" text-anchor="middle" font-size="11.5" font-style="italic" fill="#33759B">&#8220;What do I return?&#8221;</text>
+
+  <!-- formula -->
+  <rect x="140" y="416" width="480" height="48" rx="8" fill="#FFFFFF" stroke="#555555" stroke-width="1.5"/>
+  <text x="380" y="446" text-anchor="middle" font-size="14.5" fill="#333333">Attention(<tspan font-style="italic">Q</tspan>, <tspan font-style="italic">K</tspan>, <tspan font-style="italic">V</tspan>) = softmax(&#8202;<tspan font-style="italic">QK</tspan><tspan dy="-6" font-size="11">T</tspan><tspan dy="6"> / &#8730;</tspan><tspan font-style="italic">d</tspan><tspan dy="3" font-size="10" font-style="italic">k</tspan><tspan dy="-3">&#8202;)&#8202;</tspan><tspan font-style="italic">V</tspan></text>
+
+  <text x="380" y="490" text-anchor="middle" font-size="11" font-style="italic" fill="#888888">The weight matrices are shared across all tokens &#8212; each token &#8220;asks&#8221; (Q) and aggregates values (V) by matching keys (K)</text>
+</svg>

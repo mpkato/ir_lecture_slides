@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="920" height="500" viewBox="0 0 920 500" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#555555"/>
+    </marker>
+  </defs>
+
+  <text x="460" y="36" text-anchor="middle" font-size="16" font-weight="bold" fill="#333333">Top-k Pooling Workflow</text>
+
+  <!-- step 1 -->
+  <text x="170" y="74" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#18617E">Step 1: Collect runs</text>
+  <rect x="50" y="90" width="240" height="84" rx="8" fill="#E9F4FA" stroke="#2B87B8" stroke-width="1.5"/>
+  <text x="170" y="118" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#18617E">System A (BM25)</text>
+  <text x="170" y="146" text-anchor="middle" font-size="12.5" font-family="Menlo, Consolas, monospace" fill="#33617A">d12, d45, d78, d3</text>
+
+  <rect x="50" y="190" width="240" height="84" rx="8" fill="#E9F4FA" stroke="#2B87B8" stroke-width="1.5"/>
+  <text x="170" y="218" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#18617E">System B (BERT)</text>
+  <text x="170" y="246" text-anchor="middle" font-size="12.5" font-family="Menlo, Consolas, monospace" fill="#33617A">d45, d92, d3, d67</text>
+
+  <rect x="50" y="290" width="240" height="84" rx="8" fill="#E9F4FA" stroke="#2B87B8" stroke-width="1.5"/>
+  <text x="170" y="318" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#18617E">System C (LTR)</text>
+  <text x="170" y="346" text-anchor="middle" font-size="12.5" font-family="Menlo, Consolas, monospace" fill="#33617A">d3, d12, d55, d92</text>
+
+  <line x1="296" y1="232" x2="356" y2="232" stroke="#555555" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- step 2 -->
+  <text x="460" y="74" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#555555">Step 2: Merge &#38; deduplicate</text>
+  <rect x="360" y="140" width="200" height="184" rx="8" fill="#F7F7F7" stroke="#999999" stroke-width="1.5"/>
+  <text x="460" y="172" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#444444">Pool</text>
+  <text x="460" y="204" text-anchor="middle" font-size="12.5" font-family="Menlo, Consolas, monospace" fill="#555555">d3, d12, d45,</text>
+  <text x="460" y="226" text-anchor="middle" font-size="12.5" font-family="Menlo, Consolas, monospace" fill="#555555">d55, d67,</text>
+  <text x="460" y="248" text-anchor="middle" font-size="12.5" font-family="Menlo, Consolas, monospace" fill="#555555">d78, d92</text>
+  <text x="460" y="290" text-anchor="middle" font-size="11" fill="#888888">deduplicated: 7 documents</text>
+
+  <line x1="566" y1="232" x2="626" y2="232" stroke="#555555" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- step 3 -->
+  <text x="755" y="74" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#B35A0E">Step 3: Assessors judge</text>
+  <rect x="630" y="90" width="250" height="284" rx="8" fill="#FDF4EA" stroke="#E87E2E" stroke-width="1.5"/>
+  <g font-size="12.5" font-family="Menlo, Consolas, monospace">
+    <text x="660" y="126" fill="#2C7A46">d3&#160;&#160;&#8594; Relevant</text>
+    <text x="660" y="162" fill="#962D22">d12 &#8594; Not relevant</text>
+    <text x="660" y="198" fill="#2C7A46">d45 &#8594; Relevant</text>
+    <text x="660" y="234" fill="#962D22">d55 &#8594; Not relevant</text>
+    <text x="660" y="270" fill="#2C7A46">d67 &#8594; Relevant</text>
+    <text x="660" y="306" fill="#962D22">d78 &#8594; Not relevant</text>
+    <text x="660" y="342" fill="#2C7A46">d92 &#8594; Relevant</text>
+  </g>
+
+  <!-- footer -->
+  <text x="460" y="420" text-anchor="middle" font-size="12.5" fill="#555555"><tspan font-weight="bold">Pool diversity matters:</tspan> runs from different methods produce qrels that are not biased toward one algorithm</text>
+  <text x="460" y="448" text-anchor="middle" font-size="12" fill="#A14D33">Post-hoc run problem: novel documents from systems outside the pool remain unjudged &#8594; risk of unfairly low scores</text>
+  <text x="460" y="478" text-anchor="middle" font-size="11" font-style="italic" fill="#888888">Judging the whole corpus is impossible &#8212; pooling samples the documents worth judging (Zobel, SIGIR 1998)</text>
+</svg>

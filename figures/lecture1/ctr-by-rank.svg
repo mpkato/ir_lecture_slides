@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="640" height="480" viewBox="0 0 640 480" font-family="Helvetica, Arial, sans-serif">
+
+  <text x="320" y="40" text-anchor="middle" font-size="16" font-weight="bold" fill="#333333">Search Rank vs Click-Through Rate</text>
+  <text x="320" y="60" text-anchor="middle" font-size="11" fill="#999999">conceptual diagram showing general trends</text>
+
+  <!-- gridlines: y 0..30%, baseline y=380, top 30% at y=110: 9px per % -->
+  <g stroke="#E6E6E6" stroke-width="1">
+    <line x1="70" y1="290" x2="600" y2="290"/>
+    <line x1="70" y1="200" x2="600" y2="200"/>
+    <line x1="70" y1="110" x2="600" y2="110"/>
+  </g>
+  <g font-size="11.5" fill="#777777" text-anchor="end">
+    <text x="62" y="384">0%</text>
+    <text x="62" y="294">10%</text>
+    <text x="62" y="204">20%</text>
+    <text x="62" y="114">30%</text>
+  </g>
+  <line x1="70" y1="80" x2="70" y2="380" stroke="#999999" stroke-width="1.5"/>
+  <line x1="70" y1="380" x2="600" y2="380" stroke="#999999" stroke-width="1.5"/>
+
+  <!-- bars: width 56, 9px per % -->
+  <rect x="95" y="128" width="56" height="252" fill="#2B87B8"/>
+  <text x="123" y="116" text-anchor="middle" font-size="13" font-weight="bold" fill="#18617E">28%</text>
+  <text x="123" y="402" text-anchor="middle" font-size="12" fill="#444444">1st</text>
+
+  <rect x="180" y="245" width="56" height="135" fill="#5BA6CC"/>
+  <text x="208" y="233" text-anchor="middle" font-size="13" font-weight="bold" fill="#33759B">15%</text>
+  <text x="208" y="402" text-anchor="middle" font-size="12" fill="#444444">2nd</text>
+
+  <rect x="265" y="281" width="56" height="99" fill="#7FBFDD"/>
+  <text x="293" y="269" text-anchor="middle" font-size="13" font-weight="bold" fill="#33759B">11%</text>
+  <text x="293" y="402" text-anchor="middle" font-size="12" fill="#444444">3rd</text>
+
+  <rect x="350" y="308" width="56" height="72" fill="#A5D2E8"/>
+  <text x="378" y="296" text-anchor="middle" font-size="13" font-weight="bold" fill="#5B87A0">8%</text>
+  <text x="378" y="402" text-anchor="middle" font-size="12" fill="#444444">4th</text>
+
+  <rect x="435" y="335" width="56" height="45" fill="#C4E0EF"/>
+  <text x="463" y="323" text-anchor="middle" font-size="13" font-weight="bold" fill="#5B87A0">5%</text>
+  <text x="463" y="402" text-anchor="middle" font-size="12" fill="#444444">5th</text>
+
+  <rect x="520" y="362" width="56" height="18" fill="#DDEBF3"/>
+  <text x="548" y="350" text-anchor="middle" font-size="13" font-weight="bold" fill="#8FA8B5">2%</text>
+  <text x="548" y="402" text-anchor="middle" font-size="12" fill="#444444">10th</text>
+
+  <text x="335" y="430" text-anchor="middle" font-size="12.5" fill="#555555">Search result position</text>
+  <text x="320" y="460" text-anchor="middle" font-size="12" font-style="italic" fill="#B35A0E">Most users only look at the top 3 results &#8212; ranking quality decides search engine quality</text>
+</svg>

@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="880" height="500" viewBox="0 0 880 500" font-family="Helvetica, Arial, sans-serif">
+
+  <!-- RankNet panel -->
+  <rect x="40" y="30" width="380" height="360" rx="10" fill="#F7F7F7" stroke="#BBBBBB" stroke-width="1.5"/>
+  <text x="230" y="62" text-anchor="middle" font-size="16" font-weight="bold" fill="#555555">RankNet</text>
+  <text x="230" y="84" text-anchor="middle" font-size="11.5" fill="#777777">all pairs are treated equally</text>
+
+  <g font-size="12.5">
+    <rect x="80" y="104" width="200" height="34" rx="5" fill="#FFFFFF" stroke="#AAAAAA"/>
+    <text x="95" y="126" fill="#444444">1.&#160;&#160;<tspan font-style="italic">d</tspan><tspan dy="3" font-size="9">3</tspan><tspan dy="-3"> (non-relevant)</tspan></text>
+    <rect x="80" y="148" width="200" height="34" rx="5" fill="#DDEEF7" stroke="#7FB8D6"/>
+    <text x="95" y="170" fill="#18617E">2.&#160;&#160;<tspan font-style="italic">d</tspan><tspan dy="3" font-size="9">1</tspan><tspan dy="-3"> (relevant)</tspan></text>
+    <rect x="80" y="192" width="200" height="34" rx="5" fill="#FFFFFF" stroke="#AAAAAA"/>
+    <text x="95" y="214" fill="#444444">3.&#160;&#160;<tspan font-style="italic">d</tspan><tspan dy="3" font-size="9">5</tspan><tspan dy="-3"> (non-relevant)</tspan></text>
+    <rect x="80" y="236" width="200" height="34" rx="5" fill="#DDEEF7" stroke="#7FB8D6"/>
+    <text x="95" y="258" fill="#18617E">4.&#160;&#160;<tspan font-style="italic">d</tspan><tspan dy="3" font-size="9">2</tspan><tspan dy="-3"> (relevant)</tspan></text>
+  </g>
+
+  <!-- equal gradient brackets -->
+  <path d="M292,121 C322,121 322,165 292,165" fill="none" stroke="#888888" stroke-width="1.5"/>
+  <text x="334" y="148" font-size="11.5" fill="#666666">same</text>
+  <path d="M292,209 C322,209 322,253 292,253" fill="none" stroke="#888888" stroke-width="1.5"/>
+  <text x="334" y="236" font-size="11.5" fill="#666666">same</text>
+
+  <text x="230" y="318" text-anchor="middle" font-size="12.5" fill="#555555">swap at the top and swap at the bottom</text>
+  <text x="230" y="338" text-anchor="middle" font-size="12.5" fill="#555555">produce gradients of <tspan font-weight="bold">the same magnitude</tspan></text>
+  <text x="230" y="368" text-anchor="middle" font-size="11.5" font-style="italic" fill="#996644">but users only see the top of the ranking!</text>
+
+  <!-- LambdaRank panel -->
+  <rect x="460" y="30" width="380" height="360" rx="10" fill="#E9F4FA" stroke="#2B87B8" stroke-width="1.8"/>
+  <text x="650" y="62" text-anchor="middle" font-size="16" font-weight="bold" fill="#18617E">LambdaRank</text>
+  <text x="650" y="84" text-anchor="middle" font-size="11.5" fill="#33617A">gradients weighted by |&#916;nDCG|</text>
+
+  <g font-size="12.5">
+    <rect x="500" y="104" width="200" height="34" rx="5" fill="#FFFFFF" stroke="#AAAAAA"/>
+    <text x="515" y="126" fill="#444444">1.&#160;&#160;<tspan font-style="italic">d</tspan><tspan dy="3" font-size="9">3</tspan><tspan dy="-3"> (non-relevant)</tspan></text>
+    <rect x="500" y="148" width="200" height="34" rx="5" fill="#DDEEF7" stroke="#7FB8D6"/>
+    <text x="515" y="170" fill="#18617E">2.&#160;&#160;<tspan font-style="italic">d</tspan><tspan dy="3" font-size="9">1</tspan><tspan dy="-3"> (relevant)</tspan></text>
+    <rect x="500" y="192" width="200" height="34" rx="5" fill="#FFFFFF" stroke="#AAAAAA"/>
+    <text x="515" y="214" fill="#444444">3.&#160;&#160;<tspan font-style="italic">d</tspan><tspan dy="3" font-size="9">5</tspan><tspan dy="-3"> (non-relevant)</tspan></text>
+    <rect x="500" y="236" width="200" height="34" rx="5" fill="#DDEEF7" stroke="#7FB8D6"/>
+    <text x="515" y="258" fill="#18617E">4.&#160;&#160;<tspan font-style="italic">d</tspan><tspan dy="3" font-size="9">2</tspan><tspan dy="-3"> (relevant)</tspan></text>
+  </g>
+
+  <path d="M712,121 C742,121 742,165 712,165" fill="none" stroke="#E87E2E" stroke-width="3"/>
+  <text x="752" y="138" font-size="11.5" font-weight="bold" fill="#B35A0E">large</text>
+  <text x="752" y="154" font-size="10.5" fill="#B35A0E">|&#916;nDCG| big</text>
+  <path d="M712,209 C742,209 742,253 712,253" fill="none" stroke="#7FB8D6" stroke-width="1.3"/>
+  <text x="752" y="226" font-size="11.5" fill="#33759B">small</text>
+  <text x="752" y="242" font-size="10.5" fill="#33759B">|&#916;nDCG| small</text>
+
+  <text x="650" y="318" text-anchor="middle" font-size="12.5" fill="#18617E">mistakes near the top get <tspan font-weight="bold">larger</tspan> gradients</text>
+  <text x="650" y="338" text-anchor="middle" font-size="12.5" fill="#18617E">&#8594; corrections are prioritized where users look</text>
+  <text x="650" y="368" text-anchor="middle" font-size="11.5" font-style="italic" fill="#33617A">&#8220;metric-aware&#8221; gradient learning</text>
+
+  <!-- bottom formula -->
+  <rect x="200" y="420" width="480" height="48" rx="8" fill="#FFFFFF" stroke="#555555" stroke-width="1.5"/>
+  <text x="440" y="450" text-anchor="middle" font-size="14.5" fill="#333333">&#955;<tspan dy="3" font-size="10" font-style="italic">ij</tspan><tspan dy="-3">&#160;=&#160;RankNet gradient&#160;&#215;&#160;|&#916;nDCG</tspan><tspan dy="3" font-size="10" font-style="italic">ij</tspan><tspan dy="-3">|</tspan></text>
+</svg>

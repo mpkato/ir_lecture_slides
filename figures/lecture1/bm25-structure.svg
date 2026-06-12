@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="760" height="500" viewBox="0 0 760 500" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#555555"/>
+    </marker>
+  </defs>
+
+  <!-- top formula -->
+  <rect x="110" y="30" width="540" height="50" rx="8" fill="#F7F7F7" stroke="#999999" stroke-width="1.5"/>
+  <text x="380" y="61" text-anchor="middle" font-size="16" fill="#333333">BM25(<tspan font-style="italic">q</tspan>, <tspan font-style="italic">d</tspan>) = &#931;<tspan dy="4" font-size="11" font-style="italic">t&#8202;&#8712;&#8202;q&#8745;d</tspan><tspan dy="-4">&#160;&#160;IDF(</tspan><tspan font-style="italic">t</tspan>) &#215; TF<tspan dy="4" font-size="11">sat</tspan><tspan dy="-4">(</tspan><tspan font-style="italic">t</tspan>, <tspan font-style="italic">d</tspan>)</text>
+
+  <line x1="240" y1="80" x2="240" y2="116" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="520" y1="80" x2="520" y2="116" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- IDF component -->
+  <rect x="60" y="120" width="360" height="150" rx="9" fill="#E9F4FA" stroke="#2B87B8" stroke-width="2"/>
+  <text x="240" y="148" text-anchor="middle" font-size="15" font-weight="bold" fill="#18617E">IDF component</text>
+  <text x="240" y="178" text-anchor="middle" font-size="14" fill="#333333">log&#8202;( (<tspan font-style="italic">N</tspan> &#8722; df(<tspan font-style="italic">t</tspan>) + 0.5) / (df(<tspan font-style="italic">t</tspan>) + 0.5) )</text>
+  <text x="240" y="208" text-anchor="middle" font-size="11.5" fill="#33617A"><tspan font-style="italic">N</tspan>: total documents&#160;&#160;&#183;&#160;&#160;df(<tspan font-style="italic">t</tspan>): documents containing <tspan font-style="italic">t</tspan></text>
+  <text x="240" y="232" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#18617E">rarer terms &#8594; higher weight</text>
+  <text x="240" y="254" text-anchor="middle" font-size="11" fill="#5B87A0">&#8220;discriminative power&#8221;</text>
+
+  <text x="465" y="200" text-anchor="middle" font-size="26" font-weight="bold" fill="#888888">&#215;</text>
+
+  <!-- TF saturation -->
+  <rect x="510" y="120" width="220" height="150" rx="9" fill="#FDF4EA" stroke="#E87E2E" stroke-width="2"/>
+  <text x="620" y="148" text-anchor="middle" font-size="15" font-weight="bold" fill="#B35A0E">TF saturation</text>
+  <text x="620" y="180" text-anchor="middle" font-size="13.5" fill="#333333">tf &#183; (<tspan font-style="italic">k</tspan><tspan dy="3" font-size="10">1</tspan><tspan dy="-3"> + 1)</tspan></text>
+  <line x1="540" y1="190" x2="700" y2="190" stroke="#7A5230" stroke-width="1"/>
+  <text x="620" y="212" text-anchor="middle" font-size="13.5" fill="#333333">tf + <tspan font-style="italic">k</tspan><tspan dy="3" font-size="10">1</tspan><tspan dy="-3">&#8202;(1 &#8722; </tspan><tspan font-style="italic">b</tspan> + <tspan font-style="italic">b</tspan> &#183; <tspan font-style="italic">l</tspan><tspan dy="3" font-size="10" font-style="italic">d</tspan><tspan dy="-3">&#8202;/</tspan><tspan font-style="italic">L</tspan>)</text>
+  <text x="620" y="238" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#B35A0E">diminishing returns</text>
+  <text x="620" y="256" text-anchor="middle" font-size="11" fill="#9C7A56">+ document length normalization</text>
+
+  <!-- parameter chips -->
+  <rect x="60" y="300" width="320" height="64" rx="8" fill="#FFFFFF" stroke="#7FB8D6" stroke-width="1.5"/>
+  <text x="220" y="326" text-anchor="middle" font-size="13" font-weight="bold" fill="#18617E">Effect of <tspan font-style="italic">k</tspan><tspan dy="3" font-size="10">1</tspan><tspan dy="-3"> (typical: 1.2)</tspan></text>
+  <text x="220" y="348" text-anchor="middle" font-size="11.5" fill="#33617A"><tspan font-style="italic">k</tspan><tspan dy="3" font-size="9">1</tspan><tspan dy="-3"> = 0: binary (BIM)&#160;&#160;|&#160;&#160;</tspan><tspan font-style="italic">k</tspan><tspan dy="3" font-size="9">1</tspan><tspan dy="-3"> &#8594; &#8734;: raw TF</tspan></text>
+
+  <rect x="410" y="300" width="320" height="64" rx="8" fill="#FFFFFF" stroke="#E8A05D" stroke-width="1.5"/>
+  <text x="570" y="326" text-anchor="middle" font-size="13" font-weight="bold" fill="#B35A0E">Effect of <tspan font-style="italic">b</tspan> (typical: 0.75)</text>
+  <text x="570" y="348" text-anchor="middle" font-size="11.5" fill="#7A5230"><tspan font-style="italic">b</tspan> = 0: no normalization&#160;&#160;|&#160;&#160;<tspan font-style="italic">b</tspan> = 1: full normalization</text>
+
+  <rect x="60" y="394" width="670" height="46" rx="8" fill="#EFF7FB" stroke="#B9D8E8" stroke-width="1.5"/>
+  <text x="395" y="416" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#18617E">BM25 = a practical realization of the probabilistic model (BIM) theory</text>
+  <text x="395" y="433" text-anchor="middle" font-size="11.5" fill="#33617A">IDF = &#8220;discriminative power&#8221;&#160;&#160;&#183;&#160;&#160;TF saturation = &#8220;diminishing returns&#8221;&#160;&#160;&#183;&#160;&#160;<tspan font-style="italic">b</tspan> = &#8220;length fairness&#8221;</text>
+
+  <text x="395" y="474" text-anchor="middle" font-size="11" font-style="italic" fill="#888888">The de facto standard for keyword search since 1994 (Robertson et al., Okapi at TREC-3)</text>
+</svg>

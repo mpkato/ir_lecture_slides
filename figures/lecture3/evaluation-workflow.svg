@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="760" height="500" viewBox="0 0 760 500" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#555555"/>
+    </marker>
+  </defs>
+
+  <text x="380" y="36" text-anchor="middle" font-size="15" font-weight="bold" fill="#333333">Test collection = Corpus + Topics + Relevance judgments (qrels)</text>
+
+  <!-- three components -->
+  <rect x="50" y="60" width="200" height="76" rx="9" fill="#F2F2F2" stroke="#BBBBBB" stroke-width="1.5"/>
+  <text x="150" y="90" text-anchor="middle" font-size="14" font-weight="bold" fill="#444444">1. Corpus</text>
+  <text x="150" y="112" text-anchor="middle" font-size="11.5" fill="#777777">document collection</text>
+
+  <rect x="280" y="60" width="200" height="76" rx="9" fill="#E9F4FA" stroke="#2B87B8" stroke-width="1.5"/>
+  <text x="380" y="90" text-anchor="middle" font-size="14" font-weight="bold" fill="#18617E">2. Topics</text>
+  <text x="380" y="112" text-anchor="middle" font-size="11.5" fill="#33617A">information needs (queries)</text>
+
+  <rect x="510" y="60" width="200" height="76" rx="9" fill="#FDF4EA" stroke="#E87E2E" stroke-width="1.5"/>
+  <text x="610" y="90" text-anchor="middle" font-size="14" font-weight="bold" fill="#B35A0E">3. qrels</text>
+  <text x="610" y="112" text-anchor="middle" font-size="11.5" fill="#7A5230">relevance judgments (<tspan font-style="italic">q</tspan>, <tspan font-style="italic">d</tspan>, <tspan font-style="italic">r</tspan>)</text>
+
+  <!-- corpus + topics -> system -->
+  <path d="M150,136 L150,180 L286,180" fill="none" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <path d="M380,136 L380,162" fill="none" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- ranking system -->
+  <rect x="290" y="166" width="180" height="58" rx="8" fill="#2B87B8"/>
+  <text x="380" y="190" text-anchor="middle" font-size="14" font-weight="bold" fill="#FFFFFF">Ranking system</text>
+  <text x="380" y="211" text-anchor="middle" font-size="11" fill="#D9ECF5">generates a ranked list per query</text>
+
+  <line x1="380" y1="224" x2="380" y2="258" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- run -->
+  <rect x="290" y="260" width="180" height="44" rx="8" fill="#FFFFFF" stroke="#7FB8D6" stroke-width="1.5"/>
+  <text x="380" y="287" text-anchor="middle" font-size="13" font-weight="bold" fill="#18617E">System output (run)</text>
+
+  <!-- qrels -> trec_eval -->
+  <path d="M610,136 L610,346 L476,346" fill="none" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="380" y1="304" x2="380" y2="324" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- trec_eval -->
+  <rect x="290" y="326" width="180" height="48" rx="8" fill="#E87E2E"/>
+  <text x="380" y="348" text-anchor="middle" font-size="14" font-weight="bold" fill="#FFFFFF">trec_eval</text>
+  <text x="380" y="366" text-anchor="middle" font-size="10.5" fill="#FBE3CD">compare run against qrels</text>
+
+  <line x1="380" y1="374" x2="380" y2="404" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- metrics -->
+  <rect x="220" y="406" width="320" height="44" rx="8" fill="#FCEEDF" stroke="#E8A05D" stroke-width="1.5"/>
+  <text x="380" y="433" text-anchor="middle" font-size="13" font-weight="bold" fill="#B35A0E">P@10 = 0.60&#160;&#160;&#183;&#160;&#160;AP = 0.433&#160;&#160;&#183;&#160;&#160;nDCG@10 = 0.72</text>
+
+  <text x="380" y="482" text-anchor="middle" font-size="11" font-style="italic" fill="#888888">The Cranfield paradigm (Cleverdon, 1960s): quantitative evaluation with reusable test collections</text>
+</svg>

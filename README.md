@@ -23,6 +23,6 @@ Lecture slides for the Information Retrieval course.
 
 ## Figures
 
-Redrawn SVG versions of the diagrams in Lectures 7–9 are available in
+Redrawn SVG versions of the diagrams in Lectures 1–5 and 7–9 are available in
 [`figures/`](figures/README.md), organized per lecture and ready to embed in
 Marp slides.

@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="760" height="520" viewBox="0 0 760 520" font-family="Helvetica, Arial, sans-serif">
+
+  <text x="380" y="36" text-anchor="middle" font-size="15" font-weight="bold" fill="#333333">Effect of Smoothing on P(<tspan font-style="italic">t</tspan> | <tspan font-style="italic">M</tspan><tspan dy="3" font-size="11" font-style="italic">d</tspan><tspan dy="-3">)</tspan></text>
+  <text x="380" y="58" text-anchor="middle" font-size="11.5" fill="#888888">document <tspan font-style="italic">d</tspan>: &#8220;Kyoto autumn leaves best Nov&#8221; &#8212; illustrative values</text>
+
+  <!-- plot: baseline y=380, 0.15 -> y=110 (1800px per unit) -->
+  <g stroke="#E6E6E6" stroke-width="1">
+    <line x1="80" y1="290" x2="700" y2="290"/>
+    <line x1="80" y1="200" x2="700" y2="200"/>
+    <line x1="80" y1="110" x2="700" y2="110"/>
+  </g>
+  <g font-size="11" fill="#777777" text-anchor="end">
+    <text x="72" y="384">0</text>
+    <text x="72" y="294">0.05</text>
+    <text x="72" y="204">0.10</text>
+    <text x="72" y="114">0.15</text>
+  </g>
+  <line x1="80" y1="90" x2="80" y2="380" stroke="#999999" stroke-width="1.5"/>
+  <line x1="80" y1="380" x2="700" y2="380" stroke="#999999" stroke-width="1.5"/>
+
+  <!-- groups: centers 150, 270, 390, 520, 630; bars w=40 each, MLE left (gray-blue), Dirichlet right (orange) -->
+  <!-- Kyoto: MLE 0.15 -> h=270, Dir 0.12 -> h=216 -->
+  <rect x="108" y="110" width="40" height="270" fill="#2B87B8"/>
+  <rect x="152" y="164" width="40" height="216" fill="#E8A05D"/>
+  <text x="150" y="404" text-anchor="middle" font-size="12.5" fill="#444444">Kyoto</text>
+
+  <!-- autumn: MLE 0.12 -> 216, Dir 0.10 -> 180 -->
+  <rect x="228" y="164" width="40" height="216" fill="#2B87B8"/>
+  <rect x="272" y="200" width="40" height="180" fill="#E8A05D"/>
+  <text x="270" y="404" text-anchor="middle" font-size="12.5" fill="#444444">autumn</text>
+
+  <!-- best: MLE 0.10 -> 180, Dir 0.08 -> 144 -->
+  <rect x="348" y="200" width="40" height="180" fill="#2B87B8"/>
+  <rect x="392" y="236" width="40" height="144" fill="#E8A05D"/>
+  <text x="390" y="404" text-anchor="middle" font-size="12.5" fill="#444444">best</text>
+
+  <!-- separator -->
+  <line x1="470" y1="90" x2="470" y2="395" stroke="#CCCCCC" stroke-width="1" stroke-dasharray="5,4"/>
+  <text x="275" y="84" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#18617E">terms in the document</text>
+  <text x="588" y="84" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#B35A0E">terms NOT in the document</text>
+
+  <!-- search: MLE 0 (marker), Dir 0.015 -> 27 -->
+  <rect x="498" y="378" width="40" height="2" fill="#2B87B8"/>
+  <text x="518" y="368" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#C0392B">0!</text>
+  <rect x="542" y="353" width="40" height="27" fill="#E8A05D"/>
+  <text x="540" y="404" text-anchor="middle" font-size="12.5" fill="#444444">search</text>
+
+  <!-- info: MLE 0, Dir 0.012 -> 21.6 -->
+  <rect x="608" y="378" width="40" height="2" fill="#2B87B8"/>
+  <text x="628" y="368" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#C0392B">0!</text>
+  <rect x="652" y="358" width="40" height="22" fill="#E8A05D"/>
+  <text x="650" y="404" text-anchor="middle" font-size="12.5" fill="#444444">info</text>
+
+  <!-- legend -->
+  <rect x="220" y="432" width="16" height="16" fill="#2B87B8"/>
+  <text x="244" y="445" font-size="12" fill="#444444">MLE (maximum likelihood)</text>
+  <rect x="430" y="432" width="16" height="16" fill="#E8A05D"/>
+  <text x="454" y="445" font-size="12" fill="#444444">after Dirichlet smoothing</text>
+
+  <text x="380" y="480" text-anchor="middle" font-size="12" fill="#555555">Smoothing gives unseen terms non-zero probability (from the collection model) and slightly lowers in-document terms</text>
+  <text x="380" y="504" text-anchor="middle" font-size="11" font-style="italic" fill="#888888">Shorter documents are smoothed more &#8594; natural length normalization (Zhai and Lafferty, TOIS 2004)</text>
+</svg>

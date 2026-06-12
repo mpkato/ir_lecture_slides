@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="720" height="560" viewBox="0 0 720 560" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#555555"/>
+    </marker>
+  </defs>
+
+  <text x="370" y="36" text-anchor="middle" font-size="15" font-weight="bold" fill="#333333">Evolution of Pre-trained Models</text>
+
+  <!-- tier labels -->
+  <g font-size="11" fill="#999999" text-anchor="end">
+    <text x="92" y="118">static</text>
+    <text x="92" y="133">embedding</text>
+    <text x="92" y="276">contextual</text>
+    <text x="92" y="291">embedding</text>
+    <text x="92" y="434">Transformer-</text>
+    <text x="92" y="449">based</text>
+  </g>
+
+  <!-- word2vec / GloVe -->
+  <rect x="120" y="80" width="230" height="84" rx="9" fill="#DDEEF7" stroke="#7FB8D6" stroke-width="1.5"/>
+  <text x="235" y="108" text-anchor="middle" font-size="14" font-weight="bold" fill="#18617E">word2vec <tspan font-size="11" font-weight="normal" fill="#5B87A0">(2013)</tspan></text>
+  <text x="235" y="130" text-anchor="middle" font-size="11" fill="#33617A">word-level, static embedding</text>
+  <text x="235" y="148" text-anchor="middle" font-size="11" fill="#33617A">Skip-gram / CBOW</text>
+
+  <rect x="390" y="80" width="230" height="84" rx="9" fill="#DDEEF7" stroke="#7FB8D6" stroke-width="1.5"/>
+  <text x="505" y="108" text-anchor="middle" font-size="14" font-weight="bold" fill="#18617E">GloVe <tspan font-size="11" font-weight="normal" fill="#5B87A0">(2014)</tspan></text>
+  <text x="505" y="130" text-anchor="middle" font-size="11" fill="#33617A">co-occurrence matrix,</text>
+  <text x="505" y="148" text-anchor="middle" font-size="11" fill="#33617A">global statistics</text>
+
+  <line x1="235" y1="164" x2="345" y2="234" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="505" y1="164" x2="395" y2="234" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- ELMo -->
+  <rect x="255" y="238" width="230" height="84" rx="9" fill="#BBDDEE" stroke="#2B87B8" stroke-width="1.8"/>
+  <text x="370" y="266" text-anchor="middle" font-size="14" font-weight="bold" fill="#15425C">ELMo <tspan font-size="11" font-weight="normal" fill="#33617A">(2018)</tspan></text>
+  <text x="370" y="288" text-anchor="middle" font-size="11" fill="#15425C">BiLSTM,</text>
+  <text x="370" y="306" text-anchor="middle" font-size="11" fill="#15425C">contextualized embedding</text>
+
+  <line x1="305" y1="322" x2="235" y2="392" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="435" y1="322" x2="505" y2="392" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- GPT -->
+  <rect x="120" y="396" width="230" height="92" rx="9" fill="#E9F4FA" stroke="#2B87B8" stroke-width="1.8"/>
+  <text x="235" y="424" text-anchor="middle" font-size="14" font-weight="bold" fill="#18617E">GPT <tspan font-size="11" font-weight="normal" fill="#5B87A0">(2018)</tspan></text>
+  <text x="235" y="446" text-anchor="middle" font-size="11" fill="#33617A">Transformer Decoder</text>
+  <text x="235" y="464" text-anchor="middle" font-size="11" fill="#33617A">unidirectional, generative</text>
+
+  <!-- BERT -->
+  <rect x="390" y="396" width="230" height="92" rx="9" fill="#FDF4EA" stroke="#E87E2E" stroke-width="2.5"/>
+  <text x="505" y="424" text-anchor="middle" font-size="14" font-weight="bold" fill="#B35A0E">BERT <tspan font-size="11" font-weight="normal" fill="#9C7A56">(2019)</tspan>&#160;&#9733;</text>
+  <text x="505" y="446" text-anchor="middle" font-size="11" fill="#7A5230">Transformer Encoder</text>
+  <text x="505" y="464" text-anchor="middle" font-size="11" fill="#7A5230">bidirectional, MLM + NSP</text>
+
+  <text x="370" y="524" text-anchor="middle" font-size="11.5" fill="#888888">&#9733; = the key model for IR &#8212; covered in this and following lectures</text>
+</svg>

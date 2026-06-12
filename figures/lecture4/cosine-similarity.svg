@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="640" height="480" viewBox="0 0 640 480" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrowB" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2B87B8"/>
+    </marker>
+    <marker id="arrowO" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#E87E2E"/>
+    </marker>
+    <marker id="axisarrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#777777"/>
+    </marker>
+  </defs>
+
+  <text x="320" y="34" text-anchor="middle" font-size="15" font-weight="bold" fill="#333333">Geometric Interpretation of the Vector Space Model</text>
+
+  <!-- axes: origin (80,350), 60px per unit -->
+  <line x1="80" y1="350" x2="430" y2="350" stroke="#777777" stroke-width="1.5" marker-end="url(#axisarrow)"/>
+  <line x1="80" y1="350" x2="80" y2="80" stroke="#777777" stroke-width="1.5" marker-end="url(#axisarrow)"/>
+  <text x="74" y="368" text-anchor="end" font-size="12" fill="#777777">O</text>
+  <text x="430" y="372" text-anchor="end" font-size="12" fill="#555555"><tspan font-style="italic">t</tspan><tspan dy="2" font-size="9">1</tspan><tspan dy="-2"> (&#8220;search&#8221;)</tspan></text>
+  <text x="96" y="92" font-size="12" fill="#555555"><tspan font-style="italic">t</tspan><tspan dy="2" font-size="9">2</tspan><tspan dy="-2"> (&#8220;info&#8221;)</tspan></text>
+
+  <!-- angle arcs -->
+  <path d="M157.6,330.6 A80,80 0 0 0 124.4,283.4" fill="none" stroke="#E87E2E" stroke-width="2"/>
+  <text x="178" y="302" font-size="12" fill="#B35A0E">&#952;<tspan dy="2" font-size="9">1</tspan><tspan dy="-2"> &#8776; 42&#176;</tspan></text>
+  <path d="M146.6,250.2 A120,120 0 0 0 117.9,236.1" fill="none" stroke="#2B87B8" stroke-width="2"/>
+  <text x="118" y="218" font-size="12" fill="#18617E">&#952;<tspan dy="2" font-size="9">2</tspan><tspan dy="-2"> &#8776; 15&#176;</tspan></text>
+
+  <!-- vectors -->
+  <line x1="80" y1="350" x2="316" y2="291" stroke="#2B87B8" stroke-width="2.5" marker-end="url(#arrowB)"/>
+  <text x="334" y="288" font-size="13" font-weight="bold" fill="#18617E"><tspan font-style="italic">d</tspan><tspan dy="3" font-size="10">1</tspan><tspan dy="-3"> (4, 1)</tspan></text>
+
+  <line x1="80" y1="350" x2="137" y2="173" stroke="#2B87B8" stroke-width="2.5" marker-end="url(#arrowB)"/>
+  <text x="128" y="158" text-anchor="middle" font-size="13" font-weight="bold" fill="#18617E"><tspan font-style="italic">d</tspan><tspan dy="3" font-size="10">2</tspan><tspan dy="-3"> (1, 3)</tspan></text>
+
+  <line x1="80" y1="350" x2="196" y2="175" stroke="#E87E2E" stroke-width="2.8" stroke-dasharray="7,4" marker-end="url(#arrowO)"/>
+  <text x="212" y="164" font-size="13" font-weight="bold" fill="#B35A0E"><tspan font-style="italic">q</tspan> (2, 3)</text>
+
+  <!-- legend panel -->
+  <rect x="420" y="120" width="200" height="120" rx="9" fill="#F7F7F7" stroke="#BBBBBB" stroke-width="1.3"/>
+  <text x="520" y="146" text-anchor="middle" font-size="13" font-weight="bold" fill="#444444">Cosine similarity</text>
+  <text x="436" y="174" font-size="12" fill="#18617E">cos(<tspan font-style="italic">q</tspan>, <tspan font-style="italic">d</tspan><tspan dy="2" font-size="9">1</tspan><tspan dy="-2">) = 0.74&#160;(&#952;</tspan><tspan dy="2" font-size="9">1</tspan><tspan dy="-2"> &#8776; 42&#176;)</tspan></text>
+  <text x="436" y="198" font-size="12" fill="#18617E">cos(<tspan font-style="italic">q</tspan>, <tspan font-style="italic">d</tspan><tspan dy="2" font-size="9">2</tspan><tspan dy="-2">) = 0.96&#160;(&#952;</tspan><tspan dy="2" font-size="9">2</tspan><tspan dy="-2"> &#8776; 15&#176;)</tspan></text>
+  <text x="436" y="224" font-size="11.5" font-weight="bold" fill="#B35A0E">&#8594; <tspan font-style="italic">d</tspan><tspan dy="2" font-size="9">2</tspan><tspan dy="-2"> is more similar to </tspan><tspan font-style="italic">q</tspan></text>
+
+  <text x="320" y="412" text-anchor="middle" font-size="12.5" fill="#555555">Smaller angle &#952; (closer vector directions) &#8594; higher similarity &#8594; higher estimated relevance</text>
+  <text x="320" y="442" text-anchor="middle" font-size="11" font-style="italic" fill="#888888">Length-independent: cosine normalizes by |q|&#183;|d|, so long documents are not automatically favored</text>
+</svg>
