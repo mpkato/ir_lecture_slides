@@ -23,10 +23,11 @@ Lecture slides for the Information Retrieval course.
 
 ## Lecture 12 exercise
 
-The Lecture 12 exercise ([lecture12_exercise.py](lecture12_exercise.py), covering
-Lectures 7-11) uses real pre-trained models — a cross-encoder, doc2query,
-a bi-encoder, and SPLADE — on a tiny corpus, so everything runs on a CPU.
-About 870 MB of models are downloaded from Hugging Face on the first run.
+In the Lecture 12 exercise ([lecture12_exercise.py](lecture12_exercise.py),
+covering Lectures 7-10) you run three real pre-trained models — a
+cross-encoder, doc2query, and a bi-encoder — on a tiny corpus and write down
+your observations. Everything runs on a CPU; about 420 MB of models are
+downloaded from Hugging Face on the first run.
 
 ```bash
 pip install -r requirements.txt
