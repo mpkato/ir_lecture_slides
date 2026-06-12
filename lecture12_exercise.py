@@ -2,31 +2,35 @@
 Information Retrieval — Lecture 12 Exercise (covers Lectures 7-10)
 ==================================================================
 
-In this hands-on you TRY OUT three real neural IR models on a tiny
+In this hands-on you make three real neural IR models work on a tiny
 corpus and OBSERVE how they behave:
 
     Experiment 1: cross-encoder reranking        (Lectures 7-8)
     Experiment 2: doc2query document expansion   (Lecture 9)
     Experiment 3: bi-encoder dense retrieval     (Lecture 10)
 
-There is no code to implement. Run the script, read the output
-carefully, and write down your answers to the questions Q1-Q4 at the
-bottom of this file.
+YOUR JOB is to implement the five functions marked TODO (Tasks 1-5) —
+the code that actually calls the models. The models to use are fixed:
 
-Everything runs on a CPU in well under a minute — the corpus has only
-11 documents. The models (about 420 MB in total) are downloaded
-automatically from Hugging Face on the first run and cached under
-`~/.cache/huggingface`:
+    Task 1-2 : cross-encoder/ms-marco-MiniLM-L6-v2        (~91 MB)
+    Task 3   : doc2query/msmarco-t5-small-v1              (~242 MB)
+    Task 4-5 : sentence-transformers/all-MiniLM-L6-v2     (~91 MB)
 
-    cross-encoder/ms-marco-MiniLM-L6-v2        (~91 MB)   cross-encoder
-    doc2query/msmarco-t5-small-v1              (~242 MB)  doc2query
-    sentence-transformers/all-MiniLM-L6-v2     (~91 MB)   bi-encoder
+All are small enough to run on a CPU; the corpus has only 11 documents,
+so a full run takes well under a minute. The models are downloaded
+automatically from Hugging Face on first use and cached under
+`~/.cache/huggingface`.
 
 Setup:
     pip install -r requirements.txt
 
 How to run:
     python lecture12_exercise.py
+
+The script first checks your implementations (loose sanity checks),
+then runs the three experiments with them. Read the output carefully
+and write down your answers to the questions Q1-Q4 at the bottom of
+this file.
 """
 
 import math
@@ -78,13 +82,19 @@ BM25_RESULTS = {
     "q3": [("d07", 1.599), ("d04", 0.619)],
 }
 
+# The models to use (do not change — the checks and the expected
+# behavior in the questions assume exactly these):
+CROSS_ENCODER_MODEL = "cross-encoder/ms-marco-MiniLM-L6-v2"
+DOC2QUERY_MODEL = "doc2query/msmarco-t5-small-v1"
+BI_ENCODER_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
+
 
 def tokenize(text: str) -> list[str]:
     """Tokenize on whitespace, dropping punctuation tokens."""
     return [t for t in text.split() if t not in {".", ",", ";", ":", "。", "、", "，", "．"}]
 
 
-def cosine(u: tuple[float, ...], v: tuple[float, ...]) -> float:
+def cosine(u, v) -> float:
     """Cosine similarity between two vectors (0.0 if either is a zero vector)."""
     dot = sum(a * b for a, b in zip(u, v))
     nu = math.sqrt(sum(a * a for a in u))
@@ -103,75 +113,211 @@ def shared_terms(query: str, text: str) -> list[str]:
 
 
 # =============================================================================
-# Real models (loaded lazily on first use, then kept in memory)
+# Task 1: Cross-encoder scoring (Lectures 7-8)
 # =============================================================================
-
-_MODELS: dict = {}
-
 
 def cross_encoder_score(query: str, doc_text: str) -> float:
     """
-    Real cross-encoder relevance scoring (monoBERT-style, Lectures 7-8).
+    Score one (query, document) pair with the real cross-encoder
+    CROSS_ENCODER_MODEL (monoBERT-style: one transformer forward pass
+    over "[CLS] query [SEP] document [SEP]").
 
-    One transformer forward pass over "[CLS] query [SEP] document [SEP]"
-    using cross-encoder/ms-marco-MiniLM-L6-v2 (a 6-layer MiniLM trained
-    on MS MARCO). The raw logit is mapped to (0, 1) with a sigmoid;
-    higher means more relevant.
+    Implementation notes:
+    - Use `sentence_transformers.CrossEncoder`. Pass `device="cpu"` so
+      that everyone gets the same (deterministic) results.
+    - `model.predict([(query, doc_text)])` returns one raw logit; map
+      it to (0, 1) with a sigmoid: 1 / (1 + exp(-logit)).
+    - Loading the model takes a few seconds — create it ONCE (e.g.,
+      store it in a module-level variable) and reuse it across calls.
+
+    Returns
+    -------
+    float
+        Relevance score in (0, 1); higher means more relevant.
     """
-    if "ce" not in _MODELS:
-        from sentence_transformers import CrossEncoder
-        print("  (loading cross-encoder/ms-marco-MiniLM-L6-v2 ...)")
-        _MODELS["ce"] = CrossEncoder("cross-encoder/ms-marco-MiniLM-L6-v2", device="cpu")
-    logit = float(_MODELS["ce"].predict([(query, doc_text)])[0])
-    return round(1.0 / (1.0 + math.exp(-logit)), 6)
+    # TODO: implement this
+    raise NotImplementedError("Please implement Task 1")
 
+
+# =============================================================================
+# Task 2: Reranking (Lecture 7)
+# =============================================================================
+
+def rerank(query: str, doc_ids: list[str]) -> list[tuple[str, float]]:
+    """
+    Stage 2 of Retrieve-and-Rerank: re-score the given Stage-1
+    candidates with `cross_encoder_score` and sort by the new score.
+
+    Only the given candidates may appear in the output — documents the
+    first stage did not retrieve are gone for good (the "recall
+    ceiling" you will observe in Experiment 1).
+
+    Parameters
+    ----------
+    query : str
+        The query string.
+    doc_ids : list[str]
+        Candidate document IDs (e.g., the BM25 top results); look the
+        texts up in CORPUS.
+
+    Returns
+    -------
+    list[tuple[str, float]]
+        (document ID, cross-encoder score) in descending score order.
+    """
+    # TODO: implement this
+    raise NotImplementedError("Please implement Task 2")
+
+
+# =============================================================================
+# Task 3: doc2query generation (Lecture 9)
+# =============================================================================
 
 def generate_queries(doc_text: str, n: int = 3) -> list[str]:
     """
-    Real doc2query / docTTTTTquery query generation (Lecture 9).
+    Generate `n` queries for a document with the real doc2query model
+    DOC2QUERY_MODEL (a T5 fine-tuned on MS MARCO to map a passage to a
+    query that the passage answers).
 
-    Feeds the document to doc2query/msmarco-t5-small-v1 (a T5 fine-tuned
-    on MS MARCO to map a passage to a query that the passage answers)
-    and returns `n` generated queries. Deterministic beam search is used
-    so that everyone gets the same output.
+    Implementation notes:
+    - Use `transformers.AutoTokenizer` and
+      `transformers.AutoModelForSeq2SeqLM` (load each once, reuse).
+    - Tokenize the document and call `model.generate` with
+      `max_length=24, num_beams=4, num_return_sequences=n`
+      (deterministic beam search — everyone gets the same output;
+      do NOT use sampling).
+    - Decode each output with `tokenizer.decode(..., skip_special_tokens=True)`.
+
+    Returns
+    -------
+    list[str]
+        The generated queries.
     """
-    import torch
-    if "d2q" not in _MODELS:
-        from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
-        print("  (loading doc2query/msmarco-t5-small-v1 ...)")
-        tok = AutoTokenizer.from_pretrained("doc2query/msmarco-t5-small-v1")
-        model = AutoModelForSeq2SeqLM.from_pretrained("doc2query/msmarco-t5-small-v1")
-        model.eval()
-        _MODELS["d2q"] = (tok, model)
-    tok, model = _MODELS["d2q"]
-    ids = tok(doc_text, return_tensors="pt", truncation=True, max_length=384).input_ids
-    with torch.no_grad():
-        out = model.generate(ids, max_length=24, num_beams=max(4, n), num_return_sequences=n)
-    return [tok.decode(o, skip_special_tokens=True) for o in out]
-
-
-def embed(text: str) -> tuple[float, ...]:
-    """
-    Real bi-encoder text embedding (Lecture 10).
-
-    Encodes the text into ONE 384-dimensional vector with
-    sentence-transformers/all-MiniLM-L6-v2 (mean pooling over the token
-    embeddings). Queries and documents are encoded INDEPENDENTLY —
-    compare vectors with `cosine`.
-    """
-    if "be" not in _MODELS:
-        from sentence_transformers import SentenceTransformer
-        print("  (loading sentence-transformers/all-MiniLM-L6-v2 ...)")
-        _MODELS["be"] = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2", device="cpu")
-    return tuple(float(x) for x in _MODELS["be"].encode(text))
+    # TODO: implement this
+    raise NotImplementedError("Please implement Task 3")
 
 
 # =============================================================================
-# Experiment 1: Cross-encoder reranking (Lectures 7-8)
+# Task 4: Bi-encoder embedding (Lecture 10)
+# =============================================================================
+
+def embed(text: str) -> list[float]:
+    """
+    Encode a text into ONE 384-dimensional vector with the real
+    bi-encoder BI_ENCODER_MODEL (mean pooling over the token
+    embeddings is done inside the model).
+
+    Implementation notes:
+    - Use `sentence_transformers.SentenceTransformer` with
+      `device="cpu"`; create it once and reuse it.
+    - `model.encode(text)` returns the vector (a numpy array — return
+      it as a list of floats).
+
+    Queries and documents are encoded INDEPENDENTLY — that is the
+    whole point of the bi-encoder architecture (Lecture 10).
+
+    Returns
+    -------
+    list[float]
+        The embedding (length 384).
+    """
+    # TODO: implement this
+    raise NotImplementedError("Please implement Task 4")
+
+
+# =============================================================================
+# Task 5: Dense retrieval (Lecture 10)
+# =============================================================================
+
+def dense_search(query: str, corpus: dict[str, str]) -> list[tuple[str, float]]:
+    """
+    Single-vector dense retrieval: embed the query and EVERY document
+    with `embed`, then rank ALL documents by cosine similarity
+    (use the provided `cosine`).
+
+    Unlike reranking, this scores the whole corpus — in a real system
+    the document vectors are precomputed offline and searched with an
+    ANN index (Lecture 10).
+
+    Returns
+    -------
+    list[tuple[str, float]]
+        (document ID, cosine similarity) for ALL documents in
+        descending score order.
+    """
+    # TODO: implement this
+    raise NotImplementedError("Please implement Task 5")
+
+
+# =============================================================================
+# Sanity checks for your implementations
+# =============================================================================
+
+def run_checks() -> dict[int, bool]:
+    """Loose checks so you know each task basically works."""
+    print("=" * 72)
+    print("Checking your implementations")
+    print("=" * 72)
+    ok = {}
+
+    def check(task, fn):
+        try:
+            fn()
+            ok[task] = True
+            print(f"  Task {task}: OK")
+        except NotImplementedError:
+            ok[task] = False
+            print(f"  Task {task}: not implemented yet")
+        except Exception as e:
+            ok[task] = False
+            print(f"  Task {task}: ERROR — {e}")
+
+    def t1():
+        s_rel = cross_encoder_score(QUERIES["q1"], CORPUS["d01"])
+        s_irr = cross_encoder_score(QUERIES["q1"], CORPUS["d06"])
+        assert isinstance(s_rel, float) and 0.0 <= s_rel <= 1.0, \
+            f"score must be a float in (0, 1) — did you apply the sigmoid? got {s_rel}"
+        assert s_rel > 0.9, f"CE(q1, d01) should be > 0.9, got {s_rel:.4f}"
+        assert s_irr < 0.1, f"CE(q1, d06) should be < 0.1, got {s_irr:.6f}"
+
+    def t2():
+        rr = rerank(QUERIES["q1"], [d for d, _ in BM25_RESULTS["q1"]])
+        assert [d for d, _ in rr] == ["d01", "d10", "d11"], \
+            f"rerank(q1, BM25 top 3): expected order ['d01','d10','d11'], got {[d for d, _ in rr]}"
+
+    def t3():
+        gen = generate_queries(CORPUS["d05"])
+        assert isinstance(gen, list) and len(gen) == 3 and all(isinstance(g, str) for g in gen), \
+            f"generate_queries must return 3 strings, got {gen}"
+        assert "car" in " ".join(gen).lower(), \
+            f"with beam search, doc2query generates 'car' for d05 — got {gen} (sampling instead of beams?)"
+
+    def t4():
+        v = embed("car")
+        assert len(v) == 384, f"embedding must have 384 dimensions, got {len(v)}"
+        assert cosine(embed("car"), embed("automobile")) > cosine(embed("car"), embed("temple")), \
+            "'car' should be closer to 'automobile' than to 'temple'"
+
+    def t5():
+        res = dense_search(QUERIES["q2"], CORPUS)
+        assert len(res) == len(CORPUS), "dense_search must rank ALL documents"
+        assert [d for d, _ in res[:2]] == ["d04", "d05"], \
+            f"dense(q2): expected top 2 ['d04','d05'], got {[d for d, _ in res[:3]]}"
+
+    check(1, t1)
+    check(2, t2)
+    check(3, t3)
+    check(4, t4)
+    check(5, t5)
+    return ok
+
+
+# =============================================================================
+# Experiment 1: Cross-encoder reranking (Lectures 7-8) — uses Tasks 1-2
 # =============================================================================
 
 def experiment1():
-    print("=" * 72)
+    print("\n" + "=" * 72)
     print("Experiment 1: Cross-encoder reranking (Lectures 7-8)")
     print("=" * 72)
 
@@ -182,21 +328,17 @@ def experiment1():
     for rank, (d, s) in enumerate(BM25_RESULTS["q1"], 1):
         print(f"    {rank}. {d}  BM25={s:<6}  {CORPUS[d][:60]}...")
 
-    print("\n  Stage 2 — the cross-encoder rescores the same candidates:")
-    rescored = sorted(
-        ((d, cross_encoder_score(q, CORPUS[d])) for d, _ in BM25_RESULTS["q1"]),
-        key=lambda x: -x[1],
-    )
-    for rank, (d, s) in enumerate(rescored, 1):
-        print(f"    {rank}. {d}  CE={s:<8}  {CORPUS[d][:60]}...")
+    print("\n  Stage 2 — your `rerank` rescores the same candidates:")
+    for rank, (d, s) in enumerate(rerank(q, [d for d, _ in BM25_RESULTS["q1"]]), 1):
+        print(f"    {rank}. {d}  CE={s:<8.6f}  {CORPUS[d][:60]}...")
     print("\n  >> Compare the two rankings: which documents swapped places?")
     print("     Look at d11 (the decoy) — it CONTAINS 'autumn' and 'foliage'.")
 
     # --- 1b: where in the long document d10 is the relevance? ------------
     print(f'\n[1b] Per-sentence cross-encoder scores of the long document d10 (q1 = "{q}")')
     for i, sent in enumerate(s.strip() for s in CORPUS["d10"].split(" . ")):
-        print(f"    sentence {i}: CE={cross_encoder_score(q, sent):<8}  {sent[:64]}")
-    print(f"    whole d10 : CE={cross_encoder_score(q, CORPUS['d10']):<8}")
+        print(f"    sentence {i}: CE={cross_encoder_score(q, sent):<8.6f}  {sent[:64]}")
+    print(f"    whole d10 : CE={cross_encoder_score(q, CORPUS['d10']):<8.6f}")
     print("\n  >> Which single sentence carries (almost) all the relevance?")
 
     # --- 1c: the recall ceiling -------------------------------------------
@@ -207,13 +349,13 @@ def experiment1():
           f"shared_terms = {shared_terms(q2, CORPUS['d05'])})")
     print("\n  But the cross-encoder CAN see that d05 is relevant:")
     for d in ("d04", "d05", "d06"):
-        print(f"    CE(q2, {d}) = {cross_encoder_score(q2, CORPUS[d]):<8}  {CORPUS[d][:55]}...")
+        print(f"    CE(q2, {d}) = {cross_encoder_score(q2, CORPUS[d]):<8.6f}  {CORPUS[d][:55]}...")
     print("\n  >> d05 scores far above the irrelevant d06 — yet a")
     print("     Retrieve-and-Rerank pipeline can NEVER return it. Why?")
 
 
 # =============================================================================
-# Experiment 2: Document expansion with doc2query (Lecture 9)
+# Experiment 2: Document expansion with doc2query (Lecture 9) — uses Task 3
 # =============================================================================
 
 def experiment2():
@@ -242,7 +384,7 @@ def experiment2():
 
 
 # =============================================================================
-# Experiment 3: Bi-encoder dense retrieval (Lecture 10)
+# Experiment 3: Bi-encoder dense retrieval (Lecture 10) — uses Tasks 4-5
 # =============================================================================
 
 def experiment3():
@@ -253,24 +395,19 @@ def experiment3():
     print("384-dim vectors; relevance = cosine similarity. Document vectors")
     print("can be precomputed and searched with an ANN index (Lecture 10).")
 
-    doc_vecs = {d: embed(t) for d, t in CORPUS.items()}
     for q_id in ("q1", "q2"):
         q = QUERIES[q_id]
-        ranking = sorted(
-            ((d, round(cosine(embed(q), doc_vecs[d]), 4)) for d in CORPUS),
-            key=lambda x: -x[1],
-        )
         print(f'\n[{q_id}] "{q}" — dense ranking of ALL 11 documents:')
-        for rank, (d, s) in enumerate(ranking, 1):
-            mark = " <-- shares NO term with the query" if rank <= 3 and not shared_terms(q, CORPUS[d]) else ""
-            print(f"    {rank:2}. {d}  cos={s:<7}  {CORPUS[d][:52]}...{mark}")
+        for rank, (d, s) in enumerate(dense_search(q, CORPUS), 1):
+            mark = " <-- shares NO term with the query" if rank <= 3 and s > 0.3 and not shared_terms(q, CORPUS[d]) else ""
+            print(f"    {rank:2}. {d}  cos={s:<7.4f}  {CORPUS[d][:52]}...{mark}")
     print("\n  >> For q2: where does d05 rank, even though BM25 scores it 0?")
     print("  >> For q1: where does d02 (the 'old capital' document) rank?")
     print("     Did ANY method in this exercise manage to connect d02 to q1?")
 
 
 # =============================================================================
-# Try your own query
+# Try your own query (for Q4)
 # =============================================================================
 
 def try_your_own_query(query: str):
@@ -284,14 +421,12 @@ def try_your_own_query(query: str):
         if st:
             print(f"    {d}: {st}")
     print("\n  cross-encoder scores (top 5):")
-    ce = sorted(((d, cross_encoder_score(query, t)) for d, t in CORPUS.items()), key=lambda x: -x[1])
-    for d, s in ce[:5]:
-        print(f"    {d}  CE={s:<8}  {CORPUS[d][:55]}...")
+    for d, s in rerank(query, list(CORPUS))[:5]:
+        print(f"    {d}  CE={s:<8.6f}  {CORPUS[d][:55]}...")
     print("\n  bi-encoder cosine (top 5):")
-    qv = embed(query)
-    dense = sorted(((d, round(cosine(qv, embed(t)), 4)) for d, t in CORPUS.items()), key=lambda x: -x[1])
+    dense = dense_search(query, CORPUS)
     for d, s in dense[:5]:
-        print(f"    {d}  cos={s:<7}  {CORPUS[d][:55]}...")
+        print(f"    {d}  cos={s:<7.4f}  {CORPUS[d][:55]}...")
     print("\n  doc2query for the top dense document:")
     for g in generate_queries(CORPUS[dense[0][0]]):
         print(f"    {dense[0][0]} generated: {g!r}")
@@ -351,11 +486,23 @@ if __name__ == "__main__":
     print("Information Retrieval — Lecture 12 Exercise (Lectures 7-10)")
     print("Note: the first run downloads ~420 MB of models from Hugging")
     print("Face and may take a few minutes; later runs load them from cache.\n")
-    experiment1()
-    experiment2()
-    experiment3()
-    # Q4: uncomment and put your own query here
-    # try_your_own_query("ramen restaurants in Fukuoka")
-    print("\n" + "=" * 72)
-    print("Done. Now answer the questions Q1-Q4 at the bottom of this file.")
-    print("=" * 72)
+    ok = run_checks()
+    if ok[1] and ok[2]:
+        experiment1()
+    else:
+        print("\n(Experiment 1 skipped — finish Tasks 1-2 first)")
+    if ok[3]:
+        experiment2()
+    else:
+        print("\n(Experiment 2 skipped — finish Task 3 first)")
+    if ok[4] and ok[5]:
+        experiment3()
+    else:
+        print("\n(Experiment 3 skipped — finish Tasks 4-5 first)")
+    if all(ok.values()):
+        # Q4: uncomment and put your own query here
+        # try_your_own_query("ramen restaurants in Fukuoka")
+        print("\n" + "=" * 72)
+        print("All tasks done. Now answer the questions Q1-Q4 at the bottom")
+        print("of this file (and try your own query for Q4).")
+        print("=" * 72)
