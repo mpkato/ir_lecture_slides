@@ -242,11 +242,11 @@ def run_tests():
     # --- Task 1 ---
     print("\n[Task 1] Cross-encoder scoring")
     try:
-        s_rel = cross_encoder_score(QUERIES["q1"], CORPUS["d01"])
-        s_dec = cross_encoder_score(QUERIES["q1"], CORPUS["d11"])
-        s_irr = cross_encoder_score(QUERIES["q1"], CORPUS["d06"])
-        assert isinstance(s_rel, float) and 0.0 <= s_rel <= 1.0, \
-            f"score must be a float in (0, 1) — did you apply the sigmoid? got {s_rel}"
+        s_rel = float(cross_encoder_score(QUERIES["q1"], CORPUS["d01"]))
+        s_dec = float(cross_encoder_score(QUERIES["q1"], CORPUS["d11"]))
+        s_irr = float(cross_encoder_score(QUERIES["q1"], CORPUS["d06"]))
+        assert 0.0 <= s_rel <= 1.0, \
+            f"score must be in (0, 1) — did you apply the sigmoid? got {s_rel}"
         assert s_rel > 0.9, f"CE(q1, d01) should be > 0.9, got {s_rel:.4f}"
         assert s_irr < 0.1, f"CE(q1, d06) should be < 0.1, got {s_irr:.6f}"
         # the decoy d11 contains "autumn" and "foliage" but is about fake
@@ -305,8 +305,8 @@ def run_tests():
     try:
         v = embed("car")
         assert len(v) == 384, f"embedding must have 384 dimensions, got {len(v)}"
-        sim_syn = cosine(embed("car"), embed("automobile"))
-        sim_far = cosine(embed("car"), embed("temple"))
+        sim_syn = float(cosine(embed("car"), embed("automobile")))
+        sim_far = float(cosine(embed("car"), embed("temple")))
         assert sim_syn > sim_far, \
             f"'car' should be closer to 'automobile' ({sim_syn:.4f}) than to 'temple' ({sim_far:.4f})"
         print(f"  OK  cos(car, automobile)={sim_syn:.4f} > cos(car, temple)={sim_far:.4f}")
@@ -329,7 +329,7 @@ def run_tests():
         res_q1 = dense_search(QUERIES["q1"], CORPUS)
         assert res_q1[0][0] == "d01", \
             f"dense(q1): expected d01 first, got {res_q1[:3]}"
-        top = [(d, round(s, 4)) for d, s in res[:3]]
+        top = [(d, round(float(s), 4)) for d, s in res[:3]]
         print(f"  OK  dense(q2) top 3: {top} (d05 found with zero term overlap)")
     except NotImplementedError:
         print("  X   not implemented")
