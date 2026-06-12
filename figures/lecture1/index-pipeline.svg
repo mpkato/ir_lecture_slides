@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="940" height="380" viewBox="0 0 940 380" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#555555"/>
+    </marker>
+  </defs>
+
+  <text x="470" y="36" text-anchor="middle" font-size="15" font-weight="bold" fill="#333333">Inverted Index Construction Pipeline</text>
+
+  <!-- 5 stages -->
+  <rect x="30" y="70" width="160" height="110" rx="9" fill="#F2F2F2" stroke="#BBBBBB" stroke-width="1.5"/>
+  <text x="110" y="98" text-anchor="middle" font-size="13" font-weight="bold" fill="#444444">Document</text>
+  <text x="110" y="115" text-anchor="middle" font-size="13" font-weight="bold" fill="#444444">acquisition</text>
+  <text x="110" y="142" text-anchor="middle" font-size="11" fill="#777777">web crawling</text>
+  <text x="110" y="158" text-anchor="middle" font-size="11" fill="#777777">databases</text>
+
+  <line x1="194" y1="125" x2="216" y2="125" stroke="#555555" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <rect x="220" y="70" width="160" height="110" rx="9" fill="#E9F4FA" stroke="#7FB8D6" stroke-width="1.5"/>
+  <text x="300" y="105" text-anchor="middle" font-size="13" font-weight="bold" fill="#18617E">Preprocessing</text>
+  <text x="300" y="132" text-anchor="middle" font-size="11" fill="#33617A">tokenization</text>
+  <text x="300" y="148" text-anchor="middle" font-size="11" fill="#33617A">normalization</text>
+
+  <line x1="384" y1="125" x2="406" y2="125" stroke="#555555" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <rect x="410" y="70" width="160" height="110" rx="9" fill="#D6E9F4" stroke="#2B87B8" stroke-width="1.5"/>
+  <text x="490" y="98" text-anchor="middle" font-size="13" font-weight="bold" fill="#18617E">Vocabulary</text>
+  <text x="490" y="115" text-anchor="middle" font-size="13" font-weight="bold" fill="#18617E">construction</text>
+  <text x="490" y="142" text-anchor="middle" font-size="11" fill="#33617A">stop-word removal</text>
+  <text x="490" y="158" text-anchor="middle" font-size="11" fill="#33617A">stemming</text>
+
+  <line x1="574" y1="125" x2="596" y2="125" stroke="#555555" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <rect x="600" y="70" width="160" height="110" rx="9" fill="#BBDDEE" stroke="#2B87B8" stroke-width="1.5"/>
+  <text x="680" y="98" text-anchor="middle" font-size="13" font-weight="bold" fill="#15425C">Posting list</text>
+  <text x="680" y="115" text-anchor="middle" font-size="13" font-weight="bold" fill="#15425C">construction</text>
+  <text x="680" y="142" text-anchor="middle" font-size="11" fill="#33617A">sort by</text>
+  <text x="680" y="158" text-anchor="middle" font-size="11" fill="#33617A">document ID</text>
+
+  <line x1="764" y1="125" x2="786" y2="125" stroke="#555555" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <rect x="790" y="70" width="130" height="110" rx="9" fill="#E87E2E"/>
+  <text x="855" y="98" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFFFFF">Compression</text>
+  <text x="855" y="115" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFFFFF">&#38; storage</text>
+  <text x="855" y="142" text-anchor="middle" font-size="10.5" fill="#FBE3CD">delta encoding</text>
+  <text x="855" y="158" text-anchor="middle" font-size="10.5" fill="#FBE3CD">variable-byte coding</text>
+
+  <!-- notes -->
+  <rect x="30" y="216" width="430" height="92" rx="8" fill="#EFF7FB" stroke="#B9D8E8" stroke-width="1.5"/>
+  <text x="245" y="242" text-anchor="middle" font-size="12" font-weight="bold" fill="#18617E">Preprocessing</text>
+  <text x="245" y="263" text-anchor="middle" font-size="11" fill="#33617A">lowercase &#183; stop words (&#8220;the&#8221;, &#8220;is&#8221;) &#183; stemming (&#8220;running&#8221;&#8594;&#8220;run&#8221;)</text>
+  <text x="245" y="282" text-anchor="middle" font-size="11" fill="#33617A">Japanese requires morphological analysis</text>
+
+  <rect x="490" y="216" width="430" height="92" rx="8" fill="#FDF6EC" stroke="#E8C9A0" stroke-width="1.5"/>
+  <text x="705" y="242" text-anchor="middle" font-size="12" font-weight="bold" fill="#B35A0E">Compression</text>
+  <text x="705" y="263" text-anchor="middle" font-size="11" fill="#7A5230">delta encoding: [1, 5, 12, 45] &#8594; [1, 4, 7, 33]</text>
+  <text x="705" y="282" text-anchor="middle" font-size="11" fill="#7A5230">fewer bytes for small numbers &#8594; large disk and I/O savings</text>
+
+  <text x="470" y="348" text-anchor="middle" font-size="11" font-style="italic" fill="#888888">Posting lists can be huge &#8212; compression is essential at web scale</text>
+</svg>

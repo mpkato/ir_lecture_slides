@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="860" height="440" viewBox="0 0 860 440" font-family="Helvetica, Arial, sans-serif">
+
+  <text x="430" y="36" text-anchor="middle" font-size="15" font-weight="bold" fill="#333333">Static vs Contextualized Embeddings</text>
+
+  <!-- static -->
+  <rect x="40" y="60" width="380" height="280" rx="10" fill="#F7F7F7" stroke="#BBBBBB" stroke-width="1.5"/>
+  <text x="230" y="92" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#555555">word2vec (static)</text>
+
+  <rect x="70" y="116" width="320" height="44" rx="7" fill="#FFFFFF" stroke="#AAAAAA"/>
+  <text x="230" y="143" text-anchor="middle" font-size="12.5" fill="#444444">&#8220;bank <tspan font-weight="bold">account</tspan>&#8221; &#8594; <tspan font-style="italic">v</tspan><tspan dy="2" font-size="9">account</tspan></text>
+  <rect x="70" y="172" width="320" height="44" rx="7" fill="#FFFFFF" stroke="#AAAAAA"/>
+  <text x="230" y="199" text-anchor="middle" font-size="12.5" fill="#444444">&#8220;river <tspan font-weight="bold">account</tspan>&#8221; &#8594; <tspan font-style="italic">v</tspan><tspan dy="2" font-size="9">account</tspan><tspan dy="-2">&#160;&#160;</tspan><tspan font-weight="bold" fill="#C0392B">(the same!)</tspan></text>
+
+  <rect x="100" y="248" width="260" height="44" rx="22" fill="#FBEDEB" stroke="#C0392B" stroke-width="1.5"/>
+  <text x="230" y="276" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#962D22">one vector per word &#8212; polysemy lost</text>
+
+  <!-- contextual -->
+  <rect x="440" y="60" width="380" height="280" rx="10" fill="#E9F4FA" stroke="#2B87B8" stroke-width="1.8"/>
+  <text x="630" y="92" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#18617E">BERT (contextualized)</text>
+
+  <rect x="470" y="116" width="320" height="44" rx="7" fill="#FFFFFF" stroke="#7FB8D6"/>
+  <text x="630" y="143" text-anchor="middle" font-size="12.5" fill="#18617E">&#8220;bank <tspan font-weight="bold">account</tspan>&#8221; &#8594; <tspan font-style="italic">h</tspan><tspan dy="2" font-size="9">account</tspan><tspan dy="-2"></tspan><tspan dy="-5" font-size="9">(1)</tspan><tspan dy="5">&#160;&#160;financial</tspan></text>
+  <rect x="470" y="172" width="320" height="44" rx="7" fill="#FFFFFF" stroke="#7FB8D6"/>
+  <text x="630" y="199" text-anchor="middle" font-size="12.5" fill="#18617E">&#8220;cooking <tspan font-weight="bold">account</tspan>&#8221; &#8594; <tspan font-style="italic">h</tspan><tspan dy="2" font-size="9">account</tspan><tspan dy="-2"></tspan><tspan dy="-5" font-size="9">(2)</tspan><tspan dy="5">&#160;&#160;different!</tspan></text>
+
+  <rect x="500" y="248" width="260" height="44" rx="22" fill="#E4F4E9" stroke="#3E9C5C" stroke-width="1.5"/>
+  <text x="630" y="276" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#2C7A46">vectors depend on context</text>
+
+  <text x="430" y="382" text-anchor="middle" font-size="12.5" fill="#555555">Each BERT layer progressively integrates context, distinguishing &#8220;bank (financial)&#8221; from &#8220;bank (river)&#8221;</text>
+  <text x="430" y="412" text-anchor="middle" font-size="11" font-style="italic" fill="#888888">ELMo (Peters et al., 2018) &#8594; BERT (Devlin et al., 2019) &#8212; crucial for matching queries to documents by meaning</text>
+</svg>

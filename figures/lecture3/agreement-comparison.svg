@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="860" height="420" viewBox="0 0 860 420" font-family="Helvetica, Arial, sans-serif">
+
+  <text x="430" y="36" text-anchor="middle" font-size="15" font-weight="bold" fill="#333333">&#8220;Relevance is in the eye of the beholder&#8221;</text>
+
+  <!-- NLP panel -->
+  <rect x="40" y="60" width="380" height="240" rx="10" fill="#E9F4FA" stroke="#2B87B8" stroke-width="1.8"/>
+  <text x="230" y="92" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#18617E">POS tagging (NLP annotation)</text>
+
+  <rect x="90" y="116" width="280" height="44" rx="7" fill="#FFFFFF" stroke="#7FB8D6" stroke-width="1.5"/>
+  <text x="230" y="143" text-anchor="middle" font-size="13" fill="#18617E">&#8220;run&#8221; &#8594; verb</text>
+
+  <text x="230" y="196" text-anchor="middle" font-size="12" fill="#33617A">an objectively correct answer exists</text>
+  <rect x="110" y="216" width="240" height="44" rx="22" fill="#E4F4E9" stroke="#3E9C5C" stroke-width="1.5"/>
+  <text x="230" y="244" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#2C7A46">high agreement (&#954; &#62; 0.9)</text>
+
+  <!-- IR panel -->
+  <rect x="440" y="60" width="380" height="240" rx="10" fill="#FDF4EA" stroke="#E87E2E" stroke-width="1.8"/>
+  <text x="630" y="92" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#B35A0E">Relevance judgment (IR)</text>
+
+  <rect x="490" y="116" width="280" height="44" rx="7" fill="#FFFFFF" stroke="#E8A05D" stroke-width="1.5"/>
+  <text x="630" y="143" text-anchor="middle" font-size="13" fill="#7A3E0F">&#8220;Is this document useful?&#8221; &#8594; it depends</text>
+
+  <text x="630" y="196" text-anchor="middle" font-size="12" fill="#7A5230">inherently subjective, user-specific</text>
+  <rect x="510" y="216" width="240" height="44" rx="22" fill="#FBEDEB" stroke="#C0392B" stroke-width="1.5"/>
+  <text x="630" y="244" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#962D22">low agreement (overlap &#8776; 60%)</text>
+
+  <text x="430" y="344" text-anchor="middle" font-size="12.5" fill="#555555">Yet evaluation still works: <tspan font-weight="bold">relative system orderings are stable</tspan> across assessors (Kendall&#8217;s &#964; &#62; 0.9)</text>
+  <text x="430" y="376" text-anchor="middle" font-size="11" font-style="italic" fill="#888888">Voorhees, &#8220;Variations in Relevance Judgments and the Measurement of Retrieval Effectiveness&#8221;, IPM, 2000</text>
+</svg>

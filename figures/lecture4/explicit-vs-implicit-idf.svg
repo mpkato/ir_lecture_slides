@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="860" height="380" viewBox="0 0 860 380" font-family="Helvetica, Arial, sans-serif">
+
+  <text x="430" y="36" text-anchor="middle" font-size="15" font-weight="bold" fill="#333333">Explicit vs Implicit IDF</text>
+
+  <!-- explicit -->
+  <rect x="40" y="60" width="380" height="200" rx="10" fill="#E9F4FA" stroke="#2B87B8" stroke-width="1.8"/>
+  <text x="230" y="92" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#18617E">TF-IDF / BM25</text>
+  <text x="230" y="116" text-anchor="middle" font-size="12" fill="#33617A">multiplies an explicit IDF factor</text>
+  <rect x="110" y="138" width="240" height="48" rx="7" fill="#FFFFFF" stroke="#7FB8D6" stroke-width="1.5"/>
+  <text x="230" y="168" text-anchor="middle" font-size="14" fill="#18617E">log(&#8202;<tspan font-style="italic">N</tspan> / df(<tspan font-style="italic">t</tspan>)&#8202;)</text>
+  <text x="230" y="222" text-anchor="middle" font-size="11.5" fill="#5B87A0">a designed component of the formula</text>
+
+  <!-- implicit -->
+  <rect x="440" y="60" width="380" height="200" rx="10" fill="#FDF4EA" stroke="#E87E2E" stroke-width="1.8"/>
+  <text x="630" y="92" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#B35A0E">Language model (QL)</text>
+  <text x="630" y="116" text-anchor="middle" font-size="12" fill="#7A5230">IDF arises implicitly through smoothing</text>
+  <rect x="510" y="138" width="240" height="48" rx="7" fill="#FFFFFF" stroke="#E8A05D" stroke-width="1.5"/>
+  <text x="630" y="168" text-anchor="middle" font-size="14" fill="#7A3E0F">1 / P(<tspan font-style="italic">t</tspan> | <tspan font-style="italic">M</tspan><tspan dy="3" font-size="10" font-style="italic">C</tspan><tspan dy="-3">)</tspan></text>
+  <text x="630" y="222" text-anchor="middle" font-size="11.5" fill="#9C7A56">collection-rare terms get a smaller denominator</text>
+
+  <text x="430" y="302" text-anchor="middle" font-size="12.5" fill="#555555">From different theoretical starting points, the same &#8220;emphasize rare terms&#8221; effect is derived</text>
+  <text x="430" y="334" text-anchor="middle" font-size="11" font-style="italic" fill="#888888">Zhai and Lafferty, &#8220;A Study of Smoothing Methods for Language Models Applied to Information Retrieval&#8221;, TOIS, 2004</text>
+</svg>

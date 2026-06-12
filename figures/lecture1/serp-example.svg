@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="700" height="460" viewBox="0 0 700 460" font-family="Helvetica, Arial, sans-serif">
+
+  <!-- search box -->
+  <rect x="60" y="30" width="460" height="44" rx="22" fill="#FFFFFF" stroke="#2B87B8" stroke-width="2"/>
+  <text x="84" y="58" font-size="14" fill="#333333">Kyoto autumn leaves best time</text>
+  <circle cx="494" cy="52" r="11" fill="none" stroke="#2B87B8" stroke-width="2.5"/>
+  <line x1="502" y1="60" x2="510" y2="68" stroke="#2B87B8" stroke-width="2.5"/>
+  <rect x="544" y="30" width="100" height="44" rx="8" fill="#2B87B8"/>
+  <text x="594" y="58" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFFFFF">Search</text>
+
+  <text x="60" y="102" font-size="11" fill="#888888">About 12,400,000 results (0.42 seconds)</text>
+
+  <!-- result 1 -->
+  <text x="60" y="138" font-size="14.5" font-weight="bold" fill="#1A5FA8">Kyoto Autumn Foliage Guide 2024 &#8211; Best Viewing Calendar</text>
+  <text x="60" y="156" font-size="11" fill="#2C7A46">https://example.com/kyoto-koyo</text>
+  <text x="60" y="176" font-size="11.5" fill="#555555">A comprehensive list of Kyoto&#8217;s autumn leaves spots and their best viewing times.</text>
+  <text x="60" y="192" font-size="11.5" fill="#555555">Arashiyama peaks mid to late November, Tofukuji&#8230;</text>
+
+  <!-- result 2 -->
+  <text x="60" y="228" font-size="14.5" font-weight="bold" fill="#1A5FA8">Arashiyama Autumn Foliage Guide | Kyoto Tourism</text>
+  <text x="60" y="246" font-size="11" fill="#2C7A46">https://example.com/arashiyama</text>
+  <text x="60" y="266" font-size="11.5" fill="#555555">Kyoto Arashiyama&#8217;s autumn leaves typically peak in mid-November. The view from</text>
+  <text x="60" y="282" font-size="11.5" fill="#555555">Togetsukyo Bridge is particularly&#8230;</text>
+
+  <!-- result 3 -->
+  <text x="60" y="318" font-size="14.5" font-weight="bold" fill="#1A5FA8">2024 Autumn Foliage Forecast</text>
+  <text x="60" y="336" font-size="11" fill="#2C7A46">https://example.com/forecast</text>
+  <text x="60" y="356" font-size="11.5" fill="#555555">Nationwide autumn foliage best-time forecast. The Kyoto area begins to change</text>
+  <text x="60" y="372" font-size="11.5" fill="#555555">color from early November&#8230;</text>
+
+  <!-- annotations -->
+  <g font-size="11" fill="#B35A0E" font-weight="bold">
+    <text x="566" y="138">&#8592; title</text>
+    <text x="566" y="156">&#8592; URL</text>
+    <text x="566" y="180">&#8592; snippet</text>
+  </g>
+
+  <line x1="60" y1="398" x2="644" y2="398" stroke="#E0E0E0" stroke-width="1"/>
+  <text x="350" y="426" text-anchor="middle" font-size="12" fill="#555555"><tspan font-weight="bold">Input:</tspan> a few keywords (avg. 2&#8211;3 words)&#160;&#160;&#8594;&#160;&#160;<tspan font-weight="bold">Output:</tspan> SERP &#8212; a ranked list of &#8220;ten blue links&#8221;</text>
+  <text x="350" y="448" text-anchor="middle" font-size="11" font-style="italic" fill="#888888">Each result consists of a title, snippet, and URL</text>
+</svg>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="680" height="440" viewBox="0 0 680 440" font-family="Helvetica, Arial, sans-serif">
+
+  <text x="340" y="36" text-anchor="middle" font-size="15" font-weight="bold" fill="#333333">Text Granularity and Containment</text>
+
+  <!-- nested boxes -->
+  <rect x="60" y="60" width="560" height="320" rx="10" fill="#E9F4FA" stroke="#2B87B8" stroke-width="1.8"/>
+  <text x="340" y="90" text-anchor="middle" font-size="14" font-weight="bold" fill="#18617E">Book / entire website</text>
+  <text x="340" y="109" text-anchor="middle" font-size="11" fill="#5B87A0">tens of thousands of words or more</text>
+
+  <rect x="110" y="126" width="460" height="234" rx="9" fill="#D6E9F4" stroke="#2B87B8" stroke-width="1.5"/>
+  <text x="340" y="154" text-anchor="middle" font-size="14" font-weight="bold" fill="#18617E">Document (paper / article)</text>
+  <text x="340" y="173" text-anchor="middle" font-size="11" fill="#4A7A93">hundreds to thousands of words</text>
+
+  <rect x="160" y="190" width="360" height="150" rx="8" fill="#BBDDEE" stroke="#2B87B8" stroke-width="1.5"/>
+  <text x="340" y="218" text-anchor="middle" font-size="14" font-weight="bold" fill="#15425C">Passage / paragraph</text>
+  <text x="340" y="237" text-anchor="middle" font-size="11" fill="#33617A">50&#8211;200 words</text>
+
+  <rect x="210" y="254" width="260" height="66" rx="7" fill="#7FBFDD" stroke="#2B87B8" stroke-width="1.5"/>
+  <text x="340" y="282" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#15425C">Sentence</text>
+  <text x="340" y="302" text-anchor="middle" font-size="11" fill="#15425C">10&#8211;30 words</text>
+
+  <text x="340" y="412" text-anchor="middle" font-size="12" fill="#555555">Ranking granularity can be chosen independently &#8212; crucial for Transformers with the 512-token input limit</text>
+</svg>

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="660" height="560" viewBox="0 0 660 560" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#555555"/>
+    </marker>
+  </defs>
+
+  <text x="330" y="36" text-anchor="middle" font-size="15" font-weight="bold" fill="#333333">What Fine-Tuning Updates</text>
+
+  <!-- BERT body -->
+  <rect x="130" y="60" width="400" height="96" rx="10" fill="#E9F4FA" stroke="#2B87B8" stroke-width="2"/>
+  <text x="330" y="92" text-anchor="middle" font-size="15" font-weight="bold" fill="#18617E">BERT (pre-trained)</text>
+  <text x="330" y="116" text-anchor="middle" font-size="12" fill="#33617A">110M&#8211;340M parameters &#8212; all fine-tuned</text>
+  <text x="330" y="138" text-anchor="middle" font-size="11" fill="#5B87A0">learning rate 2e-5 to 5e-5 (low, to protect existing weights)</text>
+
+  <line x1="330" y1="156" x2="330" y2="190" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="200" y="192" width="260" height="44" rx="7" fill="#FFFFFF" stroke="#2B87B8" stroke-width="1.5"/>
+  <text x="330" y="219" text-anchor="middle" font-size="13" fill="#18617E"><tspan font-style="italic" font-weight="bold">h</tspan><tspan dy="3" font-size="10">[CLS]</tspan><tspan dy="-3">: 768 dims (sequence representation)</tspan></text>
+
+  <line x1="330" y1="236" x2="330" y2="270" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- new head -->
+  <rect x="130" y="272" width="400" height="84" rx="10" fill="#FDF4EA" stroke="#E87E2E" stroke-width="2" stroke-dasharray="7,4"/>
+  <text x="330" y="300" text-anchor="middle" font-size="14" font-weight="bold" fill="#B35A0E">Classification head (new, randomly initialized)</text>
+  <text x="330" y="324" text-anchor="middle" font-size="12" fill="#7A5230"><tspan font-style="italic">W</tspan>: 768 &#215; 2,&#160;&#160;<tspan font-style="italic">b</tspan>: 2&#160;&#160;&#8594;&#160;&#160;only 1,538 parameters</text>
+  <text x="330" y="344" text-anchor="middle" font-size="11" fill="#9C7A56">softmax over {relevant, not relevant}</text>
+
+  <line x1="330" y1="356" x2="330" y2="390" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="180" y="392" width="300" height="46" rx="8" fill="#E87E2E"/>
+  <text x="330" y="421" text-anchor="middle" font-size="14" font-weight="bold" fill="#FFFFFF">P(Relevant | <tspan font-style="italic">q</tspan>, <tspan font-style="italic">d</tspan>)</text>
+
+  <text x="330" y="480" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#18617E">99.999% of all parameters are pre-trained</text>
+  <text x="330" y="502" text-anchor="middle" font-size="12" fill="#555555">fine-tuning = &#8220;steering&#8221; a massive knowledge base toward the ranking task</text>
+  <text x="330" y="536" text-anchor="middle" font-size="11" font-style="italic" fill="#888888">Devlin et al., 2019; Lin et al., 2021, &#167;3.2</text>
+</svg>

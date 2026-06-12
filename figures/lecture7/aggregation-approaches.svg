@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="860" height="420" viewBox="0 0 860 420" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#555555"/>
+    </marker>
+  </defs>
+
+  <text x="430" y="36" text-anchor="middle" font-size="15" font-weight="bold" fill="#333333">Two Aggregation Approaches for Long Documents</text>
+
+  <!-- score aggregation -->
+  <rect x="40" y="60" width="380" height="270" rx="10" fill="#E9F4FA" stroke="#2B87B8" stroke-width="1.8"/>
+  <text x="230" y="92" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#18617E">Score aggregation</text>
+
+  <g font-size="11.5">
+    <rect x="80" y="112" width="84 " height="30" rx="5" fill="#FFFFFF" stroke="#7FB8D6"/>
+    <text x="122" y="132" text-anchor="middle" fill="#18617E">chunk 1</text>
+    <rect x="188" y="112" width="84" height="30" rx="5" fill="#FFFFFF" stroke="#7FB8D6"/>
+    <text x="230" y="132" text-anchor="middle" fill="#18617E">chunk 2</text>
+    <rect x="296" y="112" width="84" height="30" rx="5" fill="#FFFFFF" stroke="#7FB8D6"/>
+    <text x="338" y="132" text-anchor="middle" fill="#18617E">chunk 3</text>
+  </g>
+  <g stroke="#555555" stroke-width="1.3">
+    <line x1="122" y1="142" x2="122" y2="168" marker-end="url(#arrow)"/>
+    <line x1="230" y1="142" x2="230" y2="168" marker-end="url(#arrow)"/>
+    <line x1="338" y1="142" x2="338" y2="168" marker-end="url(#arrow)"/>
+  </g>
+  <g font-size="11.5">
+    <rect x="92" y="170" width="60" height="28" rx="5" fill="#2B87B8"/>
+    <text x="122" y="189" text-anchor="middle" fill="#FFFFFF"><tspan font-style="italic">s</tspan><tspan dy="2" font-size="9">1</tspan></text>
+    <rect x="200" y="170" width="60" height="28" rx="5" fill="#2B87B8"/>
+    <text x="230" y="189" text-anchor="middle" fill="#FFFFFF"><tspan font-style="italic">s</tspan><tspan dy="2" font-size="9">2</tspan></text>
+    <rect x="308" y="170" width="60" height="28" rx="5" fill="#2B87B8"/>
+    <text x="338" y="189" text-anchor="middle" fill="#FFFFFF"><tspan font-style="italic">s</tspan><tspan dy="2" font-size="9">3</tspan></text>
+  </g>
+  <g stroke="#555555" stroke-width="1.3">
+    <line x1="122" y1="198" x2="206" y2="232" marker-end="url(#arrow)"/>
+    <line x1="230" y1="198" x2="230" y2="232" marker-end="url(#arrow)"/>
+    <line x1="338" y1="198" x2="254" y2="232" marker-end="url(#arrow)"/>
+  </g>
+  <rect x="140" y="234" width="180" height="36" rx="6" fill="#E87E2E"/>
+  <text x="230" y="257" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#FFFFFF">max / sum &#8594; score</text>
+
+  <text x="230" y="296" text-anchor="middle" font-size="11.5" fill="#33617A">score each chunk, then aggregate the scores</text>
+  <text x="230" y="316" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#18617E">e.g., BERT-MaxP &#8212; simple, differentiable</text>
+
+  <!-- representation aggregation -->
+  <rect x="440" y="60" width="380" height="270" rx="10" fill="#FDF4EA" stroke="#E87E2E" stroke-width="1.8"/>
+  <text x="630" y="92" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#B35A0E">Representation aggregation</text>
+
+  <g font-size="11.5">
+    <rect x="480" y="112" width="84" height="30" rx="5" fill="#FFFFFF" stroke="#E8A05D"/>
+    <text x="522" y="132" text-anchor="middle" fill="#7A3E0F">chunk 1</text>
+    <rect x="588" y="112" width="84" height="30" rx="5" fill="#FFFFFF" stroke="#E8A05D"/>
+    <text x="630" y="132" text-anchor="middle" fill="#7A3E0F">chunk 2</text>
+    <rect x="696" y="112" width="84" height="30" rx="5" fill="#FFFFFF" stroke="#E8A05D"/>
+    <text x="738" y="132" text-anchor="middle" fill="#7A3E0F">chunk 3</text>
+  </g>
+  <g stroke="#555555" stroke-width="1.3">
+    <line x1="522" y1="142" x2="522" y2="168" marker-end="url(#arrow)"/>
+    <line x1="630" y1="142" x2="630" y2="168" marker-end="url(#arrow)"/>
+    <line x1="738" y1="142" x2="738" y2="168" marker-end="url(#arrow)"/>
+  </g>
+  <g font-size="11.5">
+    <rect x="492" y="170" width="60" height="28" rx="5" fill="#E8A05D"/>
+    <text x="522" y="189" text-anchor="middle" fill="#FFFFFF"><tspan font-style="italic">v</tspan><tspan dy="2" font-size="9">1</tspan></text>
+    <rect x="600" y="170" width="60" height="28" rx="5" fill="#E8A05D"/>
+    <text x="630" y="189" text-anchor="middle" fill="#FFFFFF"><tspan font-style="italic">v</tspan><tspan dy="2" font-size="9">2</tspan></text>
+    <rect x="708" y="170" width="60" height="28" rx="5" fill="#E8A05D"/>
+    <text x="738" y="189" text-anchor="middle" fill="#FFFFFF"><tspan font-style="italic">v</tspan><tspan dy="2" font-size="9">3</tspan></text>
+  </g>
+  <g stroke="#555555" stroke-width="1.3">
+    <line x1="522" y1="198" x2="606" y2="232" marker-end="url(#arrow)"/>
+    <line x1="630" y1="198" x2="630" y2="232" marker-end="url(#arrow)"/>
+    <line x1="738" y1="198" x2="654" y2="232" marker-end="url(#arrow)"/>
+  </g>
+  <rect x="510" y="234" width="240" height="36" rx="6" fill="#E87E2E"/>
+  <text x="630" y="257" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#FFFFFF">combine reprs. &#8594; one score</text>
+
+  <text x="630" y="296" text-anchor="middle" font-size="11.5" fill="#7A5230">merge chunk representations before scoring</text>
+  <text x="630" y="316" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#B35A0E">e.g., CEDR, PARADE &#8212; flexible, more complex</text>
+
+  <text x="430" y="372" text-anchor="middle" font-size="12" fill="#555555">Score aggregation is simple and end-to-end trainable; representation aggregation is more flexible but costlier</text>
+  <text x="430" y="400" text-anchor="middle" font-size="11" font-style="italic" fill="#888888">Lin et al., &#8220;Pretrained Transformers for Text Ranking: BERT and Beyond&#8221;, 2021, &#167;3.3</text>
+</svg>

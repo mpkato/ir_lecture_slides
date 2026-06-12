@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="760" height="560" viewBox="0 0 760 560" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#555555"/>
+    </marker>
+  </defs>
+
+  <text x="380" y="36" text-anchor="middle" font-size="15" font-weight="bold" fill="#333333">Expando-Mono-Duo Pipeline (Pradeep et al., 2021)</text>
+
+  <!-- stage 1 -->
+  <rect x="80" y="64" width="430" height="76" rx="9" fill="#E9F4FA" stroke="#2B87B8" stroke-width="1.8"/>
+  <text x="100" y="92" font-size="14" font-weight="bold" fill="#18617E">Stage 1: Expando&#160;&#160;<tspan font-size="11" font-weight="normal" fill="#5B87A0">document expansion</tspan></text>
+  <text x="100" y="114" font-size="11.5" fill="#33617A">expand documents with doc2query, initial retrieval with BM25</text>
+  <text x="100" y="132" font-size="11.5" font-weight="bold" fill="#18617E">&#8594; top 1,000 candidates</text>
+
+  <line x1="295" y1="140" x2="295" y2="174" stroke="#555555" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <!-- stage 2 -->
+  <rect x="80" y="176" width="430" height="76" rx="9" fill="#D6E9F4" stroke="#2B87B8" stroke-width="1.8"/>
+  <text x="100" y="204" font-size="14" font-weight="bold" fill="#18617E">Stage 2: Mono&#160;&#160;<tspan font-size="11" font-weight="normal" fill="#4A7A93">pointwise reranking</tspan></text>
+  <text x="100" y="226" font-size="11.5" fill="#33617A">rerank 1,000 candidates with monoT5-3B</text>
+  <text x="100" y="244" font-size="11.5" font-weight="bold" fill="#18617E">&#8594; top 50</text>
+
+  <line x1="295" y1="252" x2="295" y2="286" stroke="#555555" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <!-- stage 3 -->
+  <rect x="80" y="288" width="430" height="76" rx="9" fill="#FDF4EA" stroke="#E87E2E" stroke-width="1.8"/>
+  <text x="100" y="316" font-size="14" font-weight="bold" fill="#B35A0E">Stage 3: Duo&#160;&#160;<tspan font-size="11" font-weight="normal" fill="#9C7A56">pairwise reranking</tspan></text>
+  <text x="100" y="338" font-size="11.5" fill="#7A5230">pairwise comparison of 50 candidates with duoT5-3B</text>
+  <text x="100" y="356" font-size="11.5" font-weight="bold" fill="#B35A0E">&#8594; final ranking</text>
+
+  <!-- MRR@10 sidebar -->
+  <rect x="540" y="64" width="180" height="300" rx="9" fill="#F7F7F7" stroke="#BBBBBB" stroke-width="1.5"/>
+  <text x="630" y="92" text-anchor="middle" font-size="13" font-weight="bold" fill="#444444">MRR@10</text>
+  <g font-size="12">
+    <text x="560" y="126" fill="#666666">BM25</text>
+    <text x="700" y="126" text-anchor="end" fill="#666666">0.187</text>
+    <text x="560" y="166" fill="#18617E">+ Expando</text>
+    <text x="700" y="166" text-anchor="end" font-weight="bold" fill="#18617E">0.277</text>
+    <text x="560" y="206" fill="#18617E">+ Mono</text>
+    <text x="700" y="206" text-anchor="end" font-weight="bold" fill="#18617E">0.398</text>
+    <text x="560" y="246" fill="#B35A0E">+ Duo</text>
+    <text x="700" y="246" text-anchor="end" font-weight="bold" fill="#B35A0E">0.408</text>
+  </g>
+  <line x1="560" y1="270" x2="700" y2="270" stroke="#DDDDDD"/>
+  <text x="630" y="298" text-anchor="middle" font-size="11" fill="#777777">each stage adds an</text>
+  <text x="630" y="316" text-anchor="middle" font-size="11" fill="#777777">independent improvement</text>
+  <text x="630" y="344" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#B35A0E">0.187 &#8594; 0.408 (&#62;2&#215;)</text>
+
+  <text x="380" y="416" text-anchor="middle" font-size="12.5" fill="#555555">Expansion improves Recall offline; Mono prunes cheaply; Duo refines the very top precisely</text>
+  <text x="380" y="448" text-anchor="middle" font-size="12" fill="#555555">duoT5 over top 50: C(50, 2) = 1,225 inferences &#8212; affordable only after Mono&#8217;s pruning</text>
+  <text x="380" y="492" text-anchor="middle" font-size="11" font-style="italic" fill="#888888">Pradeep et al., &#8220;The Expando-Mono-Duo Design Pattern for Text Ranking with Pretrained</text>
+  <text x="380" y="510" text-anchor="middle" font-size="11" font-style="italic" fill="#888888">Sequence-to-Sequence Models&#8221;, arXiv:2101.05667, 2021</text>
+</svg>

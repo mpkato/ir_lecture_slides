@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="720" height="420" viewBox="0 0 720 420" font-family="Helvetica, Arial, sans-serif">
+
+  <text x="360" y="36" text-anchor="middle" font-size="15" font-weight="bold" fill="#333333">MRR@10 on MS MARCO passage (Dev)</text>
+
+  <!-- horizontal bars: scale 0..0.4 -> width 0..520 (1300px/unit), x start 150 -->
+  <g font-size="13" fill="#444444" text-anchor="end">
+    <text x="140" y="89">BM25</text>
+    <text x="140" y="149">KNRM</text>
+    <text x="140" y="209">Conv-KNRM</text>
+    <text x="140" y="269">IRNet</text>
+    <text x="140" y="329">monoBERT (L)</text>
+  </g>
+
+  <rect x="150" y="70" width="243.1" height="30" fill="#C9CDD1"/>
+  <text x="401" y="91" font-size="13" font-weight="bold" fill="#6B7075">0.187</text>
+
+  <rect x="150" y="130" width="283.4" height="30" fill="#A5D2E8"/>
+  <text x="441" y="151" font-size="13" font-weight="bold" fill="#33759B">0.218</text>
+
+  <rect x="150" y="190" width="321.1" height="30" fill="#7FBFDD"/>
+  <text x="479" y="211" font-size="13" font-weight="bold" fill="#33759B">0.247</text>
+
+  <rect x="150" y="250" width="361.4" height="30" fill="#5BA6CC"/>
+  <text x="519" y="271" font-size="13" font-weight="bold" fill="#18617E">0.278</text>
+
+  <rect x="150" y="310" width="483.6" height="30" fill="#E87E2E"/>
+  <text x="641" y="331" font-size="13" font-weight="bold" fill="#B35A0E">0.372</text>
+
+  <line x1="150" y1="60" x2="150" y2="352" stroke="#999999" stroke-width="1.5"/>
+
+  <!-- gap annotation -->
+  <path d="M511,265 L511,250 L633,250 L633,310" fill="none" stroke="#B35A0E" stroke-width="1.2" stroke-dasharray="4,3" opacity="0"/>
+  <text x="400" y="382 " text-anchor="middle" font-size="12" fill="#555555">monoBERT exceeds the best pre-BERT model (IRNet) by <tspan font-weight="bold" fill="#B35A0E">+0.094</tspan> &#8212; all-to-all attention beats partial interaction</text>
+  <text x="400" y="406" text-anchor="middle" font-size="10.5" fill="#999999">Lexical: BM25 &#183; Interaction-based: KNRM, Conv-KNRM &#183; Representation+Interaction: IRNet &#183; Cross-encoder: monoBERT</text>
+</svg>

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="680" height="500" viewBox="0 0 680 500" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#555555"/>
+    </marker>
+  </defs>
+
+  <text x="340" y="36" text-anchor="middle" font-size="15" font-weight="bold" fill="#333333">T5&#8217;s Text-to-Text Framework</text>
+  <text x="340" y="58" text-anchor="middle" font-size="11.5" fill="#888888">every NLP task becomes text in &#8594; text out</text>
+
+  <rect x="90" y="80" width="500" height="48" rx="8" fill="#FCEEDF" stroke="#E8A05D" stroke-width="1.5"/>
+  <text x="340" y="110" text-anchor="middle" font-size="13" font-family="Menlo, Consolas, monospace" fill="#333333">Input: "Query: q Document: d Relevant:"</text>
+
+  <line x1="340" y1="128" x2="340" y2="162" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="110" y="164" width="460" height="96" rx="9" fill="#E9F4FA" stroke="#2B87B8" stroke-width="2"/>
+  <text x="340" y="190" text-anchor="middle" font-size="15" font-weight="bold" fill="#18617E">Encoder&#8211;Decoder Transformer</text>
+  <text x="340" y="216" text-anchor="middle" font-size="12" fill="#33617A">Encoder: contextualized representation of the input</text>
+  <text x="340" y="238" text-anchor="middle" font-size="12" fill="#33617A">Decoder: generates the answer as text</text>
+
+  <line x1="340" y1="260" x2="340" y2="294" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="190" y="296" width="300" height="48" rx="8" fill="#E87E2E"/>
+  <text x="340" y="326" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#FFFFFF">Output: "true" or "false"</text>
+
+  <!-- examples -->
+  <rect x="60" y="376" width="560 " height="76" rx="8" fill="#EFF7FB" stroke="#B9D8E8" stroke-width="1.5"/>
+  <g font-size="11.5" fill="#33617A">
+    <text x="90" y="400">translation:&#160;&#160;<tspan font-family="Menlo, Consolas, monospace" font-size="11">"translate English to German: ..."</tspan> &#8594; German text</text>
+    <text x="90" y="420">classification:&#160;&#160;<tspan font-family="Menlo, Consolas, monospace" font-size="11">"sst2 sentence: ..."</tspan> &#8594; "positive" / "negative"</text>
+    <text x="90" y="440">summarization:&#160;&#160;<tspan font-family="Menlo, Consolas, monospace" font-size="11">"summarize: ..."</tspan> &#8594; summary text</text>
+  </g>
+
+  <text x="340" y="482" text-anchor="middle" font-size="11" font-style="italic" fill="#888888">BERT classifies from [CLS]; T5 generates the answer as text (Raffel et al., 2020)</text>
+</svg>

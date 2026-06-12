@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="900" height="640" viewBox="0 0 900 640" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#555555"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="34" text-anchor="middle" font-size="15" font-weight="bold" fill="#333333">The Full Transformer: Encoder&#8211;Decoder (Vaswani et al., 2017)</text>
+
+  <!-- ===== Encoder (left, blue) ===== -->
+  <rect x="80" y="120" width="280" height="320" rx="12" fill="none" stroke="#2B87B8" stroke-width="2" stroke-dasharray="8,5"/>
+  <text x="220" y="106" text-anchor="middle" font-size="13" font-weight="bold" fill="#2B87B8">Encoder &#215; N</text>
+
+  <rect x="120" y="150" width="200" height="38" rx="6" fill="#FCEEDF" stroke="#E8A05D" stroke-width="1.3"/>
+  <text x="220" y="174" text-anchor="middle" font-size="12" font-weight="bold" fill="#B35A0E">Add &#38; Norm</text>
+  <line x1="220" y1="222" x2="220" y2="192" stroke="#555555" stroke-width="1.3" marker-end="url(#arrow)"/>
+  <rect x="120" y="224" width="200" height="38" rx="6" fill="#DDEEF7" stroke="#2B87B8" stroke-width="1.3"/>
+  <text x="220" y="248" text-anchor="middle" font-size="12" font-weight="bold" fill="#18617E">Feed Forward</text>
+  <line x1="220" y1="296" x2="220" y2="266" stroke="#555555" stroke-width="1.3" marker-end="url(#arrow)"/>
+  <rect x="120" y="298" width="200" height="38" rx="6" fill="#FCEEDF" stroke="#E8A05D" stroke-width="1.3"/>
+  <text x="220" y="322" text-anchor="middle" font-size="12" font-weight="bold" fill="#B35A0E">Add &#38; Norm</text>
+  <line x1="220" y1="370" x2="220" y2="340" stroke="#555555" stroke-width="1.3" marker-end="url(#arrow)"/>
+  <rect x="120" y="372" width="200" height="38" rx="6" fill="#2B87B8"/>
+  <text x="220" y="396" text-anchor="middle" font-size="12" font-weight="bold" fill="#FFFFFF">Multi-Head Self-Attention</text>
+
+  <line x1="220" y1="470" x2="220" y2="412" stroke="#555555" stroke-width="1.3" marker-end="url(#arrow)"/>
+  <rect x="120" y="472" width="200" height="38" rx="6" fill="#F2F2F2" stroke="#BBBBBB"/>
+  <text x="220" y="496" text-anchor="middle" font-size="11.5" fill="#444444">Input embed + pos enc</text>
+  <text x="220" y="538" text-anchor="middle" font-size="12" fill="#666666">Inputs</text>
+
+  <!-- ===== Decoder (right, orange) ===== -->
+  <rect x="540" y="60" width="280" height="380" rx="12" fill="none" stroke="#E87E2E" stroke-width="2" stroke-dasharray="8,5"/>
+  <text x="680" y="48" text-anchor="middle" font-size="13" font-weight="bold" fill="#E87E2E">Decoder &#215; N</text>
+
+  <rect x="580" y="86" width="200" height="38" rx="6" fill="#FCEEDF" stroke="#E8A05D" stroke-width="1.3"/>
+  <text x="680" y="110" text-anchor="middle" font-size="12" font-weight="bold" fill="#B35A0E">Add &#38; Norm</text>
+  <line x1="680" y1="158" x2="680" y2="128" stroke="#555555" stroke-width="1.3" marker-end="url(#arrow)"/>
+  <rect x="580" y="160" width="200" height="38" rx="6" fill="#DDEEF7" stroke="#2B87B8" stroke-width="1.3"/>
+  <text x="680" y="184" text-anchor="middle" font-size="12" font-weight="bold" fill="#18617E">Feed Forward</text>
+  <line x1="680" y1="232" x2="680" y2="202" stroke="#555555" stroke-width="1.3" marker-end="url(#arrow)"/>
+  <rect x="580" y="234" width="200" height="38" rx="6" fill="#FCEEDF" stroke="#E8A05D" stroke-width="1.3"/>
+  <text x="680" y="258" text-anchor="middle" font-size="12" font-weight="bold" fill="#B35A0E">Add &#38; Norm</text>
+  <line x1="680" y1="306" x2="680" y2="276" stroke="#555555" stroke-width="1.3" marker-end="url(#arrow)"/>
+  <rect x="580" y="308" width="200" height="38" rx="6" fill="#E87E2E"/>
+  <text x="680" y="332" text-anchor="middle" font-size="12" font-weight="bold" fill="#FFFFFF">Cross-Attention</text>
+  <line x1="680" y1="380" x2="680" y2="350" stroke="#555555" stroke-width="1.3" marker-end="url(#arrow)"/>
+  <rect x="580" y="382" width="200" height="38" rx="6" fill="#E87E2E"/>
+  <text x="680" y="406" text-anchor="middle" font-size="12" font-weight="bold" fill="#FFFFFF">Masked Self-Attention</text>
+
+  <line x1="680" y1="470" x2="680" y2="422" stroke="#555555" stroke-width="1.3" marker-end="url(#arrow)"/>
+  <rect x="580" y="472" width="200" height="38" rx="6" fill="#F2F2F2" stroke="#BBBBBB"/>
+  <text x="680" y="496" text-anchor="middle" font-size="11.5" fill="#444444">Output embed + pos enc</text>
+  <text x="680" y="538" text-anchor="middle" font-size="12" fill="#666666">Outputs (shifted right)</text>
+
+  <!-- encoder -> decoder K,V -->
+  <path d="M324,170 C440,170 470,327 576,327" fill="none" stroke="#2B87B8" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="448" y="240" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#2B87B8"><tspan font-style="italic">K</tspan>, <tspan font-style="italic">V</tspan></text>
+
+  <!-- decoder output -->
+  <text x="826" y="110" text-anchor="start" font-size="11" fill="#666666">&#8594; Linear +</text>
+  <text x="826" y="126" text-anchor="start" font-size="11" fill="#666666">&#160;&#160;&#160;Softmax</text>
+
+  <!-- derivative models -->
+  <rect x="80" y="566" width="740" height="52" rx="9" fill="#EFF7FB" stroke="#B9D8E8" stroke-width="1.5"/>
+  <text x="450" y="588" text-anchor="middle" font-size="12.5" fill="#33617A"><tspan font-weight="bold" fill="#18617E">Encoder only &#8594; BERT</tspan> (Cross-encoder reranking)&#160;&#160;&#183;&#160;&#160;<tspan font-weight="bold" fill="#B35A0E">Decoder only &#8594; GPT</tspan> (listwise reranking)&#160;&#160;&#183;&#160;&#160;<tspan font-weight="bold" fill="#555555">Both &#8594; T5</tspan> (monoT5 / duoT5)</text>
+  <text x="450" y="608" text-anchor="middle" font-size="11" fill="#5B87A0">every sub-layer is wrapped with a residual connection and LayerNorm</text>
+</svg>

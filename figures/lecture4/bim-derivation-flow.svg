@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="660" height="540" viewBox="0 0 660 540" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#555555"/>
+    </marker>
+  </defs>
+
+  <text x="330" y="36" text-anchor="middle" font-size="15" font-weight="bold" fill="#333333">Reasoning Flow of the Binary Independence Model</text>
+
+  <rect x="110" y="60" width="440" height="52" rx="8" fill="#DDEEF7" stroke="#2B87B8" stroke-width="1.5"/>
+  <text x="330" y="83" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#18617E">Goal: estimate the relevance probability P(<tspan font-style="italic">R</tspan>=1 | <tspan font-style="italic">d</tspan>, <tspan font-style="italic">q</tspan>)</text>
+  <text x="330" y="103" text-anchor="middle" font-size="11" fill="#33617A">direct estimation is hard</text>
+
+  <line x1="330" y1="112" x2="330" y2="146" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="345" y="136" font-size="11" font-weight="bold" fill="#2B87B8">Bayes&#8217; theorem + odds ratio</text>
+
+  <rect x="110" y="148" width="440" height="52" rx="8" fill="#D6E9F4" stroke="#2B87B8" stroke-width="1.5"/>
+  <text x="330" y="171" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#18617E">Convert to a likelihood ratio</text>
+  <text x="330" y="191" text-anchor="middle" font-size="11.5" fill="#33617A">P(<tspan font-style="italic">x</tspan> | <tspan font-style="italic">R</tspan>=1, <tspan font-style="italic">q</tspan>) / P(<tspan font-style="italic">x</tspan> | <tspan font-style="italic">R</tspan>=0, <tspan font-style="italic">q</tspan>) &#8212; prior odds are rank-invariant, dropped</text>
+
+  <line x1="330" y1="200" x2="330" y2="234" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="345" y="224" font-size="11" font-weight="bold" fill="#2B87B8">term-independence assumption (Naive Bayes)</text>
+
+  <rect x="110" y="236" width="440" height="52" rx="8" fill="#BBDDEE" stroke="#2B87B8" stroke-width="1.5"/>
+  <text x="330" y="259" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#15425C">Decompose into a product over terms</text>
+  <text x="330" y="279" text-anchor="middle" font-size="11.5" fill="#33617A">only query terms contribute (non-query terms cancel)</text>
+
+  <line x1="330" y1="288" x2="330" y2="322" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="345" y="312" font-size="11" font-weight="bold" fill="#2B87B8">take the logarithm: products &#8594; sums</text>
+
+  <rect x="110" y="324" width="440" height="60" rx="8" fill="#2B87B8"/>
+  <text x="330" y="349" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#FFFFFF">RSV(<tspan font-style="italic">q</tspan>, <tspan font-style="italic">d</tspan>) = &#931; <tspan font-style="italic">c</tspan><tspan dy="3" font-size="10" font-style="italic">i</tspan><tspan dy="-3">&#160;&#160;(sum of RSJ weights over </tspan><tspan font-style="italic">t</tspan><tspan dy="3" font-size="10" font-style="italic">i</tspan><tspan dy="-3"> &#8712; </tspan><tspan font-style="italic">q</tspan> &#8745; <tspan font-style="italic">d</tspan>)</text>
+  <text x="330" y="372" text-anchor="middle" font-size="11.5" fill="#D9ECF5"><tspan font-style="italic">c</tspan><tspan dy="2" font-size="9" font-style="italic">i</tspan><tspan dy="-2"> = log [ </tspan><tspan font-style="italic">p</tspan><tspan dy="2" font-size="9" font-style="italic">i</tspan><tspan dy="-2">&#8202;(1&#8722;</tspan><tspan font-style="italic">q</tspan><tspan dy="2" font-size="9" font-style="italic">i</tspan><tspan dy="-2">) / </tspan><tspan font-style="italic">q</tspan><tspan dy="2" font-size="9" font-style="italic">i</tspan><tspan dy="-2">&#8202;(1&#8722;</tspan><tspan font-style="italic">p</tspan><tspan dy="2" font-size="9" font-style="italic">i</tspan><tspan dy="-2">) ]</tspan></text>
+
+  <line x1="330" y1="384" x2="330" y2="418" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="345" y="408" font-size="11" font-weight="bold" fill="#E87E2E">no relevance info: <tspan font-style="italic">p</tspan>&#7522; = 0.5, <tspan font-style="italic">q</tspan>&#7522; &#8776; df/N</text>
+
+  <rect x="170" y="420" width="320" height="48" rx="8" fill="#E87E2E"/>
+  <text x="330" y="450" text-anchor="middle" font-size="14" font-weight="bold" fill="#FFFFFF"><tspan font-style="italic">c</tspan><tspan dy="3" font-size="10" font-style="italic">i</tspan><tspan dy="-3"> &#8776; log(</tspan><tspan font-style="italic">N</tspan>/<tspan font-style="italic">n</tspan>) = IDF</text>
+
+  <text x="330" y="502" text-anchor="middle" font-size="12" fill="#555555">IDF emerges as a special case of the probabilistic model &#8212; TF-IDF&#8217;s IDF has a probabilistic justification</text>
+  <text x="330" y="526" text-anchor="middle" font-size="11" font-style="italic" fill="#888888">Robertson and Sparck Jones, &#8220;Relevance Weighting of Search Terms&#8221;, JASIS, 1976</text>
+</svg>

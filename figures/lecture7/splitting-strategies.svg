@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="760" height="540" viewBox="0 0 760 540" font-family="Helvetica, Arial, sans-serif">
+
+  <text x="380" y="36" text-anchor="middle" font-size="15" font-weight="bold" fill="#333333">Three Document-Splitting Strategies</text>
+
+  <!-- sentence level -->
+  <rect x="50" y="60" width="660" height="120" rx="10" fill="#E9F4FA" stroke="#7FB8D6" stroke-width="1.5"/>
+  <text x="80" y="90" font-size="14" font-weight="bold" fill="#18617E">1. Sentence level&#160;&#160;<tspan font-size="11" font-weight="normal" fill="#5B87A0">representative: Birch</tspan></text>
+  <!-- many small chips -->
+  <g fill="#BBDDEE" stroke="#7FB8D6">
+    <rect x="80" y="104" width="40" height="20" rx="4"/><rect x="126" y="104" width="52" height="20" rx="4"/><rect x="184" y="104" width="36" height="20" rx="4"/><rect x="226" y="104" width="58" height="20" rx="4"/><rect x="290" y="104" width="44" height="20" rx="4"/><rect x="340" y="104" width="50" height="20" rx="4"/><rect x="396" y="104" width="38" height="20" rx="4"/><rect x="440" y="104" width="56" height="20" rx="4"/><rect x="502" y="104" width="42" height="20" rx="4"/><rect x="550" y="104" width="48" height="20" rx="4"/>
+  </g>
+  <text x="620" y="119" font-size="12" fill="#5B87A0">&#8230;</text>
+  <text x="80" y="152" font-size="11.5" fill="#33617A">chunks: many (20&#8211;50 per doc)&#160;&#160;&#183;&#160;&#160;context retention: <tspan fill="#A14D33">low</tspan>&#160;&#160;&#183;&#160;&#160;implementation: easy</text>
+
+  <!-- passage level -->
+  <rect x="50" y="196" width="660" height="130" rx="10" fill="#D6E9F4" stroke="#2B87B8" stroke-width="2"/>
+  <text x="80" y="226" font-size="14" font-weight="bold" fill="#18617E">2. Passage level (sliding window)&#160;&#160;<tspan font-size="11" font-weight="normal" fill="#4A7A93">representative: BERT-MaxP (150 words, stride 75)</tspan></text>
+  <!-- overlapping bars -->
+  <g>
+    <rect x="80" y="240" width="170" height="20" rx="4" fill="#7FBFDD" stroke="#2B87B8"/>
+    <rect x="250" y="240" width="170" height="20" rx="4" fill="#7FBFDD" stroke="#2B87B8"/>
+    <rect x="420" y="240" width="170" height="20" rx="4" fill="#7FBFDD" stroke="#2B87B8"/>
+    <rect x="165" y="266" width="170" height="20" rx="4" fill="#F4D2AE" stroke="#E8A05D"/>
+    <rect x="335" y="266" width="170" height="20" rx="4" fill="#F4D2AE" stroke="#E8A05D"/>
+    <rect x="505" y="266" width="170" height="20" rx="4" fill="#F4D2AE" stroke="#E8A05D"/>
+  </g>
+  <text x="80" y="312" font-size="11.5" fill="#33617A">chunks: moderate (5&#8211;15)&#160;&#160;&#183;&#160;&#160;context retention: <tspan fill="#7A5230">medium (overlap helps)</tspan>&#160;&#160;&#183;&#160;&#160;implementation: easy</text>
+
+  <!-- paragraph level -->
+  <rect x="50" y="342" width="660" height="120" rx="10" fill="#FDF4EA" stroke="#E8A05D" stroke-width="1.5"/>
+  <text x="80" y="372" font-size="14" font-weight="bold" fill="#B35A0E">3. Paragraph level</text>
+  <g fill="#F4D2AE" stroke="#E8A05D">
+    <rect x="80" y="386" width="200" height="20" rx="4"/><rect x="290" y="386" width="150" height="20" rx="4"/><rect x="450" y="386" width="230" height="20" rx="4"/>
+  </g>
+  <text x="80" y="434" font-size="11.5" fill="#7A5230">chunks: few (3&#8211;10)&#160;&#160;&#183;&#160;&#160;context retention: <tspan fill="#2C7A46">high</tspan>&#160;&#160;&#183;&#160;&#160;implementation: depends on document structure</text>
+
+  <text x="380" y="500" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#18617E">In practice, passage-level splitting with a sliding window is the most widely used</text>
+  <text x="380" y="524" text-anchor="middle" font-size="11" font-style="italic" fill="#888888">Sentences may be cut mid-way by fixed windows; overlap mitigates the context loss</text>
+</svg>

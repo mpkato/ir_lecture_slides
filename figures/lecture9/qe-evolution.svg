@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="680" height="500" viewBox="0 0 680 500" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#555555"/>
+    </marker>
+  </defs>
+
+  <text x="340" y="36" text-anchor="middle" font-size="15" font-weight="bold" fill="#333333">Evolution of Query Expansion</text>
+
+  <rect x="100" y="60" width="480" height="84" rx="9" fill="#F7F7F7" stroke="#BBBBBB" stroke-width="1.5"/>
+  <text x="340" y="88" text-anchor="middle" font-size="14" font-weight="bold" fill="#555555">Classical: synonym dictionaries</text>
+  <text x="340" y="110" text-anchor="middle" font-size="12" fill="#666666">WordNet and other curated thesauri</text>
+  <text x="340" y="130" text-anchor="middle" font-size="11.5" fill="#A14D33">&#8722; limited by dictionary coverage</text>
+
+  <line x1="340" y1="144" x2="340" y2="178" stroke="#555555" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <rect x="100" y="180" width="480" height="84" rx="9" fill="#E9F4FA" stroke="#7FB8D6" stroke-width="1.5"/>
+  <text x="340" y="208" text-anchor="middle" font-size="14" font-weight="bold" fill="#33759B">Statistical: RM3 (pseudo-relevance feedback)</text>
+  <text x="340" y="230" text-anchor="middle" font-size="12" fill="#33617A">probabilistic expansion-term estimation from pseudo-relevant documents</text>
+  <text x="340" y="250" text-anchor="middle" font-size="11.5" fill="#A14D33">&#8722; query drift when the top results are off-topic</text>
+
+  <line x1="340" y1="264" x2="340" y2="298" stroke="#555555" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <rect x="100" y="300" width="480" height="84" rx="9" fill="#D6E9F4" stroke="#2B87B8" stroke-width="1.8"/>
+  <text x="340" y="328" text-anchor="middle" font-size="14" font-weight="bold" fill="#18617E">Neural: BERT-QE, Neural PRF</text>
+  <text x="340" y="350" text-anchor="middle" font-size="12" fill="#33617A">expansion-term selection based on contextual understanding</text>
+  <text x="340" y="370" text-anchor="middle" font-size="11.5" fill="#A14D33">&#8722; model inference at search time &#8594; latency; still depends on initial retrieval</text>
+
+  <line x1="340" y1="384" x2="340" y2="418" stroke="#555555" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <rect x="100" y="420" width="480" height="52" rx="26" fill="#E87E2E"/>
+  <text x="340" y="442" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#FFFFFF">Shift in thinking: expand the document side instead</text>
+  <text x="340" y="462" text-anchor="middle" font-size="11.5" fill="#FBE3CD">preprocess offline &#8594; zero impact on search-time latency (doc2query &#8594; next section)</text>
+</svg>

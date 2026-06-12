@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="720" height="520" viewBox="0 0 720 520" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#555555"/>
+    </marker>
+  </defs>
+
+  <text x="360" y="36" text-anchor="middle" font-size="15" font-weight="bold" fill="#333333">Why the Transformer Is Needed</text>
+
+  <!-- RNN -->
+  <rect x="110" y="60" width="500" height="92" rx="9" fill="#F7F7F7" stroke="#BBBBBB" stroke-width="1.5"/>
+  <text x="360" y="88" text-anchor="middle" font-size="14" font-weight="bold" fill="#555555">RNN / LSTM</text>
+  <text x="360" y="110" text-anchor="middle" font-size="12" fill="#666666">sequential processing: <tspan font-style="italic">t</tspan><tspan dy="2" font-size="9">1</tspan><tspan dy="-2"> &#8594; </tspan><tspan font-style="italic">t</tspan><tspan dy="2" font-size="9">2</tspan><tspan dy="-2"> &#8594; &#8230; &#8594; </tspan><tspan font-style="italic">t</tspan><tspan dy="2" font-size="9" font-style="italic">n</tspan></text>
+  <text x="360" y="132" text-anchor="middle" font-size="11.5" fill="#A14D33">&#8722; long-range dependencies difficult &#183; no parallelism &#183; gradient vanishing</text>
+
+  <line x1="360" y1="152" x2="360" y2="186" stroke="#555555" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <text x="375" y="176" font-size="11" font-weight="bold" fill="#2B87B8">selectively attend to context</text>
+
+  <!-- Attention -->
+  <rect x="110" y="188" width="500" height="92" rx="9" fill="#E9F4FA" stroke="#7FB8D6" stroke-width="1.5"/>
+  <text x="360" y="216" text-anchor="middle" font-size="14" font-weight="bold" fill="#33759B">Attention mechanism (Bahdanau et al., 2015)</text>
+  <text x="360" y="238" text-anchor="middle" font-size="12" fill="#33617A">focus weights on important positions; context-aware decoding</text>
+  <text x="360" y="260" text-anchor="middle" font-size="11.5" fill="#A14D33">&#8722; still RNN-based; sequential processing remains</text>
+
+  <line x1="360" y1="280" x2="360" y2="314" stroke="#555555" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <text x="375" y="304" font-size="11" font-weight="bold" fill="#E87E2E">drop recurrence entirely &#8212; attention is all you need</text>
+
+  <!-- Transformer -->
+  <rect x="110" y="316" width="500" height="100" rx="9" fill="#FDF4EA" stroke="#E87E2E" stroke-width="2"/>
+  <text x="360" y="344" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#B35A0E">Transformer (Vaswani et al., 2017)</text>
+  <text x="360" y="368" text-anchor="middle" font-size="12" fill="#7A5230">Self-Attention attends to all positions at once</text>
+  <text x="360" y="390" text-anchor="middle" font-size="11.5" fill="#2C7A46">+ fully parallel &#183; models long-range dependencies directly (O(1) path)</text>
+
+  <text x="360" y="456" text-anchor="middle" font-size="12" fill="#555555">Complexity: RNN needs O(<tspan font-style="italic">n</tspan>) sequential steps; the Transformer needs O(1) steps,</text>
+  <text x="360" y="476" text-anchor="middle" font-size="12" fill="#555555">but each step costs O(<tspan font-style="italic">n</tspan>&#178;) attention computations</text>
+</svg>

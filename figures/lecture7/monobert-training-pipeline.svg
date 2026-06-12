@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="660" height="540" viewBox="0 0 660 540" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#555555"/>
+    </marker>
+  </defs>
+
+  <text x="330" y="36" text-anchor="middle" font-size="15" font-weight="bold" fill="#333333">monoBERT Training Pipeline</text>
+
+  <rect x="130" y="60" width="400" height="52" rx="8" fill="#DDEEF7" stroke="#2B87B8" stroke-width="1.5"/>
+  <text x="330" y="83" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#18617E">MS MARCO: (<tspan font-style="italic">q</tspan>, <tspan font-style="italic">d</tspan>&#8202;&#8314;, <tspan font-style="italic">d</tspan>&#8202;&#8315;) triples</text>
+  <text x="330" y="103" text-anchor="middle" font-size="11" fill="#5B87A0">~530K queries &#183; negatives sampled from BM25 top results</text>
+
+  <line x1="330" y1="112" x2="330" y2="146" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="345" y="136" font-size="11" fill="#888888">convert to input format</text>
+
+  <rect x="100" y="148" width="460" height="64" rx="8" fill="#FFFFFF" stroke="#7FB8D6" stroke-width="1.5"/>
+  <text x="330" y="174" text-anchor="middle" font-size="12.5" font-family="Menlo, Consolas, monospace" fill="#2C7A46">[CLS] q [SEP] d&#8314; [SEP] &#8594; y = 1</text>
+  <text x="330" y="198" text-anchor="middle" font-size="12.5" font-family="Menlo, Consolas, monospace" fill="#962D22">[CLS] q [SEP] d&#8315; [SEP] &#8594; y = 0</text>
+
+  <line x1="330" y1="212" x2="330" y2="246" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="130" y="248" width="400" height="58" rx="8" fill="#2B87B8"/>
+  <text x="330" y="272" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#FFFFFF">BERT + classification layer</text>
+  <text x="330" y="293" text-anchor="middle" font-size="11.5" fill="#D9ECF5">pointwise cross-entropy loss</text>
+
+  <line x1="330" y1="306" x2="330" y2="340" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="345" y="330" font-size="11" fill="#888888">update all parameters</text>
+
+  <rect x="170" y="342" width="320" height="48" rx="8" fill="#E87E2E"/>
+  <text x="330" y="372" text-anchor="middle" font-size="14" font-weight="bold" fill="#FFFFFF">Fine-tuned monoBERT</text>
+
+  <rect x="80" y="420" width="500" height="50" rx="8" fill="#EFF7FB" stroke="#B9D8E8" stroke-width="1.5"/>
+  <text x="330" y="441" text-anchor="middle" font-size="11.5" fill="#33617A">Hyperparameters: learning rate 3&#215;10&#8315;&#8310; (lower than BERT standard) &#183; batch 32 &#183; ~400K iterations</text>
+  <text x="330" y="460" text-anchor="middle" font-size="11" fill="#5B87A0">all BERT layers are fine-tuned; the classification layer is newly added (randomly initialized)</text>
+
+  <text x="330" y="510" text-anchor="middle" font-size="11" font-style="italic" fill="#888888">Nogueira and Cho, &#8220;Passage Re-ranking with BERT&#8221;, 2019; Lin et al., 2021, &#167;3.2</text>
+</svg>

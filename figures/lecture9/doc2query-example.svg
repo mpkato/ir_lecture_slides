@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="680" height="480" viewBox="0 0 680 480" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#555555"/>
+    </marker>
+  </defs>
+
+  <text x="340" y="36" text-anchor="middle" font-size="15" font-weight="bold" fill="#333333">How doc2query Resolves Mismatch &#8212; Concrete Example</text>
+
+  <!-- original document -->
+  <rect x="70" y="60" width="540" height="76" rx="9" fill="#DDEEF7" stroke="#2B87B8" stroke-width="1.5"/>
+  <text x="340" y="86" text-anchor="middle" font-size="13" font-weight="bold" fill="#18617E">Original document</text>
+  <text x="340" y="108" text-anchor="middle" font-size="11.5" font-style="italic" fill="#33617A">&#8220;Osaka Castle was built by Toyotomi Hideyoshi in 1583. The observation deck</text>
+  <text x="340" y="124" text-anchor="middle" font-size="11.5" font-style="italic" fill="#33617A">offers a panoramic view of Osaka city &#8230;&#8221;</text>
+
+  <line x1="340" y1="136" x2="340" y2="170" stroke="#555555" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <text x="355" y="160" font-size="11.5" font-weight="bold" fill="#2B87B8">doc2query generates anticipated queries</text>
+
+  <!-- generated queries -->
+  <rect x="120" y="172" width="440" height="108" rx="9" fill="#FCEEDF" stroke="#E8A05D" stroke-width="1.5"/>
+  <text x="340" y="198" text-anchor="middle" font-size="13" font-weight="bold" fill="#B35A0E">Generated queries</text>
+  <g font-size="12.5" fill="#7A5230" text-anchor="middle">
+    <text x="340" y="222">&#8220;Osaka Castle <tspan font-weight="bold" fill="#C2620E">who built it</tspan>&#8221;</text>
+    <text x="340" y="244">&#8220;Osaka Castle <tspan font-weight="bold" fill="#C2620E">observation view</tspan>&#8221;</text>
+    <text x="340" y="266">&#8220;<tspan font-weight="bold" fill="#C2620E">Hideyoshi&#8217;s castle</tspan> history&#8221;</text>
+  </g>
+
+  <line x1="340" y1="280" x2="340" y2="314" stroke="#555555" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <text x="355" y="304" font-size="11.5" fill="#888888">append to the document and index</text>
+
+  <!-- effect -->
+  <rect x="70" y="316" width="540" height="72" rx="9" fill="#E4F4E9" stroke="#3E9C5C" stroke-width="1.5"/>
+  <text x="340" y="342" text-anchor="middle" font-size="13" font-weight="bold" fill="#2C7A46">Effect</text>
+  <text x="340" y="364" text-anchor="middle" font-size="12" fill="#3E6B4D">expressions <tspan font-weight="bold">not in the original text</tspan> (&#8220;who built it&#8221;, &#8220;observation&#8221;, &#8220;Hideyoshi&#8217;s castle&#8221;)</text>
+  <text x="340" y="382" text-anchor="middle" font-size="12" fill="#3E6B4D">become matchable &#8594; a wider variety of queries finds this document</text>
+
+  <!-- results -->
+  <text x="340" y="428" text-anchor="middle" font-size="12.5" fill="#555555">MS MARCO MRR@10:&#160;&#160;BM25 0.184&#160;&#160;&#183;&#160;&#160;BM25 + RM3 0.156&#160;&#160;&#183;&#160;&#160;<tspan font-weight="bold" fill="#B35A0E">BM25 + doc2query 0.218</tspan></text>
+  <text x="340" y="458" text-anchor="middle" font-size="11" font-style="italic" fill="#888888">Method: Nogueira et al., 2019 &#183; Numbers: Lin et al., 2021, Table 34</text>
+</svg>

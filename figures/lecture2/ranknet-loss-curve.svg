@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="640" height="470" viewBox="0 0 640 470" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="axisarrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#555555"/>
+    </marker>
+  </defs>
+
+  <text x="320" y="34" text-anchor="middle" font-size="15" font-weight="bold" fill="#333333">RankNet Loss&#160;&#160;<tspan font-style="italic">L</tspan> = log(1 + e<tspan dy="-6" font-size="10">&#8722;&#945;(s&#7522;&#8722;s&#11388;)</tspan><tspan dy="6">)&#160;&#160;(&#945; = 1)</tspan></text>
+
+  <!-- plot: x -4..4 -> 70..510 (55px/unit), y 0..4.2 -> 320..70.9 (62px/unit) -->
+  <g stroke="#EDEDED" stroke-width="1">
+    <line x1="70" y1="258" x2="510" y2="258"/>
+    <line x1="70" y1="196" x2="510" y2="196"/>
+    <line x1="70" y1="134" x2="510" y2="134"/>
+  </g>
+  <line x1="290" y1="60" x2="290" y2="320" stroke="#CCCCCC" stroke-width="1" stroke-dasharray="4,4"/>
+
+  <line x1="70" y1="320" x2="540" y2="320" stroke="#555555" stroke-width="1.5" marker-end="url(#axisarrow)"/>
+  <line x1="70" y1="320" x2="70" y2="56" stroke="#555555" stroke-width="1.5" marker-end="url(#axisarrow)"/>
+  <g font-size="11.5" fill="#777777">
+    <text x="62" y="324" text-anchor="end">0</text>
+    <text x="62" y="262" text-anchor="end">1</text>
+    <text x="62" y="200" text-anchor="end">2</text>
+    <text x="62" y="138" text-anchor="end">3</text>
+    <text x="125" y="338" text-anchor="middle">&#8722;3</text>
+    <text x="180" y="338" text-anchor="middle">&#8722;2</text>
+    <text x="290" y="338" text-anchor="middle">0</text>
+    <text x="400" y="338" text-anchor="middle">+2</text>
+    <text x="510" y="338" text-anchor="middle">+4</text>
+  </g>
+  <text x="320" y="368" text-anchor="middle" font-size="13" fill="#333333"><tspan font-style="italic">s</tspan><tspan dy="3" font-size="10" font-style="italic">i</tspan><tspan dy="-3"> &#8722; </tspan><tspan font-style="italic">s</tspan><tspan dy="3" font-size="10" font-style="italic">j</tspan><tspan dy="-3"> (further right = more correct order) &#8594;</tspan></text>
+  <text x="30" y="190" text-anchor="middle" font-size="13" fill="#333333" transform="rotate(-90 30 190)">Loss <tspan font-style="italic">L</tspan></text>
+
+  <!-- curve: L(x)=ln(1+e^-x): (-4,4.018)(-3,3.049)(-2,2.127)(-1,1.313)(0,0.693)(1,0.313)(2,0.127)(3,0.049)(4,0.018) -->
+  <path d="M70,70.9 L125,130.9 L180,188.1 L235,238.6 L290,277.0 L345,300.6 L400,312.1 L455,317.0 L510,318.9" fill="none" stroke="#2B87B8" stroke-width="3"/>
+
+  <!-- annotated points -->
+  <circle cx="180" cy="188.1" r="6" fill="#C0392B"/>
+  <text x="196" y="182" font-size="11.5" font-weight="bold" fill="#962D22">L = 2.13 (reversed: s&#7522;&#8722;s&#11388; = &#8722;2)</text>
+  <circle cx="290" cy="277.0" r="6" fill="#E87E2E"/>
+  <text x="306" y="268" font-size="11.5" font-weight="bold" fill="#B35A0E">L = 0.69 (tie)</text>
+  <circle cx="400" cy="312.1" r="6" fill="#2C7A46"/>
+  <text x="400" y="298" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#2C7A46">L = 0.13 (correct)</text>
+
+  <text x="320" y="408" text-anchor="middle" font-size="12" fill="#555555">Reversed order is penalized heavily; correct order costs almost nothing</text>
+  <text x="320" y="438" text-anchor="middle" font-size="11" font-style="italic" fill="#888888">Burges et al., &#8220;Learning to Rank using Gradient Descent&#8221;, ICML, 2005</text>
+</svg>

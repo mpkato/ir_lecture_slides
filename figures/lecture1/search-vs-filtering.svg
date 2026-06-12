@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="860" height="440" viewBox="0 0 860 440" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#555555"/>
+    </marker>
+  </defs>
+
+  <!-- ===== Search ===== -->
+  <rect x="30" y="30" width="390" height="300" rx="10" fill="#E9F4FA" stroke="#2B87B8" stroke-width="1.8"/>
+  <text x="225" y="62" text-anchor="middle" font-size="16" font-weight="bold" fill="#18617E">Search / Retrieval</text>
+  <text x="225" y="84" text-anchor="middle" font-size="11.5" fill="#5B87A0">user actively seeks information (Pull model)</text>
+
+  <rect x="55" y="110" width="130" height="62" rx="8" fill="#E87E2E"/>
+  <text x="120" y="136" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFFFFF">Query</text>
+  <text x="120" y="156" text-anchor="middle" font-size="10" fill="#FBE3CD">dynamic (typed each time)</text>
+
+  <rect x="265" y="110" width="130" height="62" rx="8" fill="#FFFFFF" stroke="#7FB8D6" stroke-width="1.5"/>
+  <text x="330" y="136" text-anchor="middle" font-size="13" font-weight="bold" fill="#18617E">Collection</text>
+  <text x="330" y="156" text-anchor="middle" font-size="10" fill="#5B87A0">static (pre-built)</text>
+
+  <rect x="160" y="208" width="130" height="50" rx="8" fill="#2B87B8"/>
+  <text x="225" y="239" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#FFFFFF">Matching</text>
+
+  <line x1="120" y1="172" x2="206" y2="212" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="330" y1="172" x2="244" y2="212" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <text x="225" y="300" text-anchor="middle" font-size="12" fill="#33617A">e.g., Google Search</text>
+
+  <!-- ===== Filtering ===== -->
+  <rect x="440" y="30" width="390" height="300" rx="10" fill="#FDF4EA" stroke="#E87E2E" stroke-width="1.8"/>
+  <text x="635" y="62" text-anchor="middle" font-size="16" font-weight="bold" fill="#B35A0E">Information Filtering</text>
+  <text x="635" y="84" text-anchor="middle" font-size="11.5" fill="#9C7A56">system passively notifies (Push model)</text>
+
+  <rect x="465" y="110" width="130" height="62" rx="8" fill="#FFFFFF" stroke="#E8A05D" stroke-width="1.5"/>
+  <text x="530" y="136" text-anchor="middle" font-size="13" font-weight="bold" fill="#B35A0E">Profile</text>
+  <text x="530" y="156" text-anchor="middle" font-size="10" fill="#9C7A56">static (pre-registered)</text>
+
+  <rect x="675" y="110" width="130" height="62" rx="8" fill="#E87E2E"/>
+  <text x="740" y="136" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFFFFF">Text stream</text>
+  <text x="740" y="156" text-anchor="middle" font-size="10" fill="#FBE3CD">dynamic (arriving)</text>
+
+  <rect x="570" y="208" width="130" height="50" rx="8" fill="#2B87B8"/>
+  <text x="635" y="239" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#FFFFFF">Matching</text>
+
+  <line x1="530" y1="172" x2="616" y2="212" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="740" y1="172" x2="654" y2="212" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <text x="635" y="300" text-anchor="middle" font-size="12" fill="#7A5230">e.g., paper alert notifications (SDI, 1960s)</text>
+
+  <!-- bottom -->
+  <text x="430" y="376" text-anchor="middle" font-size="12.5" fill="#555555">Opposite structures &#8212; what is <tspan font-weight="bold">dynamic</tspan> and what is <tspan font-weight="bold">static</tspan> are swapped &#8212; but essentially the same matching problem</text>
+  <text x="430" y="408" text-anchor="middle" font-size="11" font-style="italic" fill="#888888">&#8220;Two sides of the same coin&#8221; (Belkin, &#8220;Intelligent Information Retrieval&#8221;, 1992)</text>
+</svg>

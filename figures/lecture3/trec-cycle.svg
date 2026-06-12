@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="720" height="540" viewBox="0 0 720 540" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#555555"/>
+    </marker>
+  </defs>
+
+  <text x="360" y="36" text-anchor="middle" font-size="15" font-weight="bold" fill="#333333">TREC Annual Cycle (NIST, since 1992)</text>
+
+  <!-- 4 season boxes arranged in a cycle -->
+  <rect x="230" y="64" width="260" height="72" rx="9" fill="#E4F4E9" stroke="#3E9C5C" stroke-width="1.8"/>
+  <text x="360" y="92" text-anchor="middle" font-size="14" font-weight="bold" fill="#2C7A46">Spring</text>
+  <text x="360" y="116" text-anchor="middle" font-size="12" fill="#3E6B4D">call for track proposals</text>
+
+  <rect x="430" y="220" width="260" height="72" rx="9" fill="#FDF4EA" stroke="#E8A05D" stroke-width="1.8"/>
+  <text x="560" y="248" text-anchor="middle" font-size="14" font-weight="bold" fill="#B35A0E">Summer</text>
+  <text x="560" y="272" text-anchor="middle" font-size="12" fill="#7A5230">teams submit runs (search results)</text>
+
+  <rect x="230" y="376" width="260" height="72" rx="9" fill="#FCEEDF" stroke="#E87E2E" stroke-width="1.8"/>
+  <text x="360" y="404" text-anchor="middle" font-size="14" font-weight="bold" fill="#B35A0E">Fall</text>
+  <text x="360" y="428" text-anchor="middle" font-size="12" fill="#7A5230">NIST assessors judge relevance</text>
+
+  <rect x="30" y="220" width="260" height="72" rx="9" fill="#E9F4FA" stroke="#2B87B8" stroke-width="1.8"/>
+  <text x="160" y="248" text-anchor="middle" font-size="14" font-weight="bold" fill="#18617E">November</text>
+  <text x="160" y="272" text-anchor="middle" font-size="12" fill="#33617A">workshop (Gaithersburg, MD)</text>
+
+  <!-- cycle arrows -->
+  <path d="M480,108 C600,124 620,160 590,216" fill="none" stroke="#555555" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <path d="M590,296 C620,352 600,388 480,404" fill="none" stroke="#555555" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <path d="M240,404 C120,388 100,352 130,296" fill="none" stroke="#555555" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <path d="M130,216 C100,160 120,124 240,108" fill="none" stroke="#555555" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <!-- center note -->
+  <text x="360" y="248" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#555555">Reusable test</text>
+  <text x="360" y="264" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#555555">collections</text>
+  <text x="360" y="282" text-anchor="middle" font-size="10.5" fill="#777777">as a byproduct</text>
+
+  <text x="360" y="488" text-anchor="middle" font-size="12" fill="#555555">Voluntary participation &#183; a fair, neutral forum &#183; post-hoc evaluation of new systems via the released qrels</text>
+  <text x="360" y="516" text-anchor="middle" font-size="11" font-style="italic" fill="#888888">The TREC model spread worldwide: CLEF (Europe), NTCIR (Japan/Asia, NII), FIRE (India)</text>
+</svg>
